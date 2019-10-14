@@ -27,7 +27,7 @@ def my_render(template, **kwargs):
 @app.route('/update_server', methods=['POST'])
 def webhook():
   if request.method == 'POST':
-    os.system('/home/OnlineHelpList/Online-Help-List/git_pull.sh')
+    os.system('/home/Andreasgdp/My-Portfolio/git_pull.sh')
     return 'Updated PythonAnywhere successfully', 200
   else:
     return 'Wrong event type', 400
