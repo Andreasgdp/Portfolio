@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset = "UTF-8">
+    <meta name = "viewport" content = "width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <meta http-equiv = "X-UA-Compatible" content = "ie=edge">
+    <link rel = "stylesheet" href = "https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity = "sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin = "anonymous">
+    <link rel = "stylesheet" type = "text/css" href = "{{ url_for('static', filename='main.css') }}">
+    {% if title %}
+        <title>Andreas Petersen - {{ title }}</title>
+    {% else %}
+        <title>Andreas Petersen</title>
+    {% endif %}
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+    {% block content %}{% endblock %}
+    <footer class="footer" style = "position: fixed; width: 100%; bottom: 0; background-color: #D2DAE2; display: block; max-height: 3em; border-width: 0;">
+
+            <!-- Copyright -->
+            <div class="footer-copyright text-center py-3">© 2019 Copyright
+                <a> Andreas Petersen</a>
+            </div>
+            <!-- Copyright -->
+
+    </footer>
+</body>
+</html>
