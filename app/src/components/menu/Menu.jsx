@@ -5,7 +5,7 @@ export default function Menu({menuOpen, setMenuOpen}) {
 	return (
 		<div className={"menu " + (menuOpen && "active")} id="menu">
 			<ul>
-				// TODO: Create component of listelement so that the setMenuOpen() is only used once.
+				{/* TODO: Create component of listelement so that the setMenuOpen() is only used once. */}
 				<li onClick={()=>setMenuOpen(false)}>
 					<a href="#intro">Home</a>
 				</li>
