@@ -1,7 +1,1 @@
-launch_local_webpage.bat
-
-__pycache__
-
-git_pull.sh
-
-venv
+node_modules
