@@ -6,7 +6,7 @@ import Works from './components/works/Works';
 import Testimonials from './components/testimonials/Testimonials';
 import Contact from './components/contact/Contact';
 import Menu from './components/menu/Menu';
-import "./app.css"
+import "./app.scss"
 
 function App() {
   const [menuOpen, setMenuOpen] = useState(false);

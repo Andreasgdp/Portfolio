@@ -1,5 +1,5 @@
 import React from 'react';
-import "./menu.css";
+import "./menu.scss";
 
 export default function Menu({menuOpen, setMenuOpen}: {menuOpen: boolean, setMenuOpen: React.Dispatch<React.SetStateAction<boolean>>}) {
 	return (
