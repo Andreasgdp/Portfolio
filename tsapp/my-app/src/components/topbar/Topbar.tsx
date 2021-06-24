@@ -2,7 +2,7 @@ import React from 'react';
 import {Person, Mail} from "@material-ui/icons"
 import "./topbar.css"
 
-export default function Topbar({menuOpen, setMenuOpen}) {
+export default function Topbar({menuOpen, setMenuOpen}: {menuOpen: boolean, setMenuOpen: React.Dispatch<React.SetStateAction<boolean>>}) {
 	return (
 		<div className={"topbar " + (menuOpen && "active")}>
 			<div className="wrapper">

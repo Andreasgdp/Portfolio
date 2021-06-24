@@ -1,7 +1,7 @@
 import React from 'react';
 import "./menu.css";
 
-export default function Menu({menuOpen, setMenuOpen}) {
+export default function Menu({menuOpen, setMenuOpen}: {menuOpen: boolean, setMenuOpen: React.Dispatch<React.SetStateAction<boolean>>}) {
 	return (
 		<div className={"menu " + (menuOpen && "active")} id="menu">
 			<ul>
