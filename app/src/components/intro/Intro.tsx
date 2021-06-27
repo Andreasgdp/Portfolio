@@ -11,8 +11,10 @@ export default function Intro() {
 			return;
 		}
 		init(textRef.current, { 
-			showCursor: false, 
-			strings: ['Web developer', 'Logo designer'] 
+			showCursor: true, 
+			backDelay: 1500,
+			backSpeed: 60,
+			strings: ['Developer', 'Designer']
 		})
 	}, []);
 	return (
