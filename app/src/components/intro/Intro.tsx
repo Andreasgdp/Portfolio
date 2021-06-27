@@ -4,9 +4,12 @@ import "./intro.scss";
 
 export default function Intro() {
 
-	const textRef = useRef(null);
+	const textRef = useRef<HTMLSpanElement>(null);
 
 	useEffect(() => {
+		if (!textRef.current) {
+			return;
+		}
 		init(textRef.current, { 
 			showCursor: false, 
 			strings: ['Web developer', 'Logo designer'] 
