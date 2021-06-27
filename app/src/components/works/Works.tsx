@@ -1,9 +1,6 @@
 import React from 'react';
-import "./works.scss"
+import './works.scss';
 
 export default function Works() {
-	return (
-		<div className="works" id="works">
-		</div>
-	)
+	return <div className="works" id="works"></div>;
 }
