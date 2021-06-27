@@ -27,5 +27,5 @@ Here is a short description of what my portfolio is build on.
 - `yarn create react-app . --template typescript`
 #### Add Cypress to the project
 - `yarn add cypress --dev`
-#### Added this to `package.json` to simplify running cypress
+#### Added this to "scripts" in `package.json` to simplify running cypress
 - `"cypress": "cypress open"`
