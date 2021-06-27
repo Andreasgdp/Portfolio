@@ -11,7 +11,14 @@ import {
 
 export default function Portfolio() {
 	const [selected, setSelected] = useState('featured');
-	const [data, setData] = useState([{ id: 0, title: '', img: '' }]);
+
+	interface ProfessionData {
+		id: number;
+		title: string;
+		img: string;
+	};
+
+	const [data, setData] = useState<ProfessionData[]>([]);
 
 	// ! List of categories for portfolio. Should match the categories in data.js
 	const list = [
