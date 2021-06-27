@@ -6,12 +6,12 @@ export default function Intro() {
 
 	const textRef = useRef(null);
 
-	// useEffect(() => {
-	// 	init(textRef.current, { 
-	// 		showCursor: false, 
-	// 		strings: ['Web developer', 'Logo designer'] 
-	// 	})
-	// }, [])
+	useEffect(() => {
+		init(textRef.current, { 
+			showCursor: false, 
+			strings: ['Web developer', 'Logo designer'] 
+		})
+	}, []);
 	return (
 		<div className="intro" id="intro">
 			<div className="left">
