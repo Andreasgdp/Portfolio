@@ -23,3 +23,9 @@
 //
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
+
+Cypress.Commands.add('navTo', (navTo, urlEnd) => {
+	cy.get('.hamburger').click();
+	cy.contains(navTo).click();
+	cy.url().should('include', urlEnd);
+});
