@@ -5,21 +5,21 @@ export default function Works() {
 	const [currentSlide, setCurrentSlide] = useState(0);
 	const data = [
 		{
-			id: '1',
+			id: 1,
 			icon: './assets/mobile.png',
 			title: 'Web Design',
 			desc: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. ',
 			img: 'https://99designs-blog.imgix.net/blog/wp-content/uploads/2018/10/attachment_100040756-e1538485934255.jpeg?auto=format&q=60&fit=max&w=930',
 		},
 		{
-			id: '2',
+			id: 2,
 			icon: './assets/globe.png',
 			title: 'Mobile Application',
 			desc: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.',
 			img: 'https://99designs-blog.imgix.net/blog/wp-content/uploads/2018/10/attachment_100040756-e1538485934255.jpeg?auto=format&q=60&fit=max&w=930',
 		},
 		{
-			id: '3',
+			id: 3,
 			icon: './assets/writing.png',
 			title: 'Branding',
 			desc: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.',
