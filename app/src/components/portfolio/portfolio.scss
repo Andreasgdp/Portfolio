@@ -8,13 +8,26 @@
 
 	h1 {
 		font-size: 50px;
+
+		@include mobile {
+			font-size: 20px;
+			padding-bottom: 10px;
+			overflow: hidden;
+		}
 	}
 
 	ul {
 		margin: 10px;
-		padding: 0px;
+		padding: 0;
 		list-style: none;
 		display: flex;
+
+		@include mobile {
+			height: 180px;
+			margin: 10px 0;
+			flex-wrap: wrap;
+			justify-content: center;
+		}
 	}
 
 	.container {
@@ -24,11 +37,15 @@
 		justify-content: center;
 		flex-wrap: wrap;
 
+		@include mobile {
+			width: 100%;
+		}
+
 		.item {
 			width: 220px;
 			height: 150px;
 			border-radius: 20px;
-			border: 1px solid rgb(240, 240, 240);
+			border: 1px solid rgb(240, 239, 239);
 			margin: 10px 20px;
 			display: flex;
 			align-items: center;
@@ -37,6 +54,11 @@
 			position: relative;
 			transition: $mainTransition;
 			cursor: pointer;
+
+			@include mobile {
+				width: 130px;
+				height: 100px;
+			}
 
 			h3 {
 				position: absolute;

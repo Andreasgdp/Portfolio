@@ -1,2 +1,10 @@
 $mainColor: #15023a;
 $mainTransition: all 0.25s ease;
+
+$width: 768px;
+
+@mixin mobile {
+	@media (max-width: #{$width}) {
+		@content;
+	}
+}
