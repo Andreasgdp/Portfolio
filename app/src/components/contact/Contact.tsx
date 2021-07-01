@@ -8,6 +8,9 @@ export default function Contact() {
 		e.preventDefault();
 		setMessage(true);
 	};
+	const handleFocus = () => {
+		setMessage(false);
+	};
 
 	return (
 		<div className="contact" id="contact">
@@ -17,10 +20,21 @@ export default function Contact() {
 			<div className="right">
 				<h2>Contact</h2>
 				<form onSubmit={handleSubmit}>
-					<input type="text" placeholder="Email" />
-					<textarea placeholder="Message"></textarea>
+					<input
+						type="text"
+						placeholder="Email"
+						onFocus={handleFocus}
+					/>
+					<textarea
+						placeholder="Message"
+						onFocus={handleFocus}
+					></textarea>
 					<button type="submit">Send</button>
-					{message && <span>Thanks, I'll reply ASAP :)</span>}
+					{message && (
+						<span id="recieved-message">
+							Thanks, I'll reply ASAP :)
+						</span>
+					)}
 				</form>
 			</div>
 		</div>
