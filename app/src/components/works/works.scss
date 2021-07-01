@@ -1,7 +1,7 @@
 @import '../../global.scss';
 
 .works {
-	background-color: crimson;
+	background-color: $secColor;
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -27,7 +27,10 @@
 	}
 
 	.slider {
-		height: 350px;
+		@include slim {
+			height: 250px;
+		}
+		height: 50vh;
 		display: flex;
 		position: absolute;
 		left: 0;
@@ -47,7 +50,7 @@
 			justify-content: center;
 
 			.item {
-				width: 700px;
+				width: 60vw;
 				height: 100%;
 				background-color: white;
 				border-radius: 20px;
@@ -127,7 +130,7 @@
 					overflow: hidden;
 
 					img {
-						width: 400px;
+						width: 100%;
 						transform: rotate(-10deg);
 					}
 				}
