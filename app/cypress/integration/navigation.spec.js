@@ -1,5 +1,5 @@
 describe('Site navigation', () => {
-	it('opens the app', () => {
+	it('Opens the app', () => {
 		cy.visit('http://localhost:3000');
 	});
 	it('Navigates to Home', () => {
