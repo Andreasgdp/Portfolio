@@ -1,4 +1,4 @@
-@import '../../global.scss';
+@import '../../../global.scss';
 
 .portfolioList {
 	display: flex;
@@ -9,6 +9,11 @@
 	padding: 7px;
 	border-radius: 10px;
 	cursor: pointer;
+	transition: $mainTransition;
+
+	&:hover {
+		background-color: rgb(221, 207, 240);
+	}
 
 	@include mobile {
 		margin-right: 0px;
@@ -16,7 +21,7 @@
 	}
 
 	&.active {
-		background-color: $mainColor;
+		background-color: $secColor;
 		color: white;
 	}
 }
