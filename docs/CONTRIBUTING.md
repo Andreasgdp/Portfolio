@@ -21,7 +21,7 @@ Pull requests are the best way to propose changes to the codebase (I use [Github
 6. Make sure your code lints.
 7. Remember to link issues to pull requests, if one is relevant.
 
-## Report bugs using Github's [issues](https://github.com/BHelpful/Online-Help-List/issues)
+## Report bugs using Github's [issues](https://github.com/Andreasgdp/My-Portfolio/issues)
 I use GitHub issues to track public bugs. Report a bug by [opening a new issue](); it's that easy!
 
 ## Write bug reports with detail, background, and sample code
