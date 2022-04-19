@@ -28,7 +28,7 @@ const ArticleLayout = ({ children, title }: ArticleLayoutProps) => (
     <>
       {title && (
         <Head>
-          <title>Tsao Chia-Cheng - {title}</title>
+          <title>Andreas Petersen - {title}</title>
         </Head>
       )}
       {children}

@@ -11,7 +11,6 @@ What's different:
 - JavaScript to TypeScript.
 - Rather than create pages for every works, use dynamic routes by `works/[id].tsx`.
 - Parse markdown file as contents of works.
-- Replace voxel dog with my own blender works.
 
 ## Stack
 

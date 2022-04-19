@@ -20,14 +20,17 @@ const LogoBox = styled.span`
 `;
 
 const Logo = () => {
-  const foorPrintImg = `/images/footprint${useColorModeValue('', '-dark')}.png`;
+  const foorPrintImg = `/images/logo${useColorModeValue('', '-dark')}.png`;
   return (
     <Link href="/">
       <a>
         <LogoBox>
           <Image src={foorPrintImg} width={20} height={20} alt="logo" />
-          <Text color={useColorModeValue('gray.800', 'whiteAlpha.900')} ml={3}>
-            Tsao Chia-Cheng
+          <Text
+            color={useColorModeValue('gray.800', 'whipurplepha.900')}
+            ml={3}
+          >
+            Andreas Petersen (Guldberg)
           </Text>
         </LogoBox>
       </a>
@@ -36,3 +39,4 @@ const Logo = () => {
 };
 
 export default Logo;
+

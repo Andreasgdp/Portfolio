@@ -15,35 +15,29 @@ const Footer = () => {
     <Container mt={12} maxW="container.lg">
       <Divider />
       <HStack justifyContent="end">
-        <Link
-          href="https://www.linkedin.com/in/chia-cheng-tsao"
-          target="_blank"
-        >
+        <Link href="https://www.linkedin.com/in/andreasgdp/" target="_blank">
           <Button
             variant="ghost"
             leftIcon={<IoLogoLinkedin />}
-            colorScheme="teal"
+            colorScheme="purple"
           >
             Linkedin
           </Button>
         </Link>
-        <Link href="https://github.com/acebenson0704" target="_blank">
+        <Link href="https://github.com/Andreasgdp" target="_blank">
           <Button
             variant="ghost"
             leftIcon={<IoLogoGithub />}
-            colorScheme="teal"
+            colorScheme="purple"
           >
             Github
           </Button>
         </Link>
-        <Link
-          href="https://www.instagram.com/aabcd60628891tw5/"
-          target="_blank"
-        >
+        <Link href="https://www.instagram.com/andreasgdp/" target="_blank">
           <Button
             variant="ghost"
             leftIcon={<IoLogoInstagram />}
-            colorScheme="teal"
+            colorScheme="purple"
           >
             Instagram
           </Button>
@@ -57,3 +51,4 @@ const Footer = () => {
 };
 
 export default Footer;
+

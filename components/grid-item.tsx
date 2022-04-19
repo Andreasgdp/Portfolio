@@ -27,7 +27,7 @@ export const GridItem = ({ children, href, title }: GridItemProps) => (
       cursor="pointer"
       w="100%"
       h="100%"
-      borderColor={useColorModeValue('gray.800', 'whiteAlpha.800')}
+      borderColor={useColorModeValue('gray.800', 'whipurplepha.800')}
       borderWidth={2}
       borderStyle="solid"
       borderRadius={12}
@@ -61,7 +61,7 @@ export const WorkGridItem = ({
       <NextLink href={`/works/${id}`} passHref>
         <LinkBox cursor="pointer">
           <Box
-            borderColor={useColorModeValue('gray.800', 'whiteAlpha.800')}
+            borderColor={useColorModeValue('gray.800', 'whipurplepha.800')}
             borderWidth={2}
             borderStyle="solid"
             borderRadius={12}
@@ -97,3 +97,4 @@ export const GridItemStyle = () => (
     `}
   />
 );
+

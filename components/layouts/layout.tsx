@@ -24,7 +24,7 @@ const Layout = ({ children }: LayoutProps) => {
     <Box as="main" pb={8}>
       <Head>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <title>Tsao Chia-Cheng - Homepage</title>
+        <title>Andreas Petersen - Homepage</title>
       </Head>
 
       <Navbar path={router.asPath} />

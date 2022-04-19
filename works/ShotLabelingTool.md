@@ -15,6 +15,7 @@ video:
   Shot detetion is a field of research of video processing. 
   Its subject is the automated detection of transitions between shots in digital video with the purpose of temporal segmentation of videos. <br />
   This labeling tool is used to fix pre-generated detection results, and classifying which types the current clip is.
-  <Image src="/images/shot-detection-schematic.png" bg="whiteAlpha.500" mt={6} />
+  <Image src="/images/shot-detection-schematic.png" bg="whipurplepha.500" mt={6} />
   <Box textAlign="right" opacity={0.4} fontSize="sm">https://algorithmia.com/algorithms/gifscom/deepshotdetection</Box>
 </Box>
+

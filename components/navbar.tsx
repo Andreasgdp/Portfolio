@@ -30,12 +30,12 @@ type LinkItemProps = {
 
 const LinkItem = ({ href, path, children }: LinkItemProps) => {
   const active = path === href;
-  const inacitiveColor = useColorModeValue('gray200', 'whiteAlpha.900');
+  const inacitiveColor = useColorModeValue('gray200', 'whipurplepha.900');
   return (
     <NextLink href={href} passHref>
       <Link
         p={2}
-        bg={active ? 'grassTeal' : undefined}
+        bg={active ? 'navBarPrimary' : undefined}
         color={active ? '#202023' : inacitiveColor}
       >
         {children}
@@ -56,7 +56,7 @@ const Navbar = (props: NavbarProps) => {
       position="fixed"
       as="nav"
       w="100%"
-      bg={useColorModeValue('#ffffff40', '#20202380')}
+      bg={useColorModeValue('#caa8ff40', '#2D333B99')}
       style={{ backdropFilter: 'blur(10px' }}
       zIndex={1}
       {...props}
@@ -85,7 +85,7 @@ const Navbar = (props: NavbarProps) => {
           <Link
             target="_blank"
             href="https://github.com/acebenson0704/portfolio-website"
-            color={useColorModeValue('gray200', 'whiteAlpha.900')}
+            color={useColorModeValue('gray200', 'whipurplepha.900')}
             display="inline-flex"
             alignItems="center"
             style={{ gap: 4 }}
@@ -130,3 +130,7 @@ const Navbar = (props: NavbarProps) => {
 };
 
 export default Navbar;
+
+
+
+

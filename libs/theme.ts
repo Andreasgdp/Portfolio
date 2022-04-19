@@ -4,7 +4,8 @@ import { mode, Styles } from '@chakra-ui/theme-tools';
 const styles: Styles = {
   global: (props: any) => ({
     body: {
-      bg: mode('#f0e7db', '#202023')(props)
+      // Light, dark
+      bg: mode('#ffffff', '#22272E')(props)
     }
   })
 };
@@ -32,11 +33,11 @@ const components = {
 };
 
 const fonts = {
-  heading: "'M PLUS Rounded 1c'"
+  heading: "'Montserrat'"
 };
 
 const colors = {
-  grassTeal: '#88ccca'
+  navBarPrimary: '#b794f4'
 };
 
 const config = {
@@ -46,3 +47,4 @@ const config = {
 
 const theme = extendTheme({ styles, components, fonts, colors, config });
 export default theme;
+

@@ -29,7 +29,7 @@ const Home: NextPage = () => {
       <Container maxW="container.lg">
         <Box
           borderRadius="lg"
-          bg={useColorModeValue('whiteAlpha.500', 'whiteAlpha.200')}
+          bg={useColorModeValue('whipurplepha.500', 'whipurplepha.200')}
           p={3}
           my={12}
         >
@@ -68,11 +68,11 @@ const Home: NextPage = () => {
             textAlign="center"
           >
             <Box
-              borderColor="whiteAlpha.800"
+              borderColor="whipurplepha.800"
               borderWidth={2}
               borderStyle="solid"
               w="236px"
-              h="295px"
+              h="236px"
               display="inline-block"
               borderRadius="full"
               overflow="hidden"
@@ -100,7 +100,7 @@ const Home: NextPage = () => {
           </Paragraph>
           <Center my={4}>
             <NextLink href="/works" scroll={false} passHref>
-              <Button rightIcon={<ChevronRightIcon />} colorScheme="teal">
+              <Button rightIcon={<ChevronRightIcon />} colorScheme="purple">
                 My Portfolio
               </Button>
             </NextLink>
