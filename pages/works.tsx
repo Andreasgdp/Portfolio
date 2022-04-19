@@ -42,46 +42,11 @@ const Works: NextPage<allWorksDataProps> = ({
     <ArticleLayout title="Wroks">
       <Container maxW="container.lg">
         <Heading as="h2" fontSize={20} my={4}>
-          Computer Vision
-        </Heading>
-        <Divider />
-        <Section>
-          <Paragraph>
-            Computer Vision has been achived with Neural Networks. With the
-            success of deep learning, our life is more convenient. My Lab
-            conduct research on this topic, the below is what I took part in.
-          </Paragraph>
-        </Section>
-
-        <SimpleGrid columns={[1, 1, 2]} gap={6}>
-          {allWorksData
-            .filter((data) => data.category === 'Computer Vision')
-            .map((data) => {
-              return (
-                <Section delay={0.1} key={data.id}>
-                  <WorkGridItem
-                    id={data.id}
-                    title={data.title}
-                    thumbnail={data.image}
-                  >
-                    {data.abstract}
-                  </WorkGridItem>
-                </Section>
-              );
-            })}
-        </SimpleGrid>
-
-        <Heading as="h2" fontSize={20} my={4}>
           Web Development
         </Heading>
         <Divider />
         <Section>
-          <Paragraph>
-            In my spare time, I enjoy learning something new. Web development is
-            one of them because the convenience of writing code anywhere without
-            setting up environment. In addtion, with PC, labtop, or even mobile
-            phone, you can browse the web anytime.
-          </Paragraph>
+          <Paragraph>...</Paragraph>
         </Section>
 
         <SimpleGrid columns={[1, 1, 2]} gap={6}>
@@ -103,29 +68,82 @@ const Works: NextPage<allWorksDataProps> = ({
         </SimpleGrid>
 
         <Heading as="h2" fontSize={20} my={4}>
-          Cocos Creator Project
+          App Development
         </Heading>
         <Divider />
         <Section>
-          <Paragraph>
-            {' '}
-            <Link href="https://www.cocos.com/en/creator" target="_blank">
-              Cocos Creator
-            </Link>{' '}
-            is an engine for building amazing games and software that works on
-            phones, tablets, PCs, and the web.
-          </Paragraph>
-          <Paragraph>
-            The following projects were Academia and Industry Collaboration,
-            which collaborated with BioxiTech and IGS. The backend server and
-            game art design were provided by companies. I was responsible for
-            building frontend.
-          </Paragraph>
-          <Paragraph>
-            In the progress of projects, I learned how to version control by git
-            and svn, and understood how to call backend API.
-          </Paragraph>
+          <Paragraph>...</Paragraph>
         </Section>
+
+        <SimpleGrid columns={[1, 1, 2]} gap={6}>
+          {allWorksData
+            .filter((data) => data.category === 'App Development')
+            .map((data) => {
+              return (
+                <Section delay={0.1} key={data.id}>
+                  <WorkGridItem
+                    id={data.id}
+                    title={data.title}
+                    thumbnail={data.image}
+                  >
+                    {data.abstract}
+                  </WorkGridItem>
+                </Section>
+              );
+            })}
+        </SimpleGrid>
+
+        <Heading as="h2" fontSize={20} my={4}>
+          Kinematics
+        </Heading>
+        <Divider />
+        <Section>
+          <Paragraph>...</Paragraph>
+        </Section>
+
+        <SimpleGrid columns={[1, 1, 2]} gap={6}>
+          {allWorksData
+            .filter((data) => data.category === 'Kinematics')
+            .map((data) => {
+              return (
+                <Section delay={0.1} key={data.id}>
+                  <WorkGridItem
+                    id={data.id}
+                    title={data.title}
+                    thumbnail={data.image}
+                  >
+                    {data.abstract}
+                  </WorkGridItem>
+                </Section>
+              );
+            })}
+        </SimpleGrid>
+
+        <Heading as="h2" fontSize={20} my={4}>
+          Control Systems
+        </Heading>
+        <Divider />
+        <Section>
+          <Paragraph>...</Paragraph>
+        </Section>
+
+        <SimpleGrid columns={[1, 1, 2]} gap={6}>
+          {allWorksData
+            .filter((data) => data.category === 'Control Systems')
+            .map((data) => {
+              return (
+                <Section delay={0.1} key={data.id}>
+                  <WorkGridItem
+                    id={data.id}
+                    title={data.title}
+                    thumbnail={data.image}
+                  >
+                    {data.abstract}
+                  </WorkGridItem>
+                </Section>
+              );
+            })}
+        </SimpleGrid>
 
         <SimpleGrid columns={[1, 1, 2]} gap={6}>
           {allWorksData
@@ -150,3 +168,6 @@ const Works: NextPage<allWorksDataProps> = ({
 };
 
 export default Works;
+
+
+

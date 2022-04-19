@@ -1,8 +1,6 @@
 import fs from 'fs';
 import path from 'path';
 import matter from 'gray-matter';
-import { remark } from 'remark';
-import html from 'remark-html';
 import { serialize } from 'next-mdx-remote/serialize';
 
 const worksDirectory = path.join(process.cwd(), 'works');
@@ -23,9 +21,6 @@ export async function getWorkData(id: string) {
   const fileContent = fs.readFileSync(fullPath, 'utf8');
 
   const matterResult = matter(fileContent);
-
-  // const processContent = await remark().use(html).process(matterResult.content);
-  // const contentHtml = processContent.toString();
 
   const contentHtml = await serialize(matterResult.content);
 

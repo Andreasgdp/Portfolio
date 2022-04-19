@@ -37,6 +37,7 @@ const LinkItem = ({ href, path, children }: LinkItemProps) => {
         p={2}
         bg={active ? 'navBarPrimary' : undefined}
         color={active ? '#202023' : inacitiveColor}
+        borderRadius={4}
       >
         {children}
       </Link>

@@ -1,18 +1,11 @@
 import React, { ReactNode } from 'react';
 
 import Head from 'next/head';
-import dynamic from 'next/dynamic';
 import { Box, Container } from '@chakra-ui/react';
 import { useRouter } from 'next/router';
 
 import Navbar from '../navbar';
-import AniballLoader from '../aniball-loader';
 import Footer from '../footer';
-
-const LazyAniball = dynamic(() => import('../aniball'), {
-  ssr: false,
-  loading: () => <AniballLoader />
-});
 
 type LayoutProps = {
   children: ReactNode;

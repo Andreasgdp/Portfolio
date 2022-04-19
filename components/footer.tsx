@@ -44,7 +44,7 @@ const Footer = () => {
         </Link>
       </HStack>
       <Box mt={4} textAlign="center" opacity={0.4} fontSize="sm">
-        &copy; This website is based on Takuya Matsuyama&apos;s tutorial.
+        &copy; 2022.
       </Box>
     </Container>
   );

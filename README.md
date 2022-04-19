@@ -1,10 +1,10 @@
-# Tsao Chia-Cheng Protfolio Website
+# Andreas Petersen Protfolio Website
 
 [https://portfolio-website-eta-three.vercel.app/](https://portfolio-website-eta-three.vercel.app/)
 
 ## Notes
 
-This website is based on [Takuya Matsuyama](https://github.com/craftzdog/craftzdog-homepage)'s tutorial.
+This website was originally based on [Takuya Matsuyama](https://github.com/craftzdog/craftzdog-homepage)'s tutorial.
 
 What's different:
 
@@ -20,3 +20,4 @@ What's different:
 - [Framer Motion](https://www.framer.com/motion/) - An animation library for React
 - [gray-matter](https://github.com/jonschlinkert/gray-matter) - Parse front-matter from a string or file.
 - [next-mdx-remote](https://github.com/hashicorp/next-mdx-remote) - A set of light utilities allowing MDX to be loaded within getStaticProps or getServerSideProps and hydrated correctly on the client
+- [react-markdown](https://github.com/remarkjs/react-markdown) - React component to render markdown.
