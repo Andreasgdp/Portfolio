@@ -84,11 +84,6 @@ export default function Work({ workData }: workProps) {
         <Title>
           {workData.title} <Badge>{workData.year}</Badge>
         </Title>
-        {/* Content goes in between here */}
-        {/* If the content is a link to github project -> get readme and display using react-markdown */}
-        {/* If the content is written on Sanity CMS -> display content */}
-        <Markdown url="https://raw.githubusercontent.com/Andreasgdp/Portfolio/master/README.md"></Markdown>
-        {/* Content goes in between here */}
         <List ml={4} my={4}>
           {listitems.map((listitem) => {
             return (
@@ -115,6 +110,11 @@ export default function Work({ workData }: workProps) {
             );
           })}
         </List>
+        {/* Content goes in between here */}
+        {/* If the content is a link to github project -> get readme and display using react-markdown */}
+        {/* If the content is written on Sanity CMS -> display content */}
+        <Markdown url="https://raw.githubusercontent.com/Andreasgdp/Portfolio/master/README.md"></Markdown>
+        {/* Content goes in between here */}
         {workData.video &&
           workData.video.map((video) => {
             return (
