@@ -39,7 +39,7 @@ const Works: NextPage<allWorksDataProps> = ({
   allWorksData
 }: allWorksDataProps) => {
   return (
-    <ArticleLayout title="Wroks">
+    <ArticleLayout title="Works">
       <Container maxW="container.lg">
         <Heading as="h2" fontSize={20} my={4}>
           Web Development

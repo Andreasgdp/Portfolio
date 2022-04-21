@@ -15,6 +15,8 @@ import {
 import { MDXRemote } from 'next-mdx-remote';
 
 import ArticleLayout from '../../components/layouts/article';
+import Markdown from '../../components/markdown';
+import Video from '../../components/video';
 import { Title } from '../../components/works';
 import { getAllWorkIds, getWorkData } from '../../libs/works';
 
@@ -82,7 +84,11 @@ export default function Work({ workData }: workProps) {
         <Title>
           {workData.title} <Badge>{workData.year}</Badge>
         </Title>
-        <MDXRemote {...workData.contentHtml} components={components} />
+        {/* Content goes in between here */}
+        {/* If the content is a link to github project -> get readme and display using react-markdown */}
+        {/* If the content is written on Sanity CMS -> display content */}
+        <Markdown url="https://raw.githubusercontent.com/Andreasgdp/Portfolio/master/README.md"></Markdown>
+        {/* Content goes in between here */}
         <List ml={4} my={4}>
           {listitems.map((listitem) => {
             return (
@@ -90,7 +96,7 @@ export default function Work({ workData }: workProps) {
                 <ListItem key={listitem}>
                   <Grid templateColumns="repeat(12, 1fr)">
                     <GridItem colSpan={{ base: 12, md: 2 }}>
-                      <Badge colorScheme="cyan" mr={4}>
+                      <Badge colorScheme="purple" mr={4}>
                         {listitem}
                       </Badge>
                     </GridItem>
@@ -113,17 +119,10 @@ export default function Work({ workData }: workProps) {
           workData.video.map((video) => {
             return (
               <Center mt={12} key={video}>
-                <video autoPlay loop muted width="700px">
-                  <source src={video} />
-                </video>
+                <Video video={video} />
               </Center>
             );
           })}
-        <Center>
-          <Text as="i" textAlign="center">
-            Demo video
-          </Text>
-        </Center>
       </Container>
     </ArticleLayout>
   );
