@@ -4,7 +4,6 @@ import {
   Container,
   Divider,
   Heading,
-  Link,
   SimpleGrid
 } from '@chakra-ui/react';
 

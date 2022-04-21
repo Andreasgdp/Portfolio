@@ -1,18 +1,13 @@
 import {
   Badge,
-  Box,
   Center,
   Container,
   Grid,
   GridItem,
-  HStack,
-  Image,
   Link,
   List,
   ListItem,
-  Text
 } from '@chakra-ui/react';
-import { MDXRemote } from 'next-mdx-remote';
 
 import ArticleLayout from '../../components/layouts/article';
 import Markdown from '../../components/markdown';
@@ -57,17 +52,6 @@ type workProps = {
     video: Array<string>;
     contentHtml: any;
   };
-};
-
-const components = {
-  Text,
-  Box,
-  List,
-  ListItem,
-  Badge,
-  Image,
-  HStack,
-  Container
 };
 
 export default function Work({ workData }: workProps) {
