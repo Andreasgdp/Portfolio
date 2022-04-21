@@ -29,12 +29,10 @@ const Home: NextPage = () => {
   const [biography, setBiography] = useState([]);
 
   useEffect(() => {
-    const query = '*[type == "biography"]';
+    const query = '*[_type == "biography"]';
 
     client.fetch(query).then((data) => setBiography(data));
   }, []);
-
-  console.log(biography);
 
   return (
     <ArticleLayout>
@@ -129,10 +127,6 @@ const Home: NextPage = () => {
               {bio.content}
             </BioSection>
           ))}
-          <BioSection>
-            <BioYear>2020</BioYear>
-            Graduated high school with a grade point average of 11.4.
-          </BioSection>
         </Section>
       </Container>
     </ArticleLayout>
