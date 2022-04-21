@@ -18,12 +18,24 @@ import ArticleLayout from '../components/layouts/article';
 import Section from '../components/section';
 import Paragraph from '../components/paragraphy';
 import { BioSection, BioYear } from '../components/bio';
+import { urlFor, client } from '../libs/client';
+import { useEffect, useState } from 'react';
 
 const ProfileImage = chakra(Image, {
   shouldForwardProp: (prop) => ['width', 'height', 'src', 'alt'].includes(prop)
 });
 
 const Home: NextPage = () => {
+  const [biography, setBiography] = useState([]);
+
+  useEffect(() => {
+    const query = '*[type == "biography"]';
+
+    client.fetch(query).then((data) => setBiography(data));
+  }, []);
+
+  console.log(biography);
+
   return (
     <ArticleLayout>
       <Container maxW="container.lg">
@@ -111,10 +123,12 @@ const Home: NextPage = () => {
           <Heading as="h3" variant="section-title">
             Biography
           </Heading>
-          <BioSection>
-            <BioYear>2000</BioYear>
-            Born in Odense, Denmark.
-          </BioSection>
+          {biography.map((bio: { year: number; content: string }, index) => (
+            <BioSection key={bio.content + index}>
+              <BioYear>{bio.year}</BioYear>
+              {bio.content}
+            </BioSection>
+          ))}
           <BioSection>
             <BioYear>2020</BioYear>
             Graduated high school with a grade point average of 11.4.
