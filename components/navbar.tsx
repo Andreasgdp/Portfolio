@@ -82,7 +82,7 @@ const Navbar = (props: NavbarProps) => {
           </LinkItem>
           <Link
             target="_blank"
-            href="https://github.com/acebenson0704/portfolio-website"
+            href="https://github.com/Andreasgdp/Portfolio"
             color={useColorModeValue('gray200', 'whipurplepha.900')}
             display="inline-flex"
             alignItems="center"
@@ -111,7 +111,7 @@ const Navbar = (props: NavbarProps) => {
                 </NextLink>
                 <MenuItem
                   as={Link}
-                  href="https://github.com/acebenson0704/portfolio-website"
+                  href="https://github.com/Andreasgdp/Portfolio"
                 >
                   View Source
                 </MenuItem>
