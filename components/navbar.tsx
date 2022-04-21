@@ -80,9 +80,6 @@ const Navbar = (props: NavbarProps) => {
           <LinkItem href="/works" path={path}>
             Works
           </LinkItem>
-          <LinkItem href="/notes" path={path}>
-            Notes
-          </LinkItem>
           <Link
             target="_blank"
             href="https://github.com/acebenson0704/portfolio-website"
@@ -111,9 +108,6 @@ const Navbar = (props: NavbarProps) => {
               <MenuList>
                 <NextLink href="/works" passHref>
                   <MenuItem as={Link}>Works</MenuItem>
-                </NextLink>
-                <NextLink href="/notes" passHref>
-                  <MenuItem as={Link}>Notes</MenuItem>
                 </NextLink>
                 <MenuItem
                   as={Link}
