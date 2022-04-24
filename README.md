@@ -1,31 +1,23 @@
-# My Portfolio Website
-This is the repository for my portfolio website.
+# Andreas Petersen Protfolio Website
 
-The webpage is ised to show my greatest feats in programming and technology in general. It is used to tell you something about me - who I am as a person both workrelated and at home.
+[https://portfolio-website-eta-three.vercel.app/](https://portfolio-website-eta-three.vercel.app/)
 
-The webpage is also used as a form of communication system between you and me.
+## Notes
 
+This website was originally based on [Takuya Matsuyama](https://github.com/craftzdog/craftzdog-homepage)'s tutorial.
 
-## Building blocks of the web app
-Here is a short description of what my portfolio is build on.
+What's different:
 
-### Frameworks and important components
-- React is used as the framework for the web app
-- Cypress is used as the end to end testing software for the web app
-- YARN is the packagemanager for the web app
+- JavaScript to TypeScript.
+- Rather than create pages for every works, use dynamic routes by `works/[id].tsx`.
+- Parse markdown file as contents of works.
 
-### Languages
-- Typescript (tsx & ts)
-- Javascript (jsx & js)
-- HTML
-- SASS
-- JSON
+## Stack
 
-### Initializing commands I used to start the project
-
-#### Create the react app with typescript as the main language
-- `yarn create react-app . --template typescript`
-#### Add Cypress to the project
-- `yarn add cypress --dev`
-#### Added this to "scripts" in `package.json` to simplify running cypress
-- `"cypress": "cypress open"`
+- [Next.js](https://nextjs.org/) - A React framework with hybrid static & server rendering, and route pre-fetching, etc.
+- [Chakra UI](https://chakra-ui.com/) - A simple, modular and accessible component library for React
+- [Three.js](https://threejs.org/) - 3D library for JavaScript
+- [Framer Motion](https://www.framer.com/motion/) - An animation library for React
+- [gray-matter](https://github.com/jonschlinkert/gray-matter) - Parse front-matter from a string or file.
+- [next-mdx-remote](https://github.com/hashicorp/next-mdx-remote) - A set of light utilities allowing MDX to be loaded within getStaticProps or getServerSideProps and hydrated correctly on the client
+- [react-markdown](https://github.com/remarkjs/react-markdown) - React component to render markdown.
