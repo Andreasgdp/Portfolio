@@ -1,42 +1,37 @@
 import type { NextPage } from 'next';
 
-import {
-  Container,
-  Divider,
-  Heading,
-  SimpleGrid
-} from '@chakra-ui/react';
+import { Container, Divider, Heading, SimpleGrid } from '@chakra-ui/react';
 
-import { getWorksData } from '../libs/works';
 import ArticleLayout from '../components/layouts/article';
 import Section from '../components/section';
 import { WorkGridItem } from '../components/grid-item';
 import Paragraph from '../components/paragraphy';
+import { useEffect, useState } from 'react';
+import { client } from '../libs/client';
+import { SanityImageSource } from '@sanity/image-url/lib/types/types';
 
-export async function getStaticProps() {
-  const allWorksData = getWorksData();
-  return {
-    props: {
-      allWorksData
-    }
-  };
-}
-
-type allWorksDataProps = {
-  allWorksData: [
-    {
-      id: string;
-      title: string;
-      category: string;
-      abstract: string;
-      image: string;
-    }
-  ];
+export type workType = {
+  _id: string;
+  category: string;
+  title: string;
+  year: string;
+  platform: string;
+  stack: string[];
+  source: string;
+  website: string;
+  abstract: string;
+  imgUrl: SanityImageSource;
+  videos: Array<string>;
 };
 
-const Works: NextPage<allWorksDataProps> = ({
-  allWorksData
-}: allWorksDataProps) => {
+const Works: NextPage = () => {
+  const [works, setWorks] = useState([] as Array<workType>);
+
+  useEffect(() => {
+    const query = '*[_type == "works"]';
+    client.fetch(query).then((data) => setWorks(data));
+  }, []);
+
   return (
     <ArticleLayout title="Works">
       <Container maxW="container.lg">
@@ -45,27 +40,24 @@ const Works: NextPage<allWorksDataProps> = ({
         </Heading>
         <Divider />
         <Section>
-          <Paragraph>...</Paragraph>
+          <Paragraph>
+            I have worked on a number of projects in the web development field.
+            I like to work with the latest technologies and frameworks in my
+            hobby projects, which I feel is the best way to keep up with the
+            latest trends as well as expand the knowledge pool I have as a
+            developer.
+          </Paragraph>
         </Section>
 
         <SimpleGrid columns={[1, 1, 2]} gap={6}>
-          {allWorksData
-            .filter((data) => data.category === 'Web Development')
-            .map((data) => {
-              return (
-                <Section delay={0.1} key={data.id}>
-                  <WorkGridItem
-                    id={data.id}
-                    title={data.title}
-                    thumbnail={data.image}
-                  >
-                    {data.abstract}
-                  </WorkGridItem>
-                </Section>
-              );
-            })}
+          {works
+            .filter((workData) => workData.category === 'Web Development')
+            .map((workData, index) => (
+              <Section delay={0.1} key={index}>
+                <WorkGridItem work={workData}>{workData.abstract}</WorkGridItem>
+              </Section>
+            ))}
         </SimpleGrid>
-
         <Heading as="h2" fontSize={20} my={4}>
           App Development
         </Heading>
@@ -73,24 +65,6 @@ const Works: NextPage<allWorksDataProps> = ({
         <Section>
           <Paragraph>...</Paragraph>
         </Section>
-
-        <SimpleGrid columns={[1, 1, 2]} gap={6}>
-          {allWorksData
-            .filter((data) => data.category === 'App Development')
-            .map((data) => {
-              return (
-                <Section delay={0.1} key={data.id}>
-                  <WorkGridItem
-                    id={data.id}
-                    title={data.title}
-                    thumbnail={data.image}
-                  >
-                    {data.abstract}
-                  </WorkGridItem>
-                </Section>
-              );
-            })}
-        </SimpleGrid>
 
         <Heading as="h2" fontSize={20} my={4}>
           Kinematics
@@ -100,24 +74,6 @@ const Works: NextPage<allWorksDataProps> = ({
           <Paragraph>...</Paragraph>
         </Section>
 
-        <SimpleGrid columns={[1, 1, 2]} gap={6}>
-          {allWorksData
-            .filter((data) => data.category === 'Kinematics')
-            .map((data) => {
-              return (
-                <Section delay={0.1} key={data.id}>
-                  <WorkGridItem
-                    id={data.id}
-                    title={data.title}
-                    thumbnail={data.image}
-                  >
-                    {data.abstract}
-                  </WorkGridItem>
-                </Section>
-              );
-            })}
-        </SimpleGrid>
-
         <Heading as="h2" fontSize={20} my={4}>
           Control Systems
         </Heading>
@@ -125,48 +81,9 @@ const Works: NextPage<allWorksDataProps> = ({
         <Section>
           <Paragraph>...</Paragraph>
         </Section>
-
-        <SimpleGrid columns={[1, 1, 2]} gap={6}>
-          {allWorksData
-            .filter((data) => data.category === 'Control Systems')
-            .map((data) => {
-              return (
-                <Section delay={0.1} key={data.id}>
-                  <WorkGridItem
-                    id={data.id}
-                    title={data.title}
-                    thumbnail={data.image}
-                  >
-                    {data.abstract}
-                  </WorkGridItem>
-                </Section>
-              );
-            })}
-        </SimpleGrid>
-
-        <SimpleGrid columns={[1, 1, 2]} gap={6}>
-          {allWorksData
-            .filter((data) => data.category === 'Cocos Creator Project')
-            .map((data) => {
-              return (
-                <Section delay={0.2} key={data.id}>
-                  <WorkGridItem
-                    id={data.id}
-                    title={data.title}
-                    thumbnail={data.image}
-                  >
-                    {data.abstract}
-                  </WorkGridItem>
-                </Section>
-              );
-            })}
-        </SimpleGrid>
       </Container>
     </ArticleLayout>
   );
 };
 
 export default Works;
-
-
-

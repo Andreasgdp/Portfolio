@@ -33,7 +33,8 @@ export async function getWorkData(id: string) {
 
 export function getWorksData() {
   const filenames = fs.readdirSync(worksDirectory);
-  const allWorksData = filenames.map((filename) => {
+
+  return filenames.map((filename) => {
     const id = filename.replace(/\.md$/, '');
 
     const fullPath = path.join(worksDirectory, filename);
@@ -46,6 +47,4 @@ export function getWorksData() {
       ...matterResult.data
     };
   });
-
-  return allWorksData;
 }

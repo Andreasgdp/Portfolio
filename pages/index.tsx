@@ -18,7 +18,7 @@ import ArticleLayout from '../components/layouts/article';
 import Section from '../components/section';
 import Paragraph from '../components/paragraphy';
 import { BioSection, BioYear } from '../components/bio';
-import { urlFor, client } from '../libs/client';
+import { client } from '../libs/client';
 import { useEffect, useState } from 'react';
 
 const ProfileImage = chakra(Image, {

@@ -8,8 +8,6 @@ type MarkdownProps = {
 };
 
 const Markdown = ({ url }: MarkdownProps) => {
-  // fetch README.md from github e.g. url = https://raw.githubusercontent.com/{owner}/{repo}/{branch}/README.md
-
   const [readme, setReadme] = useState<string>('');
   useEffect(() => {
     async function getToken() {
@@ -19,7 +17,6 @@ const Markdown = ({ url }: MarkdownProps) => {
     getToken();
   }, []);
 
-  console.log(readme);
   return (
     <ReactMarkdown
       components={ChakraUIRenderer()}

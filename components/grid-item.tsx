@@ -11,6 +11,8 @@ import { Global } from '@emotion/react';
 import Image from 'next/image';
 import NextLink from 'next/link';
 import { motion } from 'framer-motion';
+import { workType } from '../pages/works';
+import { urlFor } from '../libs/client';
 
 type GridItemProps = {
   children?: ReactNode;
@@ -45,20 +47,13 @@ export const GridItem = ({ children, href, title }: GridItemProps) => (
 
 type WorkGridItemProps = {
   children: ReactNode;
-  id: string;
-  title: string;
-  thumbnail: string;
+  work: workType;
 };
 
-export const WorkGridItem = ({
-  children,
-  id,
-  title,
-  thumbnail
-}: WorkGridItemProps) => (
+export const WorkGridItem = ({ children, work }: WorkGridItemProps) => (
   <Box w="100%" textAlign="center">
     <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-      <NextLink href={`/works/${id}`} passHref>
+      <NextLink href={`/works/${work._id}`} passHref>
         <LinkBox cursor="pointer">
           <Box
             borderColor={useColorModeValue('gray.800', 'whipurplepha.800')}
@@ -69,16 +64,16 @@ export const WorkGridItem = ({
             p={1}
           >
             <Image
-              src={thumbnail}
-              alt={title}
+              src={urlFor(work.imgUrl).url()}
+              alt={work.title}
               className="grid-item-thumbnail"
               width="460px"
               height="260px"
             />
           </Box>
-          <LinkOverlay href={`/works/${id}`}>
+          <LinkOverlay href={`/works/${work._id}`}>
             <Text mt={2} fontSize={20}>
-              {title}
+              {work.title}
             </Text>
           </LinkOverlay>
           <Text fontSize={14}>{children}</Text>
