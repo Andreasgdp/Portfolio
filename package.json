@@ -1,12 +1,16 @@
 {
   "name": "portfolio-website",
   "version": "0.1.0",
+  "homepage": "https://Andreasgdp.github.io/Portfolio",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
+    "export": "next build",
     "start": "next start",
     "lint": "next lint",
-    "prettier": "prettier --write ."
+    "prettier": "prettier --write .",
+    "predeploy": "yarn build && yarn export",
+    "deploy": "gh-pages -d build"
   },
   "dependencies": {
     "@chakra-ui/icons": "^1.1.7",
@@ -17,6 +21,7 @@
     "@sanity/image-url": "^1.0.1",
     "chakra-ui-markdown-renderer": "^4.0.0",
     "framer-motion": "^6.2.7",
+    "gh-pages": "^3.2.3",
     "gray-matter": "^4.0.3",
     "next": "12.1.0",
     "next-mdx-remote": "^4.0.0",
