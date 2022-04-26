@@ -66,6 +66,16 @@ const Works: NextPage = () => {
           <Paragraph>...</Paragraph>
         </Section>
 
+        <SimpleGrid columns={[1, 1, 2]} gap={6}>
+          {works
+            .filter((workData) => workData.category === 'App Development')
+            .map((workData, index) => (
+              <Section delay={0.1} key={index}>
+                <WorkGridItem work={workData}>{workData.abstract}</WorkGridItem>
+              </Section>
+            ))}
+        </SimpleGrid>
+
         <Heading as="h2" fontSize={20} my={4}>
           Kinematics
         </Heading>
@@ -74,6 +84,16 @@ const Works: NextPage = () => {
           <Paragraph>...</Paragraph>
         </Section>
 
+        <SimpleGrid columns={[1, 1, 2]} gap={6}>
+          {works
+            .filter((workData) => workData.category === 'Kinematics')
+            .map((workData, index) => (
+              <Section delay={0.1} key={index}>
+                <WorkGridItem work={workData}>{workData.abstract}</WorkGridItem>
+              </Section>
+            ))}
+        </SimpleGrid>
+
         <Heading as="h2" fontSize={20} my={4}>
           Control Systems
         </Heading>
@@ -81,6 +101,34 @@ const Works: NextPage = () => {
         <Section>
           <Paragraph>...</Paragraph>
         </Section>
+
+        <SimpleGrid columns={[1, 1, 2]} gap={6}>
+          {works
+            .filter((workData) => workData.category === 'Control Systems')
+            .map((workData, index) => (
+              <Section delay={0.1} key={index}>
+                <WorkGridItem work={workData}>{workData.abstract}</WorkGridItem>
+              </Section>
+            ))}
+        </SimpleGrid>
+
+        <Heading as="h2" fontSize={20} my={4}>
+          MISC
+        </Heading>
+        <Divider />
+        <Section>
+          <Paragraph>...</Paragraph>
+        </Section>
+
+        <SimpleGrid columns={[1, 1, 2]} gap={6}>
+          {works
+            .filter((workData) => workData.category === 'MISC')
+            .map((workData, index) => (
+              <Section delay={0.1} key={index}>
+                <WorkGridItem work={workData}>{workData.abstract}</WorkGridItem>
+              </Section>
+            ))}
+        </SimpleGrid>
       </Container>
     </ArticleLayout>
   );
