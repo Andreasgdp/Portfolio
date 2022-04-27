@@ -39,7 +39,7 @@ const Home: NextPage = () => {
       <Container maxW="container.lg">
         <Box
           borderRadius="lg"
-          bg={useColorModeValue('whipurplepha.500', 'whipurplepha.200')}
+          bg={useColorModeValue('purple.100', 'purple.700')}
           p={3}
           my={12}
         >
@@ -78,7 +78,7 @@ const Home: NextPage = () => {
             textAlign="center"
           >
             <Box
-              borderColor="whipurplepha.800"
+              borderColor="purple.800"
               borderWidth={2}
               borderStyle="solid"
               w="236px"

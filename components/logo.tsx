@@ -26,10 +26,7 @@ const Logo = () => {
       <a>
         <LogoBox>
           <Image src={foorPrintImg} width={20} height={20} alt="logo" />
-          <Text
-            color={useColorModeValue('gray.800', 'whipurplepha.900')}
-            ml={3}
-          >
+          <Text color={useColorModeValue('gray.800', 'white.900')} ml={3}>
             Andreas Petersen (Guldberg)
           </Text>
         </LogoBox>
@@ -39,4 +36,3 @@ const Logo = () => {
 };
 
 export default Logo;
-

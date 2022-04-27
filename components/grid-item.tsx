@@ -13,6 +13,7 @@ import NextLink from 'next/link';
 import { motion } from 'framer-motion';
 import { workType } from '../pages/works';
 import { urlFor } from '../libs/client';
+import { IoHeartSharp } from 'react-icons/io5';
 
 type GridItemProps = {
   children?: ReactNode;
@@ -29,7 +30,7 @@ export const GridItem = ({ children, href, title }: GridItemProps) => (
       cursor="pointer"
       w="100%"
       h="100%"
-      borderColor={useColorModeValue('gray.800', 'whipurplepha.800')}
+      borderColor={useColorModeValue('gray.800', 'purple.800')}
       borderWidth={2}
       borderStyle="solid"
       borderRadius={12}
@@ -56,8 +57,9 @@ export const WorkGridItem = ({ children, work }: WorkGridItemProps) => (
       <NextLink href={`/works/${work._id}`} passHref>
         <LinkBox cursor="pointer">
           <Box
-            borderColor={useColorModeValue('gray.800', 'whipurplepha.800')}
-            borderWidth={2}
+            bg={useColorModeValue('gray.800', 'gray.700')}
+            borderColor={useColorModeValue('gray.800', 'gray.700')}
+            borderWidth={4}
             borderStyle="solid"
             borderRadius={12}
             position="relative"
@@ -69,14 +71,25 @@ export const WorkGridItem = ({ children, work }: WorkGridItemProps) => (
               className="grid-item-thumbnail"
               width="460px"
               height="260px"
+              objectFit="cover"
             />
-          </Box>
-          <LinkOverlay href={`/works/${work._id}`}>
+            {/* like button */}
+            <Box
+              position="absolute"
+              bottom={10}
+              left={6}
+              bg={useColorModeValue('gray.700', 'gray.600')}
+              borderRadius="50%"
+              p={2}
+              boxShadow="0px 0px 4px rgba(0, 0, 0, 0.25)"
+            >
+              <IoHeartSharp />
+            </Box>
             <Text mt={2} fontSize={20}>
               {work.title}
             </Text>
-          </LinkOverlay>
-          <Text fontSize={14}>{children}</Text>
+            <Text fontSize={14}>{children}</Text>
+          </Box>
         </LinkBox>
       </NextLink>
     </motion.div>
@@ -92,4 +105,3 @@ export const GridItemStyle = () => (
     `}
   />
 );
-

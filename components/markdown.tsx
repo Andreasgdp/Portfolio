@@ -11,8 +11,8 @@ const Markdown = ({ url }: MarkdownProps) => {
   const [readme, setReadme] = useState<string>('');
   useEffect(() => {
     async function getToken() {
-      const readme = await (await fetch(url)).text();
-      setReadme(readme);
+      const fetchedReadme = await (await fetch(url)).text();
+      setReadme(fetchedReadme);
     }
     getToken();
   }, []);

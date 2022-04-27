@@ -30,7 +30,7 @@ type LinkItemProps = {
 
 const LinkItem = ({ href, path, children }: LinkItemProps) => {
   const active = path === href;
-  const inacitiveColor = useColorModeValue('gray200', 'whipurplepha.900');
+  const inacitiveColor = useColorModeValue('gray200', 'white.900');
   return (
     <NextLink href={href} passHref>
       <Link
@@ -80,10 +80,13 @@ const Navbar = (props: NavbarProps) => {
           <LinkItem href="/works" path={path}>
             Works
           </LinkItem>
+          <LinkItem href="/resume" path={path}>
+            Resume
+          </LinkItem>
           <Link
             target="_blank"
             href="https://github.com/Andreasgdp/Portfolio"
-            color={useColorModeValue('gray200', 'whipurplepha.900')}
+            color={useColorModeValue('gray200', 'white.900')}
             display="inline-flex"
             alignItems="center"
             style={{ gap: 4 }}
@@ -109,6 +112,9 @@ const Navbar = (props: NavbarProps) => {
                 <NextLink href="/works" passHref>
                   <MenuItem as={Link}>Works</MenuItem>
                 </NextLink>
+                <NextLink href="/resume" passHref>
+                  <MenuItem as={Link}>Resume</MenuItem>
+                </NextLink>
                 <MenuItem
                   as={Link}
                   href="https://github.com/Andreasgdp/Portfolio"
@@ -125,7 +131,3 @@ const Navbar = (props: NavbarProps) => {
 };
 
 export default Navbar;
-
-
-
-
