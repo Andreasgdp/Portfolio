@@ -1,20 +1,13 @@
-import { Button } from '@chakra-ui/react';
-import jsPDF from 'jspdf';
-import React, { useEffect, useState } from 'react';
+import { Button, useToast } from '@chakra-ui/react';
+import React from 'react';
 
 type MarkdownProps = {
   url: string;
 };
 
 const MarkDownPdfButton = ({ url }: MarkdownProps) => {
-  const [readme, setReadme] = useState<string>('');
-  useEffect(() => {
-    async function getToken() {
-      const fetchedReadme = await (await fetch(url)).text();
-      setReadme(fetchedReadme);
-    }
-    getToken();
-  }, []);
+  const toast = useToast();
+  console.log(url);
 
   return (
     // Button to download the markdown as pdf
@@ -23,11 +16,15 @@ const MarkDownPdfButton = ({ url }: MarkdownProps) => {
         colorScheme="purple"
         size="md"
         variant="outline"
-        onClick={() => {
-          const doc = new jsPDF();
-          doc.text(readme, 10, 10);
-          doc.save('markdown.pdf');
-        }}
+        onClick={() =>
+          toast({
+            title: 'Feature not implemented yet.',
+            description: 'Comming soon...',
+            status: 'info',
+            duration: 9000,
+            isClosable: true
+          })
+        }
       >
         Download as PDF
       </Button>
