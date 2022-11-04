@@ -66,7 +66,7 @@ const Home: NextPage = () => {
                 gain my bachelor&apos;s degree in Robotics.
               </Paragraph>
               <Paragraph>
-                I specialize in ???. Also, Web Developement is my hobby. Solving
+                Also, Web Developement is my hobby. Solving
                 real-life problem give me a sense of accomplishment.
               </Paragraph>
             </Section>
