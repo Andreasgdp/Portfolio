@@ -1,20 +1,14 @@
-import React from 'react';
-
-import {
-  Box,
-  Button,
-  Container,
-  Divider,
-  HStack,
-  Link
-} from '@chakra-ui/react';
+import { Box, Button, Container, Divider, Link, Wrap } from '@chakra-ui/react';
+import { CSSProperties } from 'react';
 import { IoLogoGithub, IoLogoInstagram, IoLogoLinkedin } from 'react-icons/io5';
+
+const socialsStyle: CSSProperties = { marginTop: '0.5rem' };
 
 const Footer = () => {
   return (
     <Container mt={12} maxW="container.lg">
       <Divider />
-      <HStack justifyContent="end">
+      <Wrap justify="right" spacing={1} style={socialsStyle}>
         <Link href="https://www.linkedin.com/in/andreasgdp/" target="_blank">
           <Button
             variant="ghost"
@@ -42,7 +36,7 @@ const Footer = () => {
             Instagram
           </Button>
         </Link>
-      </HStack>
+      </Wrap>
       <Box mt={4} textAlign="center" opacity={0.4} fontSize="sm">
         &copy; 2022.
       </Box>
@@ -51,4 +45,3 @@ const Footer = () => {
 };
 
 export default Footer;
-
