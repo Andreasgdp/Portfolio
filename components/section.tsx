@@ -1,4 +1,4 @@
-import React, { ReactNode } from 'react';
+import { ReactNode } from 'react';
 
 import { Box } from '@chakra-ui/react';
 import { motion } from 'framer-motion';
@@ -10,7 +10,7 @@ type SectionProps = {
 
 const Section = ({ children, delay = 0 }: SectionProps) => {
   return (
-    <Box my={6}>
+    <Box my={2}>
       <motion.div
         initial={{ y: 10, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
