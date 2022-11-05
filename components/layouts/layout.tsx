@@ -22,7 +22,7 @@ const Layout = ({ children }: LayoutProps) => {
 
       <Navbar path={router.asPath} />
 
-      <Container maxW="container.lg" pt={16}>
+      <Container maxW="container.xxl" pt={16}>
         {/* In here put some interresting graphic */}
         {/* <LazyAniball /> */}
 

@@ -34,7 +34,7 @@ const Works: NextPage = () => {
 
   return (
     <ArticleLayout title="Works">
-      <Container maxW="container.lg">
+      <Container maxW="container.xxl" p={8}>
         <Heading as="h2" fontSize={20} my={4}>
           Web Development
         </Heading>
@@ -49,7 +49,7 @@ const Works: NextPage = () => {
           </Paragraph>
         </Section>
 
-        <SimpleGrid columns={[1, 1, 2]} gap={6}>
+        <SimpleGrid columns={[1,2, 3, 4]} gap={6}>
           {works
             .filter((workData) => workData.category === 'Web Development')
             .map((workData, index) => (
@@ -70,7 +70,7 @@ const Works: NextPage = () => {
           </Paragraph>
         </Section>
 
-        <SimpleGrid columns={[1, 1, 2]} gap={6}>
+        <SimpleGrid columns={[1,2, 3, 4]} gap={6}>
           {works
             .filter((workData) => workData.category === 'Kinematics')
             .map((workData, index) => (
@@ -98,7 +98,7 @@ const Works: NextPage = () => {
           </Paragraph>
         </Section>
 
-        <SimpleGrid columns={[1, 1, 2]} gap={6}>
+        <SimpleGrid columns={[1,2, 3, 4]} gap={6}>
           {works
             .filter((workData) => workData.category === 'Control Systems')
             .map((workData, index) => (
@@ -119,7 +119,7 @@ const Works: NextPage = () => {
           </Paragraph>
         </Section>
 
-        <SimpleGrid columns={[1, 1, 2]} gap={6}>
+        <SimpleGrid columns={[1,2, 3, 4]} gap={6}>
           {works
             .filter((workData) => workData.category === 'General Robotics')
             .map((workData, index) => (
@@ -149,7 +149,7 @@ const Works: NextPage = () => {
           </Paragraph>
         </Section>
 
-        <SimpleGrid columns={[1, 1, 2]} gap={6}>
+        <SimpleGrid columns={[1,2, 3, 4]} gap={6}>
           {works
             .filter((workData) => workData.category === 'App Development')
             .map((workData, index) => (
@@ -170,7 +170,7 @@ const Works: NextPage = () => {
           </Paragraph>
         </Section>
 
-        <SimpleGrid columns={[1, 1, 2]} gap={6}>
+        <SimpleGrid columns={[1,2, 3, 4]} gap={6}>
           {works
             .filter((workData) => workData.category === 'Automation')
             .map((workData, index) => (

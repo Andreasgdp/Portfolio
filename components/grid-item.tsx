@@ -69,8 +69,8 @@ export const WorkGridItem = ({ children, work }: WorkGridItemProps) => (
               src={urlFor(work.imgUrl).url()}
               alt={work.title}
               className="grid-item-thumbnail"
-              width="460px"
-              height="260px"
+              width="580px"
+              height="300px"
               objectFit="cover"
             />
             <Text mt={2} fontSize={20}>
