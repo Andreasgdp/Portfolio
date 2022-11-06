@@ -1,3 +1,4 @@
+import { EditIcon } from '@chakra-ui/icons';
 import { Box, Button, Container, Divider, Link, Wrap } from '@chakra-ui/react';
 import { CSSProperties } from 'react';
 import { IoLogoGithub, IoLogoInstagram, IoLogoLinkedin } from 'react-icons/io5';
@@ -34,6 +35,13 @@ const Footer = () => {
             colorScheme="purple"
           >
             Instagram
+          </Button>
+        </Link>
+      </Wrap>
+      <Wrap justify="center">
+        <Link href="https://andreasgdp-backend.sanity.studio" target="_blank">
+          <Button leftIcon={<EditIcon />} colorScheme="purple" variant="ghost">
+            Edit Portfolio
           </Button>
         </Link>
       </Wrap>
