@@ -62,7 +62,7 @@ const Navbar = (props: NavbarProps) => {
       zIndex={1}
       {...props}
     >
-      <Container display="flex" p={2} maxW="container.lg">
+      <Container display="flex" p={2} maxW="container.xxl">
         <Box mr={5}>
           <Heading as="h1" size="lg" letterSpacing={'tighter'}>
             <Logo />
