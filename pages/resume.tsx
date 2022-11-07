@@ -33,11 +33,17 @@ const Notes: NextPage = () => {
         </Title>
         {resumes.map((resume: resumeType, index) => (
           <Section delay={0.1} key={index}>
-            <embed
-              src={urlForFile(resume.resume.asset._ref)}
+            <object
+              data={urlForFile(resume.resume.asset._ref)}
+              type="application/pdf"
               width="100%"
               height="800px"
-            />
+            >
+              <p>
+                Alternative text - include a link{' '}
+                <a href={urlForFile(resume.resume.asset._ref)}>to the PDF!</a>
+              </p>
+            </object>
           </Section>
         ))}
       </Container>
