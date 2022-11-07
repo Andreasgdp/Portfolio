@@ -14,4 +14,11 @@ export const client = sanityClient({
 
 const builder = imageUrlBuilder(client);
 
-export const urlFor = (source: SanityImageSource) => builder.image(source);
+export const urlForImage = (source: SanityImageSource) => builder.image(source);
+
+export const urlForFile = (source: string) => {
+  const endOfUrl = source.split('file-')[1].replace('-pdf', '.pdf');
+  const url = `https://cdn.sanity.io/files/oghw27bl/production/${endOfUrl}`;
+
+  return url;
+};

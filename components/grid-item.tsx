@@ -1,4 +1,4 @@
-import React, { ReactNode } from 'react';
+import { ReactNode } from 'react';
 
 import {
   Box,
@@ -8,11 +8,11 @@ import {
   useColorModeValue
 } from '@chakra-ui/react';
 import { Global } from '@emotion/react';
+import { motion } from 'framer-motion';
 import Image from 'next/image';
 import NextLink from 'next/link';
-import { motion } from 'framer-motion';
+import { urlForImage } from '../libs/client';
 import { workType } from '../pages/works';
-import { urlFor } from '../libs/client';
 
 type GridItemProps = {
   children?: ReactNode;
@@ -50,7 +50,6 @@ type WorkGridItemProps = {
   work: workType;
 };
 
-
 export const WorkGridItem = ({ children, work }: WorkGridItemProps) => (
   <Box w="100%" textAlign="center">
     <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
@@ -66,7 +65,7 @@ export const WorkGridItem = ({ children, work }: WorkGridItemProps) => (
             p={1}
           >
             <Image
-              src={urlFor(work.imgUrl).url()}
+              src={urlForImage(work.imgUrl).url()}
               alt={work.title}
               className="grid-item-thumbnail"
               width="580px"
