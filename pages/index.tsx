@@ -67,7 +67,7 @@ const Home: NextPage = () => {
               </Paragraph>
               <Paragraph>
                 Also, Web Developement is my hobby. Solving
-                real-life problem give me a sense of accomplishment.
+                real-life problems give me a sense of accomplishment.
               </Paragraph>
             </Section>
           </Box>
