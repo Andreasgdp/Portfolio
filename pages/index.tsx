@@ -1,25 +1,25 @@
 import type { NextPage } from 'next';
 
+import { ChevronRightIcon } from '@chakra-ui/icons';
 import {
   Box,
   Button,
   Center,
+  chakra,
   Container,
   Heading,
+  Image,
   Text,
-  useColorModeValue,
-  chakra,
-  Image
+  useColorModeValue
 } from '@chakra-ui/react';
 import NextLink from 'next/link';
-import { ChevronRightIcon } from '@chakra-ui/icons';
 
-import ArticleLayout from '../components/layouts/article';
-import Section from '../components/section';
-import Paragraph from '../components/paragraphy';
-import { BioSection, BioYear } from '../components/bio';
-import { client } from '../libs/client';
 import { useEffect, useState } from 'react';
+import { BioSection, BioYear } from '../components/bio';
+import ArticleLayout from '../components/layouts/article';
+import Paragraph from '../components/paragraphy';
+import Section from '../components/section';
+import { client } from '../libs/client';
 
 const ProfileImage = chakra(Image, {
   shouldForwardProp: (prop) => ['width', 'height', 'src', 'alt'].includes(prop)
@@ -44,33 +44,11 @@ const Home: NextPage = () => {
           my={12}
         >
           <Text fontSize={['2xl', '4xl', '6xl']} align="center">
-            Hello, I&apos;m a full-stack developer.
+            Hello, I&apos;m a Problem Solver.
           </Text>
         </Box>
 
         <Box display={{ md: 'flex' }}>
-          <Box flexGrow={1}>
-            <Heading as="h2" variant="page-title" textAlign="center">
-              Andreas Guldberg Duelund Petersen
-            </Heading>
-            <Text mb={{ base: 0, md: 1 }} fontSize="xl" align="center">
-              Development: Web / App
-            </Text>
-            <Text mb={{ base: 0, md: 12 }} fontSize="xl" align="center">
-              Robotics: Kinematics / Control Systems
-            </Text>
-            <Section>
-              <Paragraph>
-                My name is Andreas Petersen, a student in Denmark. I&apos;m
-                currently studying at University of Southern Denmark, SDU to
-                gain my bachelor&apos;s degree in Robotics.
-              </Paragraph>
-              <Paragraph>
-                Also, Web Developement is my hobby. Solving
-                real-life problems give me a sense of accomplishment.
-              </Paragraph>
-            </Section>
-          </Box>
           <Box
             flexShrink={0}
             mt={{ base: 4, md: 0 }}
@@ -96,16 +74,41 @@ const Home: NextPage = () => {
               />
             </Box>
           </Box>
+          <Box flexGrow={1}>
+            <Heading as="h2" variant="page-title" textAlign="center">
+              Andreas Guldberg Duelund Petersen
+            </Heading>
+            <Text mb={{ base: 0, md: 1 }} fontSize="xl" align="center">
+              Development: Web / App
+            </Text>
+            <Text mb={{ base: 0, md: 12 }} fontSize="xl" align="center">
+              Robotics: Kinematics / Control Systems
+            </Text>
+            <Section>
+              <Paragraph>
+                Student in Denmark currently studying at University of Southern
+                Denmark, SDU to gain my bachelor&apos;s degree in Robotics in
+                January of 2024.
+              </Paragraph>
+              <Paragraph>
+                I have a drive for solving real-life problems as it gives me a
+                sense of accomplishment seeing the help I can create for others.
+                I have a great passion for both Robotics and Software
+                Development, as they are different tools to solve real-life
+                problems.
+              </Paragraph>
+            </Section>
+          </Box>
         </Box>
 
         <Section delay={0.1}>
           <Heading as="h3" variant="section-title">
-            Work
+            Works
           </Heading>
           <Paragraph>
-            Some of my work are open-source projects which either I or my friend
-            and I have created and are activly maintaining. The other projects
-            are a mix of hobby projects and projects during my study in
+            Some of my works are open-source projects which either I or my
+            friends and I have created and are activly maintaining. The other
+            projects are a mix of hobby projects and projects during my study in
             Robotics.
           </Paragraph>
           <Center my={4}>
