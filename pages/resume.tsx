@@ -1,8 +1,10 @@
 import type { NextPage } from 'next';
 
-import { Badge, Container } from '@chakra-ui/react';
+import { Badge, Button, Center, Container, Heading } from '@chakra-ui/react';
 import { client, urlForFile } from '../libs/client';
 
+import { DownloadIcon } from '@chakra-ui/icons';
+import NextLink from 'next/link';
 import { useEffect, useState } from 'react';
 import ArticleLayout from '../components/layouts/article';
 import Section from '../components/section';
@@ -39,10 +41,22 @@ const Notes: NextPage = () => {
               width="100%"
               height="800px"
             >
-              <p>
-                Alternative text - include a link{' '}
-                <a href={urlForFile(resume.resume.asset._ref)}>to the PDF!</a>
-              </p>
+              {' '}
+              <Heading>
+                Displaying PDF is not supported by your browser/device.
+                Please...
+              </Heading>
+              <Center my={4}>
+                <NextLink
+                  href={urlForFile(resume.resume.asset._ref)}
+                  scroll={false}
+                  passHref
+                >
+                  <Button leftIcon={<DownloadIcon />} colorScheme="purple">
+                    Download Resume
+                  </Button>
+                </NextLink>{' '}
+              </Center>
             </object>
           </Section>
         ))}
