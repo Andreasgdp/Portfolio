@@ -16,6 +16,8 @@ import NextLink from 'next/link';
 
 import { useEffect, useState } from 'react';
 import { BioSection, BioYear } from '../components/bio';
+import Education, { EducationType } from '../components/education';
+import Experience, { ExperienceType } from '../components/experience';
 import ArticleLayout from '../components/layouts/article';
 import Paragraph from '../components/paragraphy';
 import Section from '../components/section';
@@ -26,12 +28,18 @@ const ProfileImage = chakra(Image, {
 });
 
 const Home: NextPage = () => {
+  const [experience, setExperience] = useState([]);
+  const [education, setEducation] = useState([]);
   const [biography, setBiography] = useState([]);
 
   useEffect(() => {
-    const query = '*[_type == "biography"]';
+    const expQuery = '*[_type == "experiences"] | order(startingDate desc)';
+    const eduQuery = '*[_type == "education"] | order(startYear desc)';
+    const bioQuery = '*[_type == "biography"]';
 
-    client.fetch(query).then((data) => setBiography(data));
+    client.fetch(expQuery).then((data) => setExperience(data));
+    client.fetch(eduQuery).then((data) => setEducation(data));
+    client.fetch(bioQuery).then((data) => setBiography(data));
   }, []);
 
   return (
@@ -90,18 +98,20 @@ const Home: NextPage = () => {
                 Denmark, SDU to gain my bachelor&apos;s degree in Robotics in
                 January of 2024.
               </Paragraph>
-              <Paragraph>
-                I have a drive for solving real-life problems as it gives me a
-                sense of accomplishment seeing the help I can create for others.
-                I have a great passion for both Robotics and Software
-                Development, as they are different tools to solve real-life
-                problems.
-              </Paragraph>
             </Section>
           </Box>
         </Box>
 
         <Section delay={0.1}>
+          <Paragraph>
+            I have a drive for solving real-life problems as it gives me a sense
+            of accomplishment seeing the help I can create for others. I have a
+            great passion for both Robotics and Software Development, as they
+            are different tools to solve real-life problems.
+          </Paragraph>
+        </Section>
+
+        <Section delay={0.2}>
           <Heading as="h3" variant="section-title">
             Works
           </Heading>
@@ -120,7 +130,25 @@ const Home: NextPage = () => {
           </Center>
         </Section>
 
-        <Section delay={0.2}>
+        <Section delay={0.3}>
+          <Heading as="h3" variant="section-title">
+            Experience
+          </Heading>
+          {experience.map((exp: ExperienceType, index) => (
+            <Experience exp={exp} key={index} />
+          ))}
+        </Section>
+
+        <Section delay={0.4}>
+          <Heading as="h3" variant="section-title">
+            Education
+          </Heading>
+          {education.map((edu: EducationType, index) => (
+            <Education edu={edu} key={index} />
+          ))}
+        </Section>
+
+        <Section delay={0.5}>
           <Heading as="h3" variant="section-title">
             Biography
           </Heading>

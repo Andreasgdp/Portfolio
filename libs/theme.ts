@@ -21,6 +21,12 @@ const components = {
         textDecorationThickness: 4,
         marginTop: 3,
         marginBottom: 4
+      },
+      'company-title': {
+        fontSize: 20,
+        textDecorationThickness: 4,
+        marginTop: 3,
+        marginBottom: 0
       }
     }
   },
@@ -47,4 +53,3 @@ const config = {
 
 const theme = extendTheme({ styles, components, fonts, colors, config });
 export default theme;
-

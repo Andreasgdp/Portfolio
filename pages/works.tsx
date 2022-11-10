@@ -64,7 +64,7 @@ const Works: NextPage = () => {
               {works
                 .filter((workData) => workData.category === 'Web Development')
                 .map((workData, index) => (
-                  <Section delay={0.1} key={index}>
+                  <Section delay={0.1 * index} key={index}>
                     <WorkGridItem work={workData}>
                       {workData.abstract}
                     </WorkGridItem>
@@ -92,7 +92,7 @@ const Works: NextPage = () => {
               {works
                 .filter((workData) => workData.category === 'Kinematics')
                 .map((workData, index) => (
-                  <Section delay={0.1} key={index}>
+                  <Section delay={0.1 * index} key={index}>
                     <WorkGridItem work={workData}>
                       {workData.abstract}
                     </WorkGridItem>
@@ -127,7 +127,7 @@ const Works: NextPage = () => {
               {works
                 .filter((workData) => workData.category === 'Control Systems')
                 .map((workData, index) => (
-                  <Section delay={0.1} key={index}>
+                  <Section delay={0.1 * index} key={index}>
                     <WorkGridItem work={workData}>
                       {workData.abstract}
                     </WorkGridItem>
@@ -155,7 +155,7 @@ const Works: NextPage = () => {
               {works
                 .filter((workData) => workData.category === 'General Robotics')
                 .map((workData, index) => (
-                  <Section delay={0.1} key={index}>
+                  <Section delay={0.1 * index} key={index}>
                     <WorkGridItem work={workData}>
                       {workData.abstract}
                     </WorkGridItem>
@@ -192,7 +192,7 @@ const Works: NextPage = () => {
               {works
                 .filter((workData) => workData.category === 'App Development')
                 .map((workData, index) => (
-                  <Section delay={0.1} key={index}>
+                  <Section delay={0.1 * index} key={index}>
                     <WorkGridItem work={workData}>
                       {workData.abstract}
                     </WorkGridItem>
@@ -221,7 +221,7 @@ const Works: NextPage = () => {
               {works
                 .filter((workData) => workData.category === 'Automation')
                 .map((workData, index) => (
-                  <Section delay={0.1} key={index}>
+                  <Section delay={0.1 * index} key={index}>
                     <WorkGridItem work={workData}>
                       {workData.abstract}
                     </WorkGridItem>
