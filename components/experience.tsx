@@ -1,5 +1,6 @@
 import { Box, Heading, Text } from '@chakra-ui/react';
 import { SanityImageSource } from '@sanity/image-url/lib/types/types';
+import moment from 'moment';
 import { urlForImage } from '../libs/client';
 import { CompanyLogo } from '../libs/utils';
 
@@ -19,14 +20,25 @@ export type ExperienceProps = {
 const timeSince = (date: string) => {
   const today = new Date();
   const startingDate = new Date(date);
-  let years = today.getFullYear() - startingDate.getFullYear();
-  let months = today.getMonth() - startingDate.getMonth();
+
+  const m1 = moment(today);
+  const m2 = moment(startingDate);
+  const timeLeft = moment.duration(m1.diff(m2));
+  const monthsLeft = timeLeft.asMonths();
+
+  if (monthsLeft < 12) {
+    return `${timeLeft.get('months')} months`;
+  }
+  let years = timeLeft.get('years');
+  let months = timeLeft.get('months');
+
   // Add 1 to months to show same month as current month (same as LinkedIn)
   months += 1;
   if (months >= 12) {
     months -= 12;
     years += 1;
   }
+
   return `${years} years ${months} months`;
 };
 
