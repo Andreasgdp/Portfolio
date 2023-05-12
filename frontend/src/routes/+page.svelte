@@ -93,8 +93,10 @@
 				Hello, I'm a Problem Solver 
 			</h1>
 			<p class="!text-xl max-w-[475px]">
-				Skeleton allows you to create adaptive and accessible interfaces for web apps of any shape
-				or size.
+				I'm a full-stack developer with a passion for building beautiful, functional, and accessible websites and applications.
+			</p>
+			<p class="!text-xl max-w-[475px]">
+				
 			</p>
 			<div class="flex gap-4">
 				<a href="/docs/get-started" class="btn variant-filled-primary">
@@ -141,7 +143,7 @@
 		animation: pulse 5s cubic-bezier(0, 0, 0, 0.5) infinite, glow 5s linear infinite;
 	}
 	.hero-animated-logo {
-		transform: scale(3) rotate(180deg) translate(10%, 4%);
+		transform: scale(3) rotate(180deg) translate(11.5%, 4%);
 	}
 	@keyframes glow {
 		0% {
