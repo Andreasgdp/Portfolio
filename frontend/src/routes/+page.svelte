@@ -95,14 +95,20 @@
 				I'm a dedicated full-stack developer who thrives on transforming issues <i
 					class="fa-solid fa-arrow-right"
 				/>
-				ideas <i class="fa-solid fa-arrow-right" /> user-friendly solutions be that:
+				ideas <i class="fa-solid fa-arrow-right" /> user-friendly solutions.
 			</p>
 			<ul class="list text-xl">
 				<li>
 					<span class="badge-icon variant-filled w-8 h-8"
-						><i class="fa-regular fa-window-maximize text-lg" /></span
+					><i class="fa-regular fa-window-maximize text-lg" /></span
 					>
 					<span class="flex-auto">Websites</span>
+				</li>
+				<li>
+					<span class="badge-icon variant-filled w-8 h-8"
+						><i class="fa-regular fa-solid fa-code text-lg" /></span
+					>
+					<span class="flex-auto">Scripts</span>
 				</li>
 				<li>
 					<span class="badge-icon variant-filled w-8 h-8"
