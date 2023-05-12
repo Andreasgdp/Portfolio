@@ -10,8 +10,10 @@ jobs:
             - name: Checkout Repo
               uses: actions/checkout@master
             - name: Install Dependencies
+              working-directory: ./backend
               run: npm install
             - name: Deploy
+              working-directory: ./backend
               run: |
                   set -e
                   # Make sure to add a secret for SANITY_AUTH_TOKEN
