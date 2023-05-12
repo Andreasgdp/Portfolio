@@ -82,10 +82,21 @@
 			<h1 class="!text-5xl md:!text-6xl max-w-[600px] name-highlight">Andreas Petersen</h1>
 			<h1 class="!text-5xl md:!text-6xl max-w-[600px]">Unleashing Innovation through Code</h1>
 			<p class="!text-xl max-w-[475px]">
-				I'm a dedicated full-stack developer who thrives on transforming issues into ideas. Then
-				turning those ideas into user-friendly solutions be that websites or industrial
-				applications.
+				I'm a dedicated full-stack developer who thrives on transforming issues <i
+					class="fa-solid fa-arrow-right"
+				/>
+				ideas <i class="fa-solid fa-arrow-right" /> user-friendly solutions be that:
 			</p>
+			<ul class="list text-xl">
+				<li>
+					<span><i class="fa-regular fa-window-maximize"/></span>
+					<span class="flex-auto">Websites</span>
+				</li>
+				<li>
+					<span><i class="fa-solid fa-robot" /></span>
+					<span class="flex-auto">Industrial applications</span>
+				</li>
+			</ul>
 			<div class="flex gap-4">
 				<a href="/docs/get-started" class="btn variant-filled-primary">
 					<span>Get Started</span>
