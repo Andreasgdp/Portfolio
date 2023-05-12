@@ -11,9 +11,16 @@
 			behavior: 'smooth'
 		});
 	}
+	let element: HTMLElement;
+
+	function scrollToTop() {
+		element.scrollIntoView({
+			behavior: 'smooth'
+		});
+	}
 </script>
 
-<section class="section-container">
+<section class="section-container" bind:this={element}>
 	<div class="grid grid-cols-1 xl:grid-cols-2 gap-4 md:gap-10 items-center">
 		<!-- Info -->
 		<div class="flex flex-col items-center xl:items-start text-center xl:text-left space-y-4">
@@ -100,7 +107,7 @@
 			<ul class="list text-xl">
 				<li>
 					<span class="badge-icon variant-filled w-8 h-8"
-					><i class="fa-regular fa-window-maximize text-lg" /></span
+						><i class="fa-regular fa-window-maximize text-lg" /></span
 					>
 					<span class="flex-auto">Websites</span>
 				</li>
@@ -154,6 +161,17 @@
 			{:else}
 				<p>No pets found.</p>
 			{/if}
+		</div>
+	</div>
+</section>
+
+<section class="section-container" id="section-2">
+	<div class="container h-full mx-auto flex justify-center items-center">
+		<div class="space-y-10 text-center flex flex-col items-center">
+			<button type="button" class="btn variant-soft-primary" on:click={() => scrollToTop()}>
+				<span>Scroll to top</span>
+				<i class="fa-solid fa-arrow-up-long" />
+			</button>
 		</div>
 	</div>
 </section>
