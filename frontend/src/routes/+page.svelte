@@ -89,11 +89,11 @@
 			</p>
 			<ul class="list text-xl">
 				<li>
-					<span><i class="fa-regular fa-window-maximize"/></span>
+					<span class="badge-icon variant-filled w-8 h-8"><i class="fa-regular fa-window-maximize text-lg"/></span>
 					<span class="flex-auto">Websites</span>
 				</li>
 				<li>
-					<span><i class="fa-solid fa-robot" /></span>
+					<span class="badge-icon variant-filled w-8 h-8"><i class="fa-solid fa-robot text-lg" /></span>
 					<span class="flex-auto">Industrial applications</span>
 				</li>
 			</ul>
