@@ -79,7 +79,7 @@
 				</svg>
 			</figure>
 			<!-- / -->
-			<h1 class="!text-5xl md:!text-6xl max-w-[600px] name-highlight">Andreas Petersen</h1>
+			<h1 class="!text-5xl md:!text-6xl max-w-[600px] name-highlight">Andreas Petersen (Guldberg)</h1>
 			<h1 class="!text-5xl md:!text-6xl max-w-[600px]">Unleashing Innovation through Code</h1>
 			<p class="!text-xl max-w-[475px]">
 				I'm a dedicated full-stack developer who thrives on transforming issues <i
