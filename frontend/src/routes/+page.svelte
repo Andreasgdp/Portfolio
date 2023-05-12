@@ -13,7 +13,7 @@
 			<figure>
 				<section class="img-bg" />
 				<svg
-					class="fill-token -scale-x-[00%] hero-animated-logo"
+					class="fill-token -scale-x-[00%] hero-animated-logo testingtesttest"
 					xmlns="http://www.w3.org/2000/svg"
 					viewBox="0 0 2560 1440"
 				>
@@ -133,10 +133,11 @@
 <style lang="postcss">
 	figure {
 		@apply flex relative flex-col;
+		animation: float 5s cubic-bezier(0, 0, 0, 0.5) infinite;
 	}
 	figure svg,
 	.img-bg {
-		@apply w-64 h-64 md:w-80 md:h-80;
+		@apply w-40 h-40 md:w-60 md:h-60 xl:w-96 xl:h-96;
 	}
 	.img-bg {
 		@apply absolute z-[-1] rounded-full blur-[50px] transition-all;
