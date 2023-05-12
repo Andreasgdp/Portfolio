@@ -3,6 +3,14 @@
 	import HomeHeroComponents from './home-partials/HomeHeroComponents.svelte';
 
 	export let data: PageData;
+
+	function scrollIntoView(target: string) {
+		const el = document.querySelector(target);
+		if (!el) return;
+		el.scrollIntoView({
+			behavior: 'smooth'
+		});
+	}
 </script>
 
 <section class="section-container">
@@ -79,7 +87,9 @@
 				</svg>
 			</figure>
 			<!-- / -->
-			<h1 class="!text-5xl md:!text-6xl max-w-[600px] name-highlight">Andreas Petersen (Guldberg)</h1>
+			<h1 class="!text-5xl md:!text-6xl max-w-[600px] name-highlight">
+				Andreas Petersen (Guldberg)
+			</h1>
 			<h1 class="!text-5xl md:!text-6xl max-w-[600px]">Unleashing Innovation through Code</h1>
 			<p class="!text-xl max-w-[475px]">
 				I'm a dedicated full-stack developer who thrives on transforming issues <i
@@ -89,20 +99,31 @@
 			</p>
 			<ul class="list text-xl">
 				<li>
-					<span class="badge-icon variant-filled w-8 h-8"><i class="fa-regular fa-window-maximize text-lg"/></span>
+					<span class="badge-icon variant-filled w-8 h-8"
+						><i class="fa-regular fa-window-maximize text-lg" /></span
+					>
 					<span class="flex-auto">Websites</span>
 				</li>
 				<li>
-					<span class="badge-icon variant-filled w-8 h-8"><i class="fa-solid fa-robot text-lg" /></span>
+					<span class="badge-icon variant-filled w-8 h-8"
+						><i class="fa-solid fa-robot text-lg" /></span
+					>
 					<span class="flex-auto">Industrial applications</span>
 				</li>
 			</ul>
 			<div class="flex gap-4">
 				<a href="/docs/get-started" class="btn variant-filled-primary">
-					<span>Get Started</span>
+					<span>See Works</span>
 					<i class="fa-solid fa-arrow-right-long" />
 				</a>
-				<a href="/docs/introduction" class="btn variant-soft-primary">Learn More</a>
+				<button
+					type="button"
+					class="btn variant-soft-primary"
+					on:click={() => scrollIntoView('#section-1')}
+				>
+					<span>Learn more</span>
+					<i class="fa-solid fa-arrow-down-long" />
+				</button>
 			</div>
 		</div>
 
@@ -113,9 +134,11 @@
 	</div>
 </section>
 
-<section class="section-container">
+<section class="section-container" id="section-1">
 	<div class="container h-full mx-auto flex justify-center items-center">
 		<div class="space-y-10 text-center flex flex-col items-center">
+			<h1 class="!text-5xl md:!text-6xl max-w-[600px]">WIP secion</h1>
+			<p class="!text-xl max-w-[475px]">Getting content from Sanity CMS</p>
 			{#if data.pets.length}
 				<ul class="list">
 					{#each data.pets as pet}
