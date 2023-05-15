@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { MetaTags } from 'svelte-meta-tags';
 	import type { PageData } from './$types';
 	import HomeHeroComponents from './home-partials/HomeHeroComponents.svelte';
 
@@ -20,11 +21,20 @@
 	}
 </script>
 
-<svelte:head>
-	<title>Guldberg Portfolio</title>
-	<meta name="description" content="Andreas Petersen (Guldberg) Portfolio" />
-	<meta property="og:image" content="assets/og/landingSocial.jpeg" />
-</svelte:head>
+<MetaTags
+	title="Guldberg Portfolio"
+	description="Andreas Petersen (Guldberg) Portfolio."
+	openGraph={{
+		images: [
+			{
+				url: 'https://guldberg.dev/assets/og-image.png',
+				width: 1200,
+				height: 630,
+				alt: 'Guldberg.dev'
+			}
+		]
+	}}
+/>
 
 <section class="section-container" bind:this={element}>
 	<div class="grid grid-cols-1 xl:grid-cols-2 gap-4 md:gap-10 items-center">
