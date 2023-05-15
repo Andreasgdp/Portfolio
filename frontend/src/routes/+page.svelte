@@ -25,6 +25,7 @@
 	title="Guldberg Portfolio"
 	description="Andreas Petersen (Guldberg) Portfolio."
 	openGraph={{
+		title: 'Guldberg.dev',
 		images: [
 			{
 				url: 'https://guldberg.dev/assets/og-image.png',
