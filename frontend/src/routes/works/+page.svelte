@@ -1,13 +1,11 @@
 <script lang="ts">
+	import { MetaTags } from 'svelte-meta-tags';
 	import type { PageData } from './$types';
 
 	export let data: PageData;
 </script>
 
-<svelte:head>
-	<title>Works</title>
-	<meta name="description" content="The works page" />
-</svelte:head>
+<MetaTags title="Works" description="Works page description" />
 
 <section>
 	<h1>Works</h1>
