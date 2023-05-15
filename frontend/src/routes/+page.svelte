@@ -20,6 +20,11 @@
 	}
 </script>
 
+<svelte:head>
+	<title>Guldberg Portfolio</title>
+	<meta name="description" content="Andreas Petersen (Guldberg) Portfolio" />
+</svelte:head>
+
 <section class="section-container" bind:this={element}>
 	<div class="grid grid-cols-1 xl:grid-cols-2 gap-4 md:gap-10 items-center">
 		<!-- Info -->
