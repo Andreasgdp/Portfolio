@@ -23,6 +23,7 @@
 <svelte:head>
 	<title>Guldberg Portfolio</title>
 	<meta name="description" content="Andreas Petersen (Guldberg) Portfolio" />
+	<meta property="og:image" content={data.githubProfile.avatar_url} />
 </svelte:head>
 
 <section class="section-container" bind:this={element}>
@@ -130,7 +131,7 @@
 				</li>
 			</ul>
 			<div class="flex gap-4">
-				<a href="/docs/get-started" class="btn variant-filled-primary">
+				<a href="/works" class="btn variant-filled-primary">
 					<span>See Works</span>
 					<i class="fa-solid fa-arrow-right-long" />
 				</a>
