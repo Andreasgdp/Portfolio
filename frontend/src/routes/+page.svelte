@@ -147,7 +147,7 @@
 
 		<!-- Components -->
 		<div class="hidden md:inline-block w-full max-w-[650px] mx-auto mt-20">
-			<HomeHeroComponents />
+			<HomeHeroComponents githubProfile={data.githubProfile} />
 		</div>
 	</div>
 </section>
