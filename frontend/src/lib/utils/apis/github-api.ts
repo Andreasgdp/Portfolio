@@ -43,6 +43,5 @@ export const getGithubUser = async (username: string): Promise<GithubUser> => {
 		}
 	});
 
-	console.log(data);
 	return data;
 };
