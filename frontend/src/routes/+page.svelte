@@ -23,7 +23,7 @@
 <svelte:head>
 	<title>Guldberg Portfolio</title>
 	<meta name="description" content="Andreas Petersen (Guldberg) Portfolio" />
-	<meta property="og:image" content={data.githubProfile.avatar_url} />
+	<meta property="og:image" content="assets/og/landingSocial.jpeg" />
 </svelte:head>
 
 <section class="section-container" bind:this={element}>
