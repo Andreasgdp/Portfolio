@@ -1,6 +1,16 @@
 <script lang="ts">
-	import { Avatar, ProgressRadial, RadioGroup, RadioItem, LightSwitch, SlideToggle } from "@skeletonlabs/skeleton";
+	import type { GithubUser } from '$lib/utils/apis/github-api';
+	import {
+		Avatar,
+		LightSwitch,
+		ProgressRadial,
+		RadioGroup,
+		RadioItem,
+		SlideToggle
+	} from '@skeletonlabs/skeleton';
 
+	// props
+	export let githubProfile: GithubUser;
 
 	// Local
 	let value: number = 0;
@@ -11,12 +21,17 @@
 <div class="aspect-video relative">
 	<!-- Avatar -->
 	<div class="anim-float-avatar absolute z-[1] top-[32%] left-[40%]">
-		<Avatar src="https://avatars.githubusercontent.com/u/39928082?v=4" width="w-32" shadow="shadow-xl" />
+		<Avatar src={githubProfile.avatar_url} width="w-32" shadow="shadow-xl" />
 	</div>
 	<!-- Progress Radial -->
 	<div class="anim-float-progress anim-delay-200 absolute z-[1] top-[0%] left-[10%]">
 		<div class="card variant-glass p-4">
-			<ProgressRadial width="w-20" stroke={150} meter="stroke-primary-500" track="stroke-primary-500/30" />
+			<ProgressRadial
+				width="w-20"
+				stroke={150}
+				meter="stroke-primary-500"
+				track="stroke-primary-500/30"
+			/>
 		</div>
 	</div>
 	<!-- Search Input -->
@@ -31,23 +46,39 @@
 		<RadioGroup active="variant-filled-secondary">
 			<RadioItem bind:group={value} name="justify" value={0}>Friendly</RadioItem>
 			<RadioItem bind:group={value} name="justify" value={1}>Adaptive</RadioItem>
-			<RadioItem bind:group={value} name="justify" value={2}>Customizable</RadioItem>
+			<RadioItem bind:group={value} name="justify" value={2}>Powerful</RadioItem>
 		</RadioGroup>
 	</div>
 	<!-- Card -->
 	<div class="anim-float-card absolute z-[1] top-[60%] left-[65%]">
-		<a class="block card card-hover p-4 space-y-2" href="https://twitter.com/SkeletonUI" target="_blank" rel="noreferrer">
+		<a
+			class="block card card-hover p-4 space-y-2"
+			href="https://github.com/{githubProfile.login}"
+			target="_blank"
+			rel="noreferrer"
+		>
 			<div class="flex items-center gap-4">
-				<Avatar src="https://pbs.twimg.com/profile_images/1587479781544759297/TINbbJLC_400x400.png" width="w-16" />
+				<Avatar src={githubProfile.avatar_url} width="w-16" />
 				<div>
-					<p class="font-bold">Skeleton</p>
-					<small class="opacity-50">@SkeletonUI</small>
+					<p class="font-bold">{githubProfile.name}</p>
+					<small class="opacity-50">@{githubProfile.login.toLocaleLowerCase()}</small>
 				</div>
 			</div>
-			<p class="whitespace-nowrap">UI toolkit for Svelte and Tailwind.</p>
+			<p
+				class="text-sm opacity-75 lg:w-[300px] xl:w-[400px]
+			"
+			>
+				{githubProfile.bio}
+			</p>
 			<div class="flex just gap-4">
-				<small><strong>50</strong> <span class="opacity-50">Following</span></small>
-				<small><strong>500</strong> <span class="opacity-50">Followers</span></small>
+				<small
+					><strong>{githubProfile.followers}</strong>
+					<span class="opacity-50">Following</span></small
+				>
+				<small
+					><strong>{githubProfile.following}</strong>
+					<span class="opacity-50">Followers</span></small
+				>
 			</div>
 		</a>
 	</div>
@@ -69,13 +100,17 @@
 	<!-- Icon Badge -->
 	<div class="anim-float-badge absolute z-[1] top-[45%] left-[25%]">
 		<span class="badge-icon variant-filled">
-			<i class="fa-solid fa-skull" />
+			<i class="fa-solid fa-wand-sparkles" />
 		</span>
 	</div>
 	<!-- BG Circles -->
 	<div class="absolute top-[50%] left-[50%] -translate-x-[50%] -translate-y-[50%] z-0">
-		<div class="w-96 aspect-square border-2 border-black/5 dark:border-white/5 rounded-full flex justify-center items-center">
-			<div class="w-[240px] aspect-square border-2 border-black/5 dark:border-white/5 rounded-full flex justify-center items-center" />
+		<div
+			class="w-96 aspect-square border-2 border-black/5 dark:border-white/5 rounded-full flex justify-center items-center"
+		>
+			<div
+				class="w-[240px] aspect-square border-2 border-black/5 dark:border-white/5 rounded-full flex justify-center items-center"
+			/>
 		</div>
 	</div>
 </div>
