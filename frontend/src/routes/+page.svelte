@@ -1,13 +1,14 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
 	import { MetaTags } from 'svelte-meta-tags';
-	import { blur, fade, slide } from 'svelte/transition';
+	import { blur, slide } from 'svelte/transition';
 	import type { PageData } from './$types';
 	import HomeHeroComponents from './home-partials/HomeHeroComponents.svelte';
 
 	let ready = false;
 	onMount(() => (ready = true));
 	let animationDelay = 300;
+	let animationDuration = 600;
 
 	export let data: PageData;
 
@@ -48,7 +49,7 @@
 			<!-- Info -->
 			<div class="flex flex-col items-center xl:items-start text-center xl:text-left space-y-4">
 				<!-- Animated Logo -->
-				<figure in:fade>
+				<figure in:blur>
 					<section class="img-bg" />
 					<svg
 						class="fill-token -scale-x-[00%] hero-animated-logo testingtesttest"
@@ -118,34 +119,40 @@
 				</figure>
 				<!-- / -->
 				<h1
-					in:blur={{ delay: animationDelay }}
+					in:blur={{ delay: animationDelay, duration: animationDuration }}
 					class="!text-5xl md:!text-6xl max-w-[600px] name-highlight"
 				>
 					Andreas Petersen (Guldberg)
 				</h1>
-				<h1 in:blur={{ delay: animationDelay * 2 }} class="!text-5xl md:!text-6xl max-w-[600px]">
+				<h1
+					in:blur={{ delay: animationDelay * 2, duration: animationDuration }}
+					class="!text-5xl md:!text-6xl max-w-[600px]"
+				>
 					Unleashing Innovation through Code
 				</h1>
-				<p in:blur={{ delay: animationDelay * 3 }} class="!text-xl max-w-[475px]">
+				<p
+					in:blur={{ delay: animationDelay * 3, duration: animationDuration }}
+					class="!text-xl max-w-[475px]"
+				>
 					I'm a dedicated full-stack developer who thrives on transforming issues <i
 						class="fa-solid fa-arrow-right"
 					/>
 					ideas <i class="fa-solid fa-arrow-right" /> user-friendly solutions.
 				</p>
 				<ul class="list text-xl">
-					<li in:fade={{ delay: animationDelay * 4 }}>
+					<li in:blur={{ delay: animationDelay * 4, duration: animationDuration }}>
 						<span class="badge-icon variant-filled w-8 h-8"
 							><i class="fa-regular fa-window-maximize text-lg" /></span
 						>
 						<span class="flex-auto">Websites</span>
 					</li>
-					<li in:fade={{ delay: animationDelay * 5 }}>
+					<li in:blur={{ delay: animationDelay * 4.5, duration: animationDuration }}>
 						<span class="badge-icon variant-filled w-8 h-8"
 							><i class="fa-regular fa-solid fa-code text-lg" /></span
 						>
 						<span class="flex-auto">Scripts</span>
 					</li>
-					<li in:fade={{ delay: animationDelay * 6 }}>
+					<li in:blur={{ delay: animationDelay * 5, duration: animationDuration }}>
 						<span class="badge-icon variant-filled w-8 h-8"
 							><i class="fa-solid fa-robot text-lg" /></span
 						>
@@ -154,7 +161,7 @@
 				</ul>
 				<div class="flex gap-4">
 					<a
-						in:slide={{ delay: animationDelay * 7, axis: 'x' }}
+						in:slide={{ delay: animationDelay * 6, axis: 'x', duration: animationDuration * 0.6 }}
 						href="/works"
 						class="btn variant-filled-primary"
 					>
@@ -162,7 +169,7 @@
 						<i class="fa-solid fa-arrow-right-long" />
 					</a>
 					<button
-						in:slide={{ delay: animationDelay * 8, axis: 'y' }}
+						in:slide={{ delay: animationDelay * 7, axis: 'y', duration: animationDuration * 0.6 }}
 						type="button"
 						class="btn variant-soft-primary"
 						on:click={() => scrollIntoView('#section-1')}
@@ -175,7 +182,7 @@
 
 			<!-- Components -->
 			<div
-				in:blur={{ duration: animationDelay * 4 }}
+				in:blur={{ duration: animationDuration * 3 }}
 				class="hidden md:inline-block w-full max-w-[650px] mx-auto mt-20"
 			>
 				<HomeHeroComponents githubProfile={data.githubProfile} />
