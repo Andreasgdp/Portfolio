@@ -169,7 +169,7 @@
 						<i class="fa-solid fa-arrow-right-long" />
 					</a>
 					<button
-						in:slide={{ delay: animationDelay * 7, axis: 'y', duration: animationDuration * 0.6 }}
+						in:slide={{ delay: animationDelay * 7.5, axis: 'y', duration: animationDuration * 0.6 }}
 						type="button"
 						class="btn variant-soft-primary"
 						on:click={() => scrollIntoView('#section-1')}
