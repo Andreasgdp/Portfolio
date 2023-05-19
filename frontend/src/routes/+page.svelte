@@ -6,7 +6,7 @@
 	import HomeHeroComponents from './home-partials/HomeHeroComponents.svelte';
 	import { pageLoadStore } from '$lib/stores/page-load-store';
 
-	let ready = false;
+	let ready: boolean;
 	pageLoadStore.subscribe((val) => {
 		ready = val;
 	});
