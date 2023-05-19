@@ -36,8 +36,8 @@ export type GithubUser = {
 	updated_at: string;
 };
 
-export const getGithubUser = async (username: string): Promise<GithubUser> => {
-	const { data } = await axios.get(`https://api.github.com/users/${username}`, {
+export const getGithubUser = async (username: string) => {
+	const { data } = await axios.get<GithubUser>(`https://api.github.com/users/${username}`, {
 		headers: {
 			Authorization: `token ${GITHUB_AUTH_TOKEN}`
 		}
