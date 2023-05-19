@@ -4,9 +4,14 @@
 	import { blur, slide } from 'svelte/transition';
 	import type { PageData } from './$types';
 	import HomeHeroComponents from './home-partials/HomeHeroComponents.svelte';
+	import { pageLoadStore } from '$lib/stores/page-load-store';
 
 	let ready = false;
-	onMount(() => (ready = true));
+	pageLoadStore.subscribe((val) => {
+		ready = val;
+	});
+
+	onMount(() => (pageLoadStore.set(true)));
 	let animationDelay = 300;
 	let animationDuration = 600;
 
