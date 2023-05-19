@@ -6,7 +6,7 @@
 	import HomeHeroComponents from './home-partials/HomeHeroComponents.svelte';
 	import { pageLoadStore } from '$lib/stores/page-load-store';
 
-	let shouldAnimate = false;
+	let shouldAnimate = true;
 	pageLoadStore.subscribe((val) => {
 		shouldAnimate = val;
 	});
