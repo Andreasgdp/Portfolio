@@ -8,7 +8,7 @@
 
 	let shouldAnimate = true;
 	pageLoadStore.subscribe((val) => {
-		shouldAnimate = val;
+		shouldAnimate = !val;
 	});
 
 	onMount(() => pageLoadStore.set(true));
