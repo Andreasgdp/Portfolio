@@ -3,7 +3,7 @@
 	import { MetaTags } from 'svelte-meta-tags';
 	import { blur, slide } from 'svelte/transition';
 	import type { PageData } from './$types';
-	import HomeHeroComponents from './home-partials/HomeHeroComponents.svelte';
+	import HomeHeroComponents from '$lib/components/HomeHeroComponents.svelte';
 
 	let ready = false;
 	onMount(() => (ready = true));
