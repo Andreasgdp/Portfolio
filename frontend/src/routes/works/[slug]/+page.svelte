@@ -3,20 +3,6 @@
 	export let data;
 </script>
 
-<!-- export type DummyJsonProduct = {
-	id: number;
-	title: string;
-	description: string;
-	price: number;
-	discountPercentage: number;
-	rating: number;
-	stock: number;
-	brand: string;
-	category: string;
-	thumbnail: string;
-	images: string[];
-}; -->
-
 <section class="section-container">
 	<div>
 		<h1 class="h1">{data.title}</h1>
@@ -31,5 +17,8 @@
 			<p class="text-xl text-gray-500 ml-2">
 				{data.discountPercentage}% off
 			</p>
+            <p>
+            this is a test
+            </p>
 	</div>
 </section>
