@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { urlFor } from '$lib/utils/sanity/image';
 	import { Avatar, Paginator } from '@skeletonlabs/skeleton';
 	import type { PaginationSettings } from '@skeletonlabs/skeleton/dist/components/Paginator/types';
 	import { onMount } from 'svelte';
@@ -17,7 +18,7 @@
 		}, 100);
 	}
 
-	const sourceBody = data.dummyJson.products;
+	const sourceBody = data.works;
 	let page = {
 		offset: 0,
 		limit: 6,
@@ -40,34 +41,38 @@
 	{#if ready}
 		<div class="w-full text-token grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
 			{#if sourceBodySliced.length}
-				{#each sourceBodySliced as product, i}
+				{#each sourceBodySliced as work, i}
 					<a
 						in:blur={{ delay: 30 * i }}
 						class="card bg-initial card-hover overflow-hidden"
-						href="/works/{product.id}"
+						href="/works/{work.title}"
 					>
 						<header>
 							<!-- image -->
 							<div class="relative">
-								<img class="w-full h-64 object-cover" src={product.thumbnail} alt={product.title} />
+								<img
+									class="w-full h-64 object-cover"
+									src={urlFor(work.img).url()}
+									alt={work.title}
+								/>
 								<div class="absolute inset-0 bg-gradient-to-t from-black to-transparent" />
 							</div>
 						</header>
 						<div class="p-4 space-y-4">
-							<h6 class="h6">{product.category}</h6>
-							<h3 class="h3 line-clamp-1" data-toc-ignore>{product.title}</h3>
+							<h6 class="h6">{work.category}</h6>
+							<h3 class="h3 line-clamp-1" data-toc-ignore>{work.title}</h3>
 							<article>
 								<p class="text-sm text-gray-400 h-10 overflow-hidden">
-									{product.description}
+									{work.description}
 								</p>
 							</article>
 						</div>
 						<hr class="opacity-50" />
 						<footer class="p-4 flex justify-start items-center space-x-4">
-							<Avatar src={product.thumbnail} width="w-8" />
+							<Avatar src={urlFor(work.img).url()} width="w-8" />
 							<div class="flex-auto flex justify-between items-center">
-								<h6 class="font-bold">By Alex</h6>
-								<small>On {new Date().toLocaleDateString()}</small>
+								<h6 class="font-bold">By {work.team}</h6>
+								<small>Started {work.date}</small>
 							</div>
 						</footer>
 					</a>

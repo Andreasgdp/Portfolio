@@ -1,13 +1,13 @@
-import { getDummyJson } from '$lib/utils/apis/dummy-json.js';
+import { getWork } from '$lib/utils/sanity/works';
 import { error } from '@sveltejs/kit';
 
 /** @type {import('./$types').PageServerLoad} */
-export async function load({ params }) {
-	const post = await getDummyJson(params.slug);
+export async function load({ params }: { params: { slug: string } }) {
+	const work = await getWork(params.slug);
 
-	if (!post) {
+	if (!work) {
 		throw error(404, 'Not found');
 	}
 
-	return post;
+	return work;
 }

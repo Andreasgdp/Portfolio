@@ -1,6 +1,4 @@
-import type { PortableTextBlock } from '@portabletext/types';
 import { createClient } from '@sanity/client';
-import type { ImageAsset, Slug } from '@sanity/types';
 import groq from 'groq';
 
 import { PUBLIC_SANITY_DATASET, PUBLIC_SANITY_PROJECT_ID } from '$env/static/public';
@@ -16,18 +14,6 @@ export const client = createClient({
 	apiVersion: '2023-03-20' // date of setup
 });
 
-export async function getPosts(): Promise<Post[]> {
-	return await client.fetch(
-		groq`*[_type == "post" && defined(slug.current)] | order(_createdAt desc)`
-	);
-}
-
-export async function getPost(slug: string): Promise<Post> {
-	return await client.fetch(groq`*[_type == "post" && slug.current == $slug][0]`, {
-		slug
-	});
-}
-
 export async function getPets(): Promise<Pet[]> {
 	return await client.fetch(groq`*[_type == "pet"]`);
 }
@@ -36,14 +22,4 @@ export interface Pet {
 	_type: 'pet';
 	_createdAt: string;
 	name: string;
-}
-
-export interface Post {
-	_type: 'post';
-	_createdAt: string;
-	title?: string;
-	slug: Slug;
-	excerpt?: string;
-	mainImage?: ImageAsset;
-	body: PortableTextBlock[];
 }

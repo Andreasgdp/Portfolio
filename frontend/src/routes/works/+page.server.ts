@@ -1,15 +1,15 @@
-import { getDummyJsons } from '$lib/utils/apis/dummy-json';
+import { getWorks } from '$lib/utils/sanity/works';
 import { error } from '@sveltejs/kit';
 import type { PageServerLoad } from './$types';
 
 export const load = (async () => {
-	const dummyJsons = async () => await getDummyJsons();
+	const works = async () => await getWorks();
 
-	if (!dummyJsons) {
+	if (!works) {
 		throw error(404, 'Not found');
 	}
 
 	return {
-		dummyJson: dummyJsons()
+		works: works()
 	};
 }) satisfies PageServerLoad;

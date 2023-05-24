@@ -1,4 +1,4 @@
-import pet from "./pet";
+import pet from './pet'
+import work from './work'
 
-
-export const schemaTypes = [pet]
+export const schemaTypes = [pet, work]
