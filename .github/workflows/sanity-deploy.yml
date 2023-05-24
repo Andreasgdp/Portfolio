@@ -1,15 +1,20 @@
 name: Deploy Sanity
 on:
-  push:
-    branches: [master]
+    push:
+        branches: [master]
 jobs:
-  sanity-deploy:
-    runs-on: ubuntu-18.04
-    name: Deploy Sanity
-    steps:
-      - uses: actions/checkout@v2
-      - uses: sanity-io/github-action-sanity@v0.2-alpha
-        env:
-          SANITY_AUTH_TOKEN: ${{ secrets.SANITY_AUTH_TOKEN }}
-        with:
-          args: deploy
+    sanity_deploy:
+        name: Sanity Deploy
+        runs-on: ubuntu-latest
+        steps:
+            - name: Checkout Repo
+              uses: actions/checkout@master
+            - name: Install Dependencies
+              working-directory: ./backend
+              run: npm install
+            - name: Deploy
+              working-directory: ./backend
+              run: |
+                  set -e
+                  # Make sure to add a secret for SANITY_AUTH_TOKEN
+                  SANITY_AUTH_TOKEN="${{ secrets.SANITY_AUTH_TOKEN }}" npm run deploy
