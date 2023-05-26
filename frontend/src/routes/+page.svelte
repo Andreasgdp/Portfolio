@@ -45,7 +45,7 @@
 />
 {#if ready}
 	<section class="section-container" bind:this={element}>
-		<div class="grid grid-cols-1 xl:grid-cols-2 gap-4 md:gap-10 items-center">
+		<div class="grid grid-cols-1 xl:grid-cols-2 gap-4 items-center">
 			<!-- Info -->
 			<div class="flex flex-col items-center xl:items-start text-center xl:text-left space-y-4">
 				<!-- Animated Logo -->
@@ -134,7 +134,7 @@
 					in:blur={{ delay: animationDelay * 3, duration: animationDuration }}
 					class="!text-xl max-w-[475px]"
 				>
-					I'm a dedicated full-stack developer who thrives on transforming issues <i
+					10 I'm a dedicated full-stack developer who thrives on transforming issues <i
 						class="fa-solid fa-arrow-right"
 					/>
 					ideas <i class="fa-solid fa-arrow-right" /> user-friendly solutions.
@@ -191,7 +191,7 @@
 	</section>
 
 	<section class="section-container" id="section-1">
-		<div class="container h-full mx-auto flex justify-center items-center">
+		<div class="container h-full mx-auto flex flex-col gap-10 justify-center items-center">
 			<div class="space-y-10 text-center flex flex-col items-center">
 				<h1 class="!text-5xl md:!text-6xl max-w-[600px]">WIP secion</h1>
 				<p class="!text-xl max-w-[475px]">Getting content from Sanity CMS</p>
@@ -205,11 +205,6 @@
 					<p>No pets found.</p>
 				{/if}
 			</div>
-		</div>
-	</section>
-
-	<section class="section-container" id="section-2">
-		<div class="container h-full mx-auto flex justify-center items-center">
 			<div class="space-y-10 text-center flex flex-col items-center">
 				<button type="button" class="btn variant-soft-primary" on:click={() => scrollToTop()}>
 					<span>Scroll to top</span>
@@ -261,6 +256,6 @@
 	}
 
 	.section-container {
-		@apply w-full max-w-7xl mx-auto p-4 py-16 md:py-24;
+		@apply h-screen w-full max-w-7xl mx-auto p-4 py-16 md:py-24;
 	}
 </style>

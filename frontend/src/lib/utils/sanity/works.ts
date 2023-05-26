@@ -19,7 +19,6 @@ interface Work {
 
 export async function getWorks(): Promise<Work[]> {
 	const works = await client.fetch(groq`*[_type == "work"] | order(_createdAt desc)`);
-	console.log(works);
 	return works;
 }
 
