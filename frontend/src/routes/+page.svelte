@@ -227,7 +227,7 @@
 	}
 	figure svg,
 	.img-bg {
-		@apply w-40 h-40 md:w-60 md:h-60 xl:w-96 xl:h-96;
+		@apply w-40 h-40 md:w-60 md:h-60;
 	}
 	.img-bg {
 		@apply absolute z-[-1] rounded-full blur-[50px] transition-all;
