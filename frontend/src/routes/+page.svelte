@@ -134,7 +134,7 @@
 					in:blur={{ delay: animationDelay * 3, duration: animationDuration }}
 					class="!text-xl max-w-[475px]"
 				>
-					10 I'm a dedicated full-stack developer who thrives on transforming issues <i
+					I'm a dedicated full-stack developer who thrives on transforming issues <i
 						class="fa-solid fa-arrow-right"
 					/>
 					ideas <i class="fa-solid fa-arrow-right" /> user-friendly solutions.
