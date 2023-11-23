@@ -9,14 +9,18 @@ import { mdxToMarkdown } from 'mdast-util-mdx';
 import { toMarkdown } from 'mdast-util-to-markdown';
 import type * as unified from 'unified';
 
+// TODO: Come back and fix type errors for ignored parts.
+
 /** @type {import('contentlayer/source-files').ComputedFields} */
 const computedFields = {
   path: {
     type: 'string',
+    // @ts-ignore
     resolve: (doc) => `/${doc._raw.flattenedPath}`,
   },
   slug: {
     type: 'string',
+    // @ts-ignore
     resolve: (doc) => doc._raw.flattenedPath.split('/').slice(1).join('/'),
   },
 };
@@ -48,6 +52,7 @@ export const Project = defineDocumentType(() => ({
       type: 'string',
     },
   },
+  // @ts-ignore
   computedFields,
 }));
 
@@ -204,6 +209,7 @@ export const Page = defineDocumentType(() => ({
       type: 'string',
     },
   },
+  // @ts-ignore
   computedFields,
 }));
 
@@ -218,6 +224,7 @@ export default makeSource({
         rehypePrettyCode,
         {
           theme: 'github-dark',
+          // @ts-ignore
           onVisitLine(node) {
             // Prevent lines from collapsing in `display: grid` mode, and allow empty
             // lines to be copy/pasted
@@ -225,9 +232,11 @@ export default makeSource({
               node.children = [{ type: 'text', value: ' ' }];
             }
           },
+          // @ts-ignore
           onVisitHighlightedLine(node) {
             node.properties.className.push('line--highlighted');
           },
+          // @ts-ignore
           onVisitHighlightedWord(node) {
             node.properties.className = ['word--highlighted'];
           },

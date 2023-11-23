@@ -60,6 +60,10 @@ export default async function PostPage({ params }: Props) {
   } else {
     // Identify the global content ID as the last part of the page path following
     // the last slash. It should be an 8-digit number.
+    // disable typechecking for this line because it's a hack to get the global
+    // content ID
+    // TODO: fix the type error and remove the ts-ignore when implementing docs page for real.
+    // @ts-ignore
     const globalContentId: string = pagePath
       .split('/')
       .filter(Boolean)
