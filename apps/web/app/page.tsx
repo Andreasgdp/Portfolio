@@ -36,7 +36,7 @@ export default function Home() {
               <Link
                 key={item.href}
                 href={item.href}
-                className="text-sm duration-500 text-zinc-500 hover:text-zinc-300"
+                className="text-base sm:text-lg md:text-xl duration-500 text-zinc-500 hover:text-zinc-300"
               >
                 {item.name}
               </Link>
@@ -46,8 +46,8 @@ export default function Home() {
         <div className="md:h-40 flex items-center justify-center">
           <div className="flex flex-col items-center justify-center w-screen ">
             <div className="hidden w-screen h-px animate-glow md:block animate-fade-left bg-gradient-to-r from-zinc-300/0 via-zinc-300/50 to-zinc-300/0" />
-            <h1 className="z-10 text-4xl text-transparent duration-1000 bg-white cursor-default text-edge-outline animate-title font-display sm:text-6xl md:text-9xl whitespace-nowrap bg-clip-text ">
-              guldberg
+            <h1 className="z-10 text-4xl text-transparent duration-1000 bg-white cursor-default text-edge-outline animate-title font-display sm:text-6xl md:text-9xl whitespace-nowrap bg-clip-text pb-1 font-bold">
+              Guldberg
             </h1>
             <div className="hidden w-screen h-px animate-glow md:block animate-fade-right bg-gradient-to-r from-zinc-300/0 via-zinc-300/50 to-zinc-300/0" />
           </div>
@@ -57,11 +57,11 @@ export default function Home() {
           <Image
             src="https://avatars.githubusercontent.com/u/39928082?v=4"
             alt="Profile Image"
-            className="w-4/5 h-auto mx-auto animate-fade-in rounded-lg mb-10"
+            className="w-1/2 sm:w-3/5 md:w-2/3 h-auto mx-auto animate-fade-in rounded-lg mb-10 duration-1000"
             width={500} // Adjust the width as per your requirement
             height={500} // Adjust the height as per your requirement
           />
-          <h2 className="text-sm text-zinc-500 ">
+          <h2 className="text-base sm:text-lg md:text-xl text-zinc-500 ">
             I'm building{' '}
             <Link
               target="_blank"
@@ -99,7 +99,7 @@ export default function Home() {
         <div className="!h-40 flex items-center justify-center pt-10">
           <div className="flex flex-col items-center justify-center w-screen ">
             <div className="hidden w-screen h-px animate-glow md:block animate-fade-left bg-gradient-to-r from-zinc-300/0 via-zinc-300/50 to-zinc-300/0" />
-            <h1 className="z-10 text-4xl text-transparent duration-1000 bg-white cursor-default text-edge-outline animate-title font-display sm:text-6xl md:text-9xl whitespace-nowrap bg-clip-text ">
+            <h1 className="z-10 text-4xl text-transparent duration-1000 bg-white cursor-default text-edge-outline animate-title font-display sm:text-6xl md:text-9xl whitespace-nowrap bg-clip-text font-bold ">
               Experience
             </h1>
             <div className="hidden w-screen h-px animate-glow md:block animate-fade-right bg-gradient-to-r from-zinc-300/0 via-zinc-300/50 to-zinc-300/0" />

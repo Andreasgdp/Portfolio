@@ -15,6 +15,7 @@
     "classnames": "^2.3.2",
     "contentlayer": "^0.3.4",
     "framer-motion": "^10.16.4",
+    "geist": "^1.1.0",
     "lucide-react": "^0.284.0",
     "markdown-wasm": "^1.2.0",
     "mdast-util-mdx": "^3.0.0",
