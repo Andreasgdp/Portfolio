@@ -1,8 +1,8 @@
 import '../global.css';
 import { Metadata } from 'next';
-import { Analytics } from './components/analytics';
 import { GeistSans } from 'geist/font/sans';
 import { GeistMono } from 'geist/font/mono';
+import { Analytics } from '@vercel/analytics/react';
 
 export const metadata: Metadata = {
   title: {
@@ -52,15 +52,14 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={`${GeistSans.variable} ${GeistMono.variable}`}>
-      <head>
-        <Analytics />
-      </head>
+      <head></head>
       <body
         className={`bg-black ${
           process.env.NODE_ENV === 'development' ? 'debug-screens' : undefined
         }`}
       >
         {children}
+        <Analytics />
       </body>
     </html>
   );
