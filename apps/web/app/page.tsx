@@ -1,5 +1,3 @@
-'use client';
-
 import Link from 'next/link';
 import React from 'react';
 import Particles from './components/particles';
@@ -13,13 +11,6 @@ const navigation = [
 ];
 
 export default function Home() {
-  const scrollToExperience = () => {
-    const experienceSection = document.getElementById('Experience');
-    if (experienceSection) {
-      experienceSection.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
-
   return (
     <main className="overflow-x-hidden">
       <Particles
@@ -60,6 +51,7 @@ export default function Home() {
             className="w-1/2 sm:w-3/5 md:w-2/3 h-auto mx-auto animate-fade-in mb-10 duration-1000 bg-transparent"
             width={500} // Adjust the width as per your requirement
             height={500} // Adjust the height as per your requirement
+            priority
           />
           <h2 className="text-base sm:text-lg md:text-xl text-zinc-500 ">
             I'm building{' '}
@@ -74,14 +66,13 @@ export default function Home() {
           </h2>
         </div>
 
-        <div className="absolute bottom-5 animate-pulse">
+        <a href="#Experience" className="absolute bottom-5 animate-pulse">
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            className="h-6 w-6 mx-auto text-zinc-500 animate-bounce cursor-pointer"
+            className="h-6 w-6 mx-auto text-zinc-500 animate-bounce"
             fill="none"
             viewBox="0 0 24 24"
             stroke="currentColor"
-            onClick={scrollToExperience} // Add onClick event handler
           >
             <path
               strokeLinecap="round"
@@ -90,7 +81,7 @@ export default function Home() {
               d="M19 14l-7 7m0 0l-7-7m7 7V3"
             />
           </svg>
-        </div>
+        </a>
       </section>
       <section
         id="Experience"
