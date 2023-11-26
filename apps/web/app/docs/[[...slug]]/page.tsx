@@ -1,4 +1,5 @@
 import { notFound } from 'next/navigation';
+import { permanentRedirect } from 'next/navigation';
 import { Doc, allDocs } from 'contentlayer/generated';
 import { Mdx } from '@/app/components/mdx';
 import { Header } from './header';
@@ -40,36 +41,31 @@ function getSupportingProps(doc: Doc, params: any) {
   return { tree, breadcrumbs, childrenTree };
 }
 
-// export async function generateStaticParams(): Promise<Props['params'][]> {
-//   return allDocs.map((doc) => ({
-//     slug: doc?.pathSegments.map((_: PathSegment) => _.pathName).join('/'),
-//   }));
-// }
+export async function generateStaticParams(): Promise<Props['params'][]> {
+  return allDocs.map((doc) => ({
+    slug: doc?.pathSegments.map((_: PathSegment) => _.pathName).join('/'),
+  }));
+}
 
 export default async function PostPage({ params }: Props) {
   const pagePath = params.slug?.join('/') ?? '';
-  console.log('pagePath', pagePath);
-  console.log('pagePath', pagePath === '');
   let doc;
   let project;
   // If on the index page, we don't worry about the global_id
   if (pagePath === '') {
     doc = allDocs.find((_) => _.url_path === '/docs');
-    if (!doc) return { notFound: true };
+    if (!doc) notFound();
     project = { doc, ...getSupportingProps(doc, params) };
-  } else {
+  } else if (pagePath !== undefined) {
     // Identify the global content ID as the last part of the page path following
     // the last slash. It should be an 8-digit number.
-    // disable typechecking for this line because it's a hack to get the global
-    // content ID
-    // TODO: fix the type error and remove the ts-ignore when implementing docs page for real.
-    // @ts-ignore
-    const globalContentId: string = pagePath
+    const globalContentId = pagePath
       .split('/')
       .filter(Boolean)
       .pop()
-      .split('-')
+      ?.split('-')
       .pop();
+
     // If there is a global content ID, find the corresponding document.
     if (globalContentId && globalContentId.length === 8) {
       doc = allDocs.find((_) => _.global_id === globalContentId);
@@ -79,9 +75,8 @@ export default async function PostPage({ params }: Props) {
     const urlPath = doc?.pathSegments
       .map((_: PathSegment) => _.pathName)
       .join('/');
-    console.log('urlPath', urlPath);
     if (doc && urlPath !== pagePath) {
-      return { redirect: { destination: doc.url_path, permanent: true } };
+      permanentRedirect(doc.url_path);
     }
     // If there is no global content ID, or if we couldn't find the doc by the
     // global content ID, try finding the doc by the page path.
@@ -96,10 +91,12 @@ export default async function PostPage({ params }: Props) {
       // If doc exists, but global content ID is missing in url, redirect to url
       // with global content ID
       if (doc) {
-        return { redirect: { destination: doc.url_path, permanent: true } };
+        if (doc && urlPath !== pagePath) {
+          permanentRedirect(doc.url_path);
+        }
       }
       // Otherwise, throw a 404 error.
-      return { notFound: true };
+      notFound();
     }
     project = { doc, ...getSupportingProps(doc, params) };
   }

@@ -6,7 +6,7 @@ import Experience from './components/experience';
 
 const navigation = [
   { name: 'Projects', href: '/projects' },
-  // { name: "Guldberg's Docs", href: '/docs' },
+  { name: 'About Docs', href: '/docs' },
   { name: 'Contact', href: '/contact' },
 ];
 

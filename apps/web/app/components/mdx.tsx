@@ -1,10 +1,10 @@
 // @ts-nocheck
 import * as React from 'react';
 import Image from 'next/image';
-import Link from 'next/link';
 import { useMDXComponent } from 'next-contentlayer/hooks';
 import { DocsCard } from './docs/DocsCard';
 import { ChevronLink as ChevronLinkComponent } from './common/ChevronLink';
+import { Link } from './common/Link';
 
 function clsx(...args: any) {
   return args.filter(Boolean).join(' ');
@@ -169,6 +169,7 @@ const components = {
   ChevronLink: ({ className, ...props }) => (
     <ChevronLinkComponent className={clsx('mt-6', className)} {...props} />
   ),
+  Link,
 };
 
 interface MdxProps {
