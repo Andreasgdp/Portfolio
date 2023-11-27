@@ -2,11 +2,14 @@ import { notFound } from 'next/navigation';
 import { permanentRedirect } from 'next/navigation';
 import { Doc, allDocs } from 'contentlayer/generated';
 import { Mdx } from '@/app/components/mdx';
-import { Header } from './header';
 import './mdx.css';
-import { ReportView } from './view';
 import { Redis } from '@upstash/redis';
 import { buildDocsTree } from '@/util/build-docs-tree';
+import { DocsNavigation } from '@/app/components/docs/DocsNavigation';
+import { DocsHeader } from '@/app/components/docs/DocsHeader';
+import { DocsFooter } from '@/app/components/docs/DocsFooter';
+import { DocsChildCard } from '@/app/components/docs/DocsChildCard';
+import { Container } from '@/app/components/common/Container';
 
 export const revalidate = 60;
 
@@ -41,11 +44,11 @@ function getSupportingProps(doc: Doc, params: any) {
   return { tree, breadcrumbs, childrenTree };
 }
 
-export async function generateStaticParams(): Promise<Props['params'][]> {
-  return allDocs.map((doc) => ({
-    slug: doc?.pathSegments.map((_: PathSegment) => _.pathName).join('/'),
-  }));
-}
+// export async function generateStaticParams(): Promise<Props['params'][]> {
+//   return allDocs.map((doc) => ({
+//     slug: doc?.pathSegments.map((_: PathSegment) => _.pathName).join('/'),
+//   }));
+// }
 
 export default async function PostPage({ params }: Props) {
   const pagePath = params.slug?.join('/') ?? '';
@@ -106,10 +109,46 @@ export default async function PostPage({ params }: Props) {
   }
 
   return (
-    <div className="bg-zinc-50 min-h-screen">
-      <article className="px-4 py-12 mx-auto prose prose-zinc prose-quoteless">
+    <Container
+      title={project.doc.title + ' – Contentlayer'}
+      description={project.doc.excerpt}
+    >
+      <div className="relative mx-auto w-full max-w-screen-2xl lg:flex lg:items-start">
+        <div
+          style={{ height: 'calc(100vh - 64px)' }}
+          className="sticky top-16 hidden shrink-0 border-r border-gray-200 dark:border-gray-800 lg:block"
+        >
+          <div className="-ml-3 h-full overflow-y-scroll p-8 pl-16">
+            <DocsNavigation tree={project.tree} />
+          </div>
+          <div className="absolute inset-x-0 top-0 h-8 bg-gradient-to-t from-white/0 to-white/100 dark:from-gray-950/0 dark:to-gray-950/100" />
+          <div className="absolute inset-x-0 bottom-0 h-8 bg-gradient-to-b from-white/0 to-white/100 dark:from-gray-950/0 dark:to-gray-950/100" />
+        </div>
+        <div className="relative w-full grow">
+          <DocsHeader
+            tree={project.tree}
+            breadcrumbs={project.breadcrumbs}
+            title={project.doc.title}
+          />
+          <div className="docs prose prose-slate prose-violet mx-auto mb-4 w-full max-w-3xl shrink p-4 pb-8 prose-headings:font-semibold prose-a:font-normal prose-code:font-normal prose-code:before:content-none prose-code:after:content-none prose-hr:border-gray-200 dark:prose-invert dark:prose-a:text-violet-400 dark:prose-hr:border-gray-800 md:mb-8 md:px-8 lg:mx-0 lg:max-w-full lg:px-16">
+            <Mdx code={project.doc.body.code} />
+            {project.doc.show_child_cards && (
+              <>
+                <hr />
+                <div className="mt-12 grid grid-cols-1 gap-6 md:grid-cols-2">
+                  {project.childrenTree.map((card: any, index: number) => (
+                    <DocsChildCard key={index} card={card} />
+                  ))}
+                </div>
+              </>
+            )}
+            <DocsFooter doc={project.doc} />
+          </div>
+          {/* <article className="px-4 py-12 mx-auto prose prose-zinc prose-quoteless">
         <Mdx code={project.doc.body.code} />
-      </article>
-    </div>
+      </article> */}
+        </div>
+      </div>
+    </Container>
   );
 }
