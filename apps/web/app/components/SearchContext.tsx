@@ -29,36 +29,17 @@ export const SearchProvider: FC<{ children: ReactNode }> = ({ children }) => {
       {
         id: '0-homepage',
         name: 'Homepage',
-        keywords: 'Contentlayer Home Start Index Overview Features Intro',
+        keywords: 'Portfolio Home Start Index Overview Features Intro',
         section: 'Home',
         perform: () => router.push('/'),
       },
       {
         id: '3-github',
         name: 'GitHub Repository',
-        keywords: 'Contentlayer Github Git Repository Repo Code Examples',
+        keywords: 'Portfolio Github Git Repository Repo Code',
         section: 'External',
         perform: () =>
-          window.open(
-            'https://github.com/contentlayerdev/contentlayer',
-            '_ blank'
-          ),
-      },
-      {
-        id: '3-discord',
-        name: 'Discord Community',
-        keywords: 'Discord Community Channel Contact',
-        section: 'External',
-        perform: () =>
-          window.open('https://discord.com/invite/rytFErsARm', '_ blank'),
-      },
-      {
-        id: '3-twitter',
-        name: 'Twitter',
-        keywords: 'Twitter Account Tweets Tweet News',
-        section: 'External',
-        perform: () =>
-          window.open('https://twitter.com/contentlayerdev', '_ blank'),
+          window.open('https://github.com/andreasgdp/portfolio', '_ blank'),
       },
     ];
     let id = 1;
@@ -87,7 +68,7 @@ export const SearchProvider: FC<{ children: ReactNode }> = ({ children }) => {
           keywords: project?.excerpt || '',
           section: 'Projects',
           subtitle: parent,
-          perform: () => router.push(project.urlPath),
+          perform: () => router.push(project.path),
         });
         id++;
       }

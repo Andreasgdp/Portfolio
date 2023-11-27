@@ -10,22 +10,24 @@ import { Logo } from './Logo';
 import { usePathname } from 'next/navigation';
 
 const navLinks: Array<{ label: string; url: string }> = [
+  { label: 'Projects', url: '/projects' },
   { label: 'Documentation', url: '/docs' },
-  //
-  // Removing this temporarily, until it is more active.
+  { label: 'Contact', url: '/contact' },
+  // Removing this temporarily, until it exists
   // { label: 'Blog', url: '/blog' },
-  //
-  // NOTE until we have a proper example overview page and multiple examples, link directly to Next.js example
-  { label: 'Examples', url: '/examples/nextjs' },
 ];
 
 const iconLinks: Array<{ label: string; icon: IconName; url: string }> = [
   {
     label: 'Github',
     icon: 'github',
-    url: 'https://github.com/contentlayerdev/contentlayer',
+    url: 'https://github.com/andreasgdp/portfolio',
   },
-  { label: 'Discord', icon: 'discord', url: 'https://discord.gg/rytFErsARm' },
+  {
+    label: 'LinkedIn',
+    icon: 'linkedin',
+    url: 'https://linkedin.com/in/andreasgdp',
+  },
 ];
 
 const NavLink: FC<{
@@ -90,9 +92,9 @@ export const MainNavigation = () => {
             className="flex items-center space-x-2.5 font-bold text-slate-800 no-underline dark:text-white"
           >
             <Logo />
-            <span className="-mt-0.5">Contentlayer</span>
+            <span className="-mt-0.5">Guldberg</span>
+            <Label text="Portfolio" />
           </Link>
-          <Label text="Beta" />
         </div>
         <div className="lg:hidden">
           <button

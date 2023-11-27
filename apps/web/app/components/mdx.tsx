@@ -5,6 +5,7 @@ import { useMDXComponent } from 'next-contentlayer/hooks';
 import { DocsCard } from './docs/DocsCard';
 import { ChevronLink as ChevronLinkComponent } from './common/ChevronLink';
 import { Link } from './common/Link';
+import { Callout } from './common/Callout';
 
 function clsx(...args: any) {
   return args.filter(Boolean).join(' ');
@@ -163,12 +164,9 @@ const components = {
     />
   ),
   Image,
-  Card: ({ className, ...props }) => (
-    <DocsCard className={clsx('mt-6', className)} {...props} />
-  ),
-  ChevronLink: ({ className, ...props }) => (
-    <ChevronLinkComponent className={clsx('mt-6', className)} {...props} />
-  ),
+  Card: DocsCard,
+  ChevronLink: ChevronLinkComponent,
+  Callout,
   Link,
 };
 
@@ -176,7 +174,7 @@ interface MdxProps {
   code: string;
 }
 
-export function Mdx({ code }: MdxProps) {
+export function Mdx({ code }: Readonly<MdxProps>) {
   const Component = useMDXComponent(code);
 
   return (

@@ -1,49 +1,50 @@
-import { FC } from 'react'
+import { FC } from 'react';
 
-import { ApiIcon } from './API'
-import { BarsIcon } from './Bars'
-import { BrokenLinkIcon } from './BrokenLink'
-import { CalendarIcon } from './Calendar'
-import { CheckCircleIcon } from './CheckCircle'
-import { CheckCircleOutlineIcon } from './CheckCircleOutline'
-import { CheckIcon } from './Check'
-import { ChevronDownIcon } from './ChevronDown'
-import { ChevronLeftIcon } from './ChevronLeft'
-import { ChevronRightIcon } from './ChevronRight'
-import { CloseIcon } from './Close'
-import { CodeIcon } from './Code'
-import { CodeLightIcon } from './CodeLight'
-import { CollapseIcon } from './Collapse'
-import { ContentfulIcon } from './Contentful'
-import { ContentlayerIcon } from './Contentlayer'
-import { CrossCircleOutlineIcon } from './CrossCircleOutline'
-import { DatabaseIcon } from './Database'
-import { DiscordIcon } from './Discord'
-import { ExclamationIcon } from './Exclamation'
-import { ExpandIcon } from './Expand'
-import { ExternalLinkIcon } from './ExternalLink'
-import { GearIcon } from './Gear'
-import { GitHubIcon } from './GitHub'
-import { GitpodIcon } from './Gitpod'
-import { GraphQLIcon } from './GraphQL'
-import { InfoIcon } from './Info'
-import { JekyllIcon } from './Jekyll'
-import { LightningIcon } from './Lightning'
-import { MarkdownIcon } from './Markdown'
-import { MoonIcon } from './Moon'
-import { NotionIcon } from './Notion'
-import { PHPIcon } from './PHP'
-import { PlayButtonIcon } from './PlayButton'
-import { PlusIcon } from './Plus'
-import { QuestionIcon } from './Question'
-import { ReactIcon } from './React'
-import { RocketIcon } from './Rocket'
-import { SearchIcon } from './Search'
-import { SignIcon } from './Sign'
-import { SunIcon } from './Sun'
-import { TemplateIcon } from './Template'
-import { UsersIcon } from './Users'
-import { WordPressIcon } from './WordPress'
+import { ApiIcon } from './API';
+import { BarsIcon } from './Bars';
+import { BrokenLinkIcon } from './BrokenLink';
+import { CalendarIcon } from './Calendar';
+import { CheckCircleIcon } from './CheckCircle';
+import { CheckCircleOutlineIcon } from './CheckCircleOutline';
+import { CheckIcon } from './Check';
+import { ChevronDownIcon } from './ChevronDown';
+import { ChevronLeftIcon } from './ChevronLeft';
+import { ChevronRightIcon } from './ChevronRight';
+import { CloseIcon } from './Close';
+import { CodeIcon } from './Code';
+import { CodeLightIcon } from './CodeLight';
+import { CollapseIcon } from './Collapse';
+import { ContentfulIcon } from './Contentful';
+import { ContentlayerIcon } from './Contentlayer';
+import { CrossCircleOutlineIcon } from './CrossCircleOutline';
+import { DatabaseIcon } from './Database';
+import { DiscordIcon } from './Discord';
+import { ExclamationIcon } from './Exclamation';
+import { ExpandIcon } from './Expand';
+import { ExternalLinkIcon } from './ExternalLink';
+import { GearIcon } from './Gear';
+import { GitHubIcon } from './GitHub';
+import { GitpodIcon } from './Gitpod';
+import { GraphQLIcon } from './GraphQL';
+import { InfoIcon } from './Info';
+import { LinkedInIcon } from './LinkedIn';
+import { JekyllIcon } from './Jekyll';
+import { LightningIcon } from './Lightning';
+import { MarkdownIcon } from './Markdown';
+import { MoonIcon } from './Moon';
+import { NotionIcon } from './Notion';
+import { PHPIcon } from './PHP';
+import { PlayButtonIcon } from './PlayButton';
+import { PlusIcon } from './Plus';
+import { QuestionIcon } from './Question';
+import { ReactIcon } from './React';
+import { RocketIcon } from './Rocket';
+import { SearchIcon } from './Search';
+import { SignIcon } from './Sign';
+import { SunIcon } from './Sun';
+import { TemplateIcon } from './Template';
+import { UsersIcon } from './Users';
+import { WordPressIcon } from './WordPress';
 
 export type IconName =
   | 'api'
@@ -75,6 +76,7 @@ export type IconName =
   | 'info'
   | 'jekyll'
   | 'lightning'
+  | 'linkedin'
   | 'markdown'
   | 'moon'
   | 'notion'
@@ -89,7 +91,7 @@ export type IconName =
   | 'sun'
   | 'template'
   | 'users'
-  | 'wordpress'
+  | 'wordpress';
 
 const iconMap = {
   'broken-link': BrokenLinkIcon,
@@ -120,6 +122,7 @@ const iconMap = {
   gitpod: GitpodIcon,
   graphql: GraphQLIcon,
   info: InfoIcon,
+  linkedin: LinkedInIcon,
   jekyll: JekyllIcon,
   lightning: LightningIcon,
   markdown: MarkdownIcon,
@@ -136,9 +139,9 @@ const iconMap = {
   template: TemplateIcon,
   users: UsersIcon,
   wordpress: WordPressIcon,
-}
+};
 
 export const Icon: FC<{ name: IconName }> = ({ name }) => {
-  const IconComponent = iconMap[name]
-  return <IconComponent />
-}
+  const IconComponent = iconMap[name];
+  return <IconComponent />;
+};
