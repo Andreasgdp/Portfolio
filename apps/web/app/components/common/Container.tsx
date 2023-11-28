@@ -30,7 +30,7 @@ export const Container: FC<any> = ({ children, ...customMeta }) => {
   };
 
   return (
-    <>
+    <div className="dark:text-white">
       <Head>
         <title>{meta.title}</title>
         <meta name="robots" content="follow, index" />
@@ -53,7 +53,7 @@ export const Container: FC<any> = ({ children, ...customMeta }) => {
       </Head>
       <SearchProvider>
         <MainNavigation />
-        <div className="flex min-h-screen flex-col justify-between">
+        <div className="flex min-h-screen flex-col justify-between bg-gradient-to-tl from-white via-zinc-100/80 to-white dark:from-black dark:via-zinc-600/20 dark:to-black">
           <main
             className="relative pt-16"
             style={{ scrollPaddingTop: '150px' }}
@@ -63,6 +63,6 @@ export const Container: FC<any> = ({ children, ...customMeta }) => {
           <Footer />
         </div>
       </SearchProvider>
-    </>
+    </div>
   );
 };

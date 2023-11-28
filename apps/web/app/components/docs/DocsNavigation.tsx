@@ -34,7 +34,7 @@ const NavLink: FC<{
         url == activePath
           ? `${
               level == 0 ? 'font-medium' : 'font-normal'
-            } bg-violet-50 text-violet-900 dark:bg-violet-500/20 dark:text-violet-50`
+            } bg-zinc-50 text-zinc-900 dark:bg-zinc-500/20 dark:text-zinc-50`
           : `hover:bg-gray-50 dark:hover:bg-gray-900 ${
               level == 0
                 ? 'font-medium text-slate-600 hover:text-slate-700 dark:text-slate-300 dark:hover:text-slate-200'

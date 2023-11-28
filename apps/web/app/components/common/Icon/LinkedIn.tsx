@@ -2,7 +2,7 @@ import { FC } from 'react';
 
 export const LinkedInIcon: FC = () => {
   return (
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 310 310">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 310 310" className="">
       <g id="XMLID_801_">
         <path
           id="XMLID_802_"

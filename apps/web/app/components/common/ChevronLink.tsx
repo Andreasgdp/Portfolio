@@ -17,7 +17,7 @@ export const ChevronLink: FC<{ label: string; url: string }> = ({
         className="inline-flex items-center space-x-1.5 text-zinc-600 no-underline hover:text-zinc-700 dark:text-zinc-400 dark:hover:text-zinc-300"
       >
         <span className="font-semibold">{label}</span>
-        <span className="block w-2">
+        <span className="block w-">
           <Icon name="chevron-right" />
         </span>
       </a>

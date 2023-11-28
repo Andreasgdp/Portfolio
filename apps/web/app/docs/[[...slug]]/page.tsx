@@ -125,8 +125,6 @@ export default async function PostPage({ params }: Props) {
           <div className="-ml-3 h-full overflow-y-scroll p-8 pl-16">
             <DocsNavigation tree={project.tree} />
           </div>
-          <div className="absolute inset-x-0 top-0 h-8 bg-gradient-to-t from-white/0 to-white/100 dark:from-gray-950/0 dark:to-gray-950/100" />
-          <div className="absolute inset-x-0 bottom-0 h-8 bg-gradient-to-b from-white/0 to-white/100 dark:from-gray-950/0 dark:to-gray-950/100" />
         </div>
         <div className="relative w-full grow">
           <DocsHeader
@@ -134,7 +132,7 @@ export default async function PostPage({ params }: Props) {
             breadcrumbs={project.breadcrumbs}
             title={project.doc.title}
           />
-          <div className="docs prose prose-slate prose-violet mx-auto mb-4 w-full max-w-3xl shrink p-4 pb-8 prose-headings:font-semibold prose-a:font-normal prose-code:font-normal prose-code:before:content-none prose-code:after:content-none prose-hr:border-gray-200 dark:prose-invert dark:prose-a:text-violet-400 dark:prose-hr:border-gray-800 md:mb-8 md:px-8 lg:mx-0 lg:max-w-full lg:px-16">
+          <div className="docs prose prose-slate mx-auto mb-4 w-full max-w-3xl shrink p-4 pb-8 prose-headings:font-semibold prose-a:font-normal prose-code:font-normal prose-code:before:content-none prose-code:after:content-none prose-hr:border-gray-200 dark:prose-invert dark:prose-a:text-zinc-400 dark:prose-hr:border-gray-800 md:mb-8 md:px-8 lg:mx-0 lg:max-w-full lg:px-16">
             <Mdx code={project.doc.body.code} />
             {project.doc.show_child_cards && (
               <>

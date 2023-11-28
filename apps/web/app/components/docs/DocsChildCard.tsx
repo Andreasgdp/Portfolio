@@ -21,7 +21,7 @@ export const DocsChildCard: React.FC<DocsChildCardProps> = ({ card }) => {
 
   return (
     <div onClick={() => router.push(card.urlPath)} className="cursor-pointer">
-      <ChildCard className="h-full p-6 py-4 hover:border-violet-100 hover:bg-violet-50 dark:hover:border-violet-900/50 dark:hover:bg-violet-900/20">
+      <ChildCard className="h-full p-6 py-4 hover:border-zinc-100 hover:bg-zinc-50 dark:hover:border-zinc-900/50 dark:hover:bg-zinc-900/20">
         <h3 className="mt-0 no-underline">{card.title}</h3>
         {card.label && <Label text={card.label} />}
         <div className="text-sm text-slate-500 dark:text-slate-400">

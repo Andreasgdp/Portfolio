@@ -69,8 +69,8 @@ export const DocsHeader: FC<{
         </div>
       </header>
       {open && (
-        <div className="fixed inset-0 z-50 h-screen bg-gray-950/10 pb-20 backdrop-blur-lg backdrop-filter dark:bg-gray-950/50">
-          <div className="absolute left-0 h-full divide-y divide-gray-200 overflow-y-scroll border-l border-gray-200 bg-white p-4 dark:divide-gray-800 dark:border-gray-800 dark:bg-gray-950">
+        <div className="fixed inset-0 z-50 h-screen bg-black/10 pb-20 backdrop-blur-lg backdrop-filter dark:bg-black/50">
+          <div className="absolute left-0 h-full divide-y divide-gray-200 overflow-y-scroll border-l border-gray-200 bg-white p-4 dark:divide-gray-800 dark:border-gray-800 dark:bg-black">
             <div className="flex items-center justify-between pb-2">
               <h2 className="text-xl font-semibold text-slate-800 dark:text-slate-200">
                 Documentation
@@ -93,7 +93,7 @@ export const DocsHeader: FC<{
         </div>
       )}
       <div
-        className={`fixed top-16 z-10 hidden h-16 w-full border-b border-gray-200 bg-white bg-opacity-90 backdrop-blur backdrop-filter transition-opacity duration-200 dark:border-gray-800 dark:bg-gray-950 lg:block ${
+        className={`fixed top-16 z-10 hidden h-16 w-full border-b border-gray-200 bg-white bg-opacity-90 backdrop-blur backdrop-filter transition-opacity duration-200 dark:border-gray-800 dark:bg-black lg:block ${
           top ? 'opacity-0' : 'opacity-100'
         }`}
       >

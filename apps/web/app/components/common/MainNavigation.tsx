@@ -44,7 +44,7 @@ const NavLink: FC<{
       href={url}
       className={`group flex h-8 items-center rounded-md bg-transparent px-3 text-sm font-medium leading-none ${
         active
-          ? 'bg-violet-50 text-violet-900 dark:bg-violet-500/20 dark:text-violet-50'
+          ? 'bg-zinc-50 text-zinc-900 dark:bg-zinc-500/20 dark:text-zinc-50'
           : 'text-slate-600 hover:bg-gray-50 hover:text-slate-700 dark:text-slate-300 dark:hover:bg-gray-900 dark:hover:text-slate-200'
       }`}
       target={isExternalUrl(url) ? '_blank' : undefined}
@@ -84,7 +84,7 @@ export const MainNavigation = () => {
   const [open, setOpen] = useState(false);
 
   return (
-    <header className="fixed z-50 w-full bg-white border-b border-gray-200 bg-opacity-90 backdrop-blur backdrop-filter dark:border-gray-800 dark:bg-gray-950">
+    <header className="fixed z-50 w-full bg-white border-b border-gray-200 bg-opacity-90 backdrop-blur backdrop-filter dark:border-gray-800 dark:bg-black">
       <div className="flex items-center justify-between w-full h-16 px-4 mx-auto max-w-screen-2xl md:px-8 lg:px-16">
         <div className="flex items-center space-x-2.5">
           <Link
@@ -108,8 +108,8 @@ export const MainNavigation = () => {
             </span>
           </button>
           {open && (
-            <div className="fixed inset-0 top-[65px] z-50 h-screen bg-gray-950/10 pb-20 backdrop-blur-lg backdrop-filter dark:bg-gray-950/50">
-              <nav className="absolute right-0 h-full p-8 bg-white border-l border-gray-200 divide-y divide-gray-200 dark:divide-gray-800 dark:border-gray-800 dark:bg-gray-950">
+            <div className="fixed inset-0 top-[65px] z-50 h-screen bg-black/10 pb-20 backdrop-blur-lg backdrop-filter dark:bg-black/50">
+              <nav className="absolute right-0 h-full p-8 bg-white border-l border-gray-200 divide-y divide-gray-200 dark:divide-gray-800 dark:border-gray-800 dark:bg-black">
                 <div className="flex flex-col items-end pb-8 space-y-2">
                   <div className="mb-2">
                     <SearchButton showShortcut={false} />
