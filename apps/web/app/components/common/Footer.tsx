@@ -10,7 +10,46 @@ const isExternalUrl = (link: string): boolean => {
 const content = {
   note: (
     <>
-      <p>MIT Licenced</p>
+      <p>
+        This website is built using{' '}
+        <Link
+          href="https://nextjs.org/"
+          className="hover:text-slate-700 dark:hover:text-slate-300"
+          target="_blank"
+          rel="noreferrer"
+        >
+          Next.js
+        </Link>
+        ,
+        <Link
+          href="https://tailwindcss.com/"
+          className="hover:text-slate-700 dark:hover:text-slate-300"
+          target="_blank"
+          rel="noreferrer"
+        >
+          Tailwind CSS
+        </Link>
+        ,
+        <br />
+        <Link
+          href="https://contentlayer.dev/"
+          className="hover:text-slate-700 dark:hover:text-slate-300"
+          target="_blank"
+          rel="noreferrer"
+        >
+          Contentlayer
+        </Link>
+        , and is hosted on{' '}
+        <Link
+          href="https://vercel.com/"
+          className="hover:text-slate-700 dark:hover:text-slate-300"
+          target="_blank"
+          rel="noreferrer"
+        >
+          Vercel
+        </Link>
+        .
+      </p>
       <p className="mt-2">
         Made with 💜 by{' '}
         <Link
