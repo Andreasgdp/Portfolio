@@ -114,7 +114,7 @@ export default async function PostPage({ params }: Props) {
 
   return (
     <Container
-      title={project.doc.title + ' – Contentlayer'}
+      title={project.doc.title + ' – Docs'}
       description={project.doc.excerpt}
     >
       <div className="relative mx-auto w-full max-w-screen-2xl lg:flex lg:items-start">
