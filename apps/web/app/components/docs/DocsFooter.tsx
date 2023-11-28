@@ -6,7 +6,7 @@ import { Icon } from '../common/Icon';
 import { format } from 'date-fns';
 import { Doc } from 'contentlayer/generated';
 
-const githubBranch = 'main';
+const githubBranch = 'master';
 const githubBaseUrl = `https://github.com/andreasgdp/portfolio/blob/${githubBranch}/apps/web/content/`;
 
 export const DocsFooter: FC<{ doc: Doc }> = ({ doc }) => {
