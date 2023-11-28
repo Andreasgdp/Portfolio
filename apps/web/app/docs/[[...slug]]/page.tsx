@@ -120,7 +120,7 @@ export default async function PostPage({ params }: Props) {
       <div className="relative mx-auto w-full max-w-screen-2xl lg:flex lg:items-start">
         <div
           style={{ height: 'calc(100vh - 64px)' }}
-          className="sticky top-16 hidden shrink-0 border-r border-gray-200 dark:border-gray-800 lg:block"
+          className="sticky top-16 hidden shrink-0 border-r border-zinc-200 dark:border-zinc-800 lg:block"
         >
           <div className="-ml-3 h-full overflow-y-scroll p-8 pl-16">
             <DocsNavigation tree={project.tree} />
@@ -132,7 +132,7 @@ export default async function PostPage({ params }: Props) {
             breadcrumbs={project.breadcrumbs}
             title={project.doc.title}
           />
-          <div className="docs prose prose-slate mx-auto mb-4 w-full max-w-3xl shrink p-4 pb-8 prose-headings:font-semibold prose-a:font-normal prose-code:font-normal prose-code:before:content-none prose-code:after:content-none prose-hr:border-gray-200 dark:prose-invert dark:prose-a:text-zinc-400 dark:prose-hr:border-gray-800 md:mb-8 md:px-8 lg:mx-0 lg:max-w-full lg:px-16">
+          <div className="docs prose prose-slate mx-auto mb-4 w-full max-w-3xl shrink p-4 pb-8 prose-headings:font-semibold prose-a:font-normal prose-code:font-normal prose-code:before:content-none prose-code:after:content-none prose-hr:border-zinc-200 dark:prose-invert dark:prose-a:text-zinc-400 dark:prose-hr:border-zinc-800 md:mb-8 md:px-8 lg:mx-0 lg:max-w-full lg:px-16">
             <Mdx code={project.doc.body.code} />
             {project.doc.show_child_cards && (
               <>

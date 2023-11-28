@@ -143,9 +143,5 @@ const iconMap = {
 
 export const Icon: FC<{ name: IconName }> = ({ name }) => {
   const IconComponent = iconMap[name];
-  return (
-    <div className="dark:text-white fill-current">
-      <IconComponent />
-    </div>
-  );
+  return <IconComponent />;
 };

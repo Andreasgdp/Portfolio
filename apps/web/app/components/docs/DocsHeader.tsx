@@ -43,7 +43,7 @@ export const DocsHeader: FC<{
                     >
                       {title}
                     </Link>
-                    <span className="inline-block w-1.5 text-slate-400 dark:text-slate-500">
+                    <span className="fill-current inline-block w-1.5 text-slate-400 dark:text-slate-500">
                       <Icon name="chevron-right" />
                     </span>
                   </li>
@@ -60,7 +60,7 @@ export const DocsHeader: FC<{
               onClick={() => setOpen(true)}
               className="flex space-x-2 text-left text-2xl font-semibold text-slate-800 dark:text-slate-200 md:space-x-3 md:text-3xl lg:text-4xl"
             >
-              <span className="mt-1.5 inline-block w-4 flex-shrink-0 md:w-5">
+              <span className="fill-current mt-1.5 inline-block w-4 flex-shrink-0 md:w-5">
                 <Icon name="chevron-down" />
               </span>
               <span className="inline-block flex-shrink">{title}</span>
@@ -70,7 +70,7 @@ export const DocsHeader: FC<{
       </header>
       {open && (
         <div className="fixed inset-0 z-50 h-screen bg-black/10 pb-20 backdrop-blur-lg backdrop-filter dark:bg-black/50">
-          <div className="absolute left-0 h-full divide-y divide-gray-200 overflow-y-scroll border-l border-gray-200 bg-white p-4 dark:divide-gray-800 dark:border-gray-800 dark:bg-black">
+          <div className="absolute left-0 h-full divide-y divide-zinc-200 overflow-y-scroll border-l border-zinc-200 bg-white p-4 dark:divide-zinc-800 dark:border-zinc-800 dark:bg-black">
             <div className="flex items-center justify-between pb-2">
               <h2 className="text-xl font-semibold text-slate-800 dark:text-slate-200">
                 Documentation
@@ -81,7 +81,7 @@ export const DocsHeader: FC<{
                 onClick={() => setOpen(!open)}
                 className="flex h-8 w-8 items-center justify-end text-slate-600 dark:text-slate-300"
               >
-                <span className="inline-block w-4">
+                <span className="fill-current inline-block w-4">
                   <Icon name="close" />
                 </span>
               </button>
@@ -93,7 +93,7 @@ export const DocsHeader: FC<{
         </div>
       )}
       <div
-        className={`fixed top-16 z-10 hidden h-16 w-full border-b border-gray-200 bg-white bg-opacity-90 backdrop-blur backdrop-filter transition-opacity duration-200 dark:border-gray-800 dark:bg-black lg:block ${
+        className={`fixed top-16 z-10 hidden h-16 w-full border-b border-zinc-200 bg-white bg-opacity-90 backdrop-blur backdrop-filter transition-opacity duration-200 dark:border-zinc-800 dark:bg-black lg:block ${
           top ? 'opacity-0' : 'opacity-100'
         }`}
       >
@@ -108,7 +108,7 @@ export const DocsHeader: FC<{
                   >
                     {title}
                   </Link>
-                  <span className="inline-block w-1.5 text-slate-400 dark:text-slate-500">
+                  <span className="fill-current inline-block w-1.5 text-slate-400 dark:text-slate-500">
                     <Icon name="chevron-right" />
                   </span>
                 </li>

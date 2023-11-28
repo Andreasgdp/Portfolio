@@ -19,7 +19,7 @@ export const DocsFooter: FC<{ doc: Doc }> = ({ doc }) => {
             target="_blank"
             rel="noreferrer"
           >
-            <span className="inline-block w-4">
+            <span className="fill-current inline-block w-4">
               <Icon name="github" />
             </span>
             <span>Provide feedback</span>

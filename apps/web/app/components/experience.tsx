@@ -86,7 +86,7 @@ export default function Experience() {
                 borderRight: '0.4rem solid rgba(255, 255, 255, 0.5)',
               }}
               date={item.date}
-              dateClassName="text-gray-700 dark:text-white/75"
+              dateClassName="text-zinc-700 dark:text-white/75"
               icon={item.icon}
               iconStyle={{
                 background: 'rgba(255, 255, 255, 0.15)',
@@ -99,7 +99,7 @@ export default function Experience() {
               <p className="font-normal !mt-0 dark:text-white/80">
                 {item.location}
               </p>
-              <p className="!mt-1 !font-normal text-gray-700 dark:text-white/75">
+              <p className="!mt-1 !font-normal text-zinc-700 dark:text-white/75">
                 {item.description}
               </p>
               <div className="mt-2">
@@ -107,7 +107,7 @@ export default function Experience() {
                   {item.technologies.map((technology, index) => (
                     <span
                       key={index}
-                      className="text-gray-700 dark:text-white/75 bg-gray-200 dark:bg-gray-800 px-2 py-1 rounded-full mr-2 mb-2 hover:bg-gray-300 dark:hover:bg-gray-700 transition-colors duration-300"
+                      className="text-zinc-700 dark:text-white/75 bg-zinc-200 dark:bg-zinc-800 px-2 py-1 rounded-full mr-2 mb-2 hover:bg-zinc-300 dark:hover:bg-zinc-700 transition-colors duration-300"
                     >
                       {technology}
                     </span>

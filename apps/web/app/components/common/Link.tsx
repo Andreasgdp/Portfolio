@@ -17,7 +17,7 @@ export const Link: FC<{ href: string; children: ReactNode }> = ({
     >
       <span>{children}</span>
       {isExternalUrl && (
-        <span className="block w-4">
+        <span className="block w-4 fill-current">
           <Icon name="external-link" />
         </span>
       )}

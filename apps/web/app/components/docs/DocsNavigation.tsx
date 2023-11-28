@@ -35,7 +35,7 @@ const NavLink: FC<{
           ? `${
               level == 0 ? 'font-medium' : 'font-normal'
             } bg-zinc-50 text-zinc-900 dark:bg-zinc-500/20 dark:text-zinc-50`
-          : `hover:bg-gray-50 dark:hover:bg-gray-900 ${
+          : `hover:bg-zinc-50 dark:hover:bg-zinc-900 ${
               level == 0
                 ? 'font-medium text-slate-600 hover:text-slate-700 dark:text-slate-300 dark:hover:text-slate-200'
                 : 'font-normal hover:text-slate-600 dark:hover:text-slate-300'
@@ -53,7 +53,9 @@ const NavLink: FC<{
           className="px-2 py-1 mr-2 shrink-0"
         >
           <span
-            className={`block w-2.5 ${collapsed ? '-rotate-90 transform' : ''}`}
+            className={`fill-current block w-2.5 ${
+              collapsed ? '-rotate-90 transform' : ''
+            }`}
           >
             <Icon name="chevron-down" />
           </span>
@@ -108,7 +110,7 @@ const Tree: FC<{ tree: TreeNode[]; level: number; activePath: string }> = ({
     <div
       className={classNames(
         'ml-3 space-y-2 pl-3',
-        level > 0 ? 'border-l border-gray-200 dark:border-gray-800' : ''
+        level > 0 ? 'border-l border-zinc-200 dark:border-zinc-800' : ''
       )}
     >
       {tree.map((treeNode, index) => (
