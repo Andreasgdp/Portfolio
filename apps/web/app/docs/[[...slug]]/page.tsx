@@ -44,11 +44,15 @@ function getSupportingProps(doc: Doc, params: any) {
   return { tree, breadcrumbs, childrenTree };
 }
 
-// export async function generateStaticParams(): Promise<Props['params'][]> {
-//   return allDocs.map((doc) => ({
-//     slug: doc?.pathSegments.map((_: PathSegment) => _.pathName).join('/'),
-//   }));
-// }
+export async function generateStaticParams(): Promise<Props['params'][]> {
+  // this is taking the path to the document (the url is based on the path within content/docs)
+  // and splitting it into an array of strings (the slug) e.g. /docs/getting-started -> ['docs', 'getting-started']
+  const params = allDocs.map((doc) => ({
+    slug: doc?.url_path.replace(/^\//, '').split('/'),
+  }));
+
+  return params;
+}
 
 export default async function PostPage({ params }: Props) {
   const pagePath = params.slug?.join('/') ?? '';
