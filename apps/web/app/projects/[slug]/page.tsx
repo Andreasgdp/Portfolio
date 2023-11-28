@@ -38,14 +38,15 @@ export default async function PostPage({ params }: Props) {
 
   return (
     <Container
+      showGradient={false}
       title={project.title + ' – Projects'}
       description={project.description}
     >
-      <div className="bg-zinc-50 min-h-screen">
+      <div className="min-h-screen">
         <Header project={project} views={views} />
         <ReportView slug={project.slug} />
 
-        <article className="px-4 py-12 mx-auto prose prose-zinc prose-quoteless">
+        <article className="px-4 py-12 mx-auto prose-quoteless prose prose-slate mb-4 shrink p-4 pb-8 prose-headings:font-semibold prose-a:font-normal prose-code:font-normal prose-code:before:content-none prose-code:after:content-none prose-hr:border-zinc-200 dark:prose-invert dark:prose-a:text-zinc-400 dark:prose-hr:border-zinc-800 md:mb-8 md:px-8">
           <Mdx code={project.body.code} />
         </article>
       </div>

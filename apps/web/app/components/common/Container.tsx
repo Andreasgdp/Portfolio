@@ -7,7 +7,11 @@ import { SearchProvider } from '../SearchContext';
 import { MainNavigation } from './MainNavigation';
 import { Footer } from './Footer';
 
-export const Container: FC<any> = ({ children, ...customMeta }) => {
+export const Container: FC<any> = ({
+  children,
+  showGradient = true,
+  ...customMeta
+}) => {
   const baseUrl = `https://www.contentlayer.dev`;
 
   const meta = {
@@ -30,7 +34,13 @@ export const Container: FC<any> = ({ children, ...customMeta }) => {
   };
 
   return (
-    <div className="dark:text-white">
+    <div
+      className={`dark:text-white ${
+        showGradient
+          ? 'bg-gradient-to-tl from-white via-zinc-100/80 to-white dark:from-black dark:via-zinc-600/20 dark:to-black'
+          : 'bg-white dark:bg-black'
+      }`}
+    >
       <Head>
         <title>{meta.title}</title>
         <meta name="robots" content="follow, index" />
@@ -53,7 +63,7 @@ export const Container: FC<any> = ({ children, ...customMeta }) => {
       </Head>
       <SearchProvider>
         <MainNavigation />
-        <div className="flex min-h-screen flex-col justify-between bg-gradient-to-tl from-white via-zinc-100/80 to-white dark:from-black dark:via-zinc-600/20 dark:to-black">
+        <div className="flex min-h-screen flex-col justify-between">
           <main
             className="relative pt-16"
             style={{ scrollPaddingTop: '150px' }}
