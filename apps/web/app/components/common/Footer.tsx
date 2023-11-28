@@ -41,7 +41,7 @@ const content = {
         { label: 'Twitter', url: 'https://twitter.com/guldberg_' },
         {
           label: 'GitHub',
-          url: 'https://github.com/andreasgdp/portfolio',
+          url: 'https://github.com/Andreasgdp',
         },
       ],
     },

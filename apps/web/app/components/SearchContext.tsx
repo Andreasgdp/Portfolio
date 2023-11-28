@@ -38,8 +38,7 @@ export const SearchProvider: FC<{ children: ReactNode }> = ({ children }) => {
         name: 'GitHub Repository',
         keywords: 'Portfolio Github Git Repository Repo Code',
         section: 'External',
-        perform: () =>
-          window.open('https://github.com/andreasgdp/portfolio', '_ blank'),
+        perform: () => window.open('https://github.com/Andreasgdp', '_ blank'),
       },
     ];
     let id = 1;

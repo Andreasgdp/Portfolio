@@ -21,7 +21,7 @@ const iconLinks: Array<{ label: string; icon: IconName; url: string }> = [
   {
     label: 'Github',
     icon: 'github',
-    url: 'https://github.com/andreasgdp/portfolio',
+    url: 'https://github.com/Andreasgdp',
   },
   {
     label: 'LinkedIn',

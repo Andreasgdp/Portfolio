@@ -7,7 +7,7 @@ import { format } from 'date-fns';
 import { Doc } from 'contentlayer/generated';
 
 const githubBranch = 'master';
-const githubBaseUrl = `https://github.com/andreasgdp/portfolio/blob/${githubBranch}/apps/web/content/`;
+const githubBaseUrl = `https://github.com/Andreasgdp/blob/${githubBranch}/apps/web/content/`;
 
 export const DocsFooter: FC<{ doc: Doc }> = ({ doc }) => {
   return (
@@ -17,7 +17,7 @@ export const DocsFooter: FC<{ doc: Doc }> = ({ doc }) => {
         <p className="m-0">
           Was this article helpful to you? <br />{' '}
           <Link
-            href="https://github.com/andreasgdp/portfolio/issues"
+            href="https://github.com/Andreasgdp/issues"
             className="inline-flex items-center space-x-1"
             target="_blank"
             rel="noreferrer"
