@@ -9,10 +9,10 @@ export const metadata: Metadata = {
     default: 'guldberg.dev',
     template: '%s | guldberg.dev',
   },
-  description: 'Co-founder of unkey.dev and founder of planetfall.io',
+  description: 'Building MomentMeal to help people cook more',
   openGraph: {
     title: 'guldberg.dev',
-    description: 'Co-founder of unkey.dev and founder of planetfall.io',
+    description: 'Building MomentMeal to help people cook more',
     url: 'https://guldberg.dev',
     siteName: 'guldberg.dev',
     images: [
