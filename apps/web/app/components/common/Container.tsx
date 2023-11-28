@@ -6,10 +6,12 @@ import { usePathname } from 'next/navigation';
 import { SearchProvider } from '../SearchContext';
 import { MainNavigation } from './MainNavigation';
 import { Footer } from './Footer';
+import classNames from 'classnames';
 
 export const Container: FC<any> = ({
   children,
   showGradient = true,
+  transparentBackground = false,
   ...customMeta
 }) => {
   const baseUrl = `https://www.contentlayer.dev`;
@@ -35,11 +37,13 @@ export const Container: FC<any> = ({
 
   return (
     <div
-      className={`dark:text-white ${
-        showGradient
+      className={classNames(
+        'dark:text-white',
+        transparentBackground ? 'bg-transparent dark:bg-transparent' : '',
+        showGradient && !transparentBackground
           ? 'bg-gradient-to-tl from-white via-zinc-100/80 to-white dark:from-black dark:via-zinc-600/20 dark:to-black'
           : 'bg-white dark:bg-black'
-      }`}
+      )}
     >
       <Head>
         <title>{meta.title}</title>

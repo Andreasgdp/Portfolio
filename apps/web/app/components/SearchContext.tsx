@@ -34,11 +34,12 @@ export const SearchProvider: FC<{ children: ReactNode }> = ({ children }) => {
         perform: () => router.push('/'),
       },
       {
-        id: '3-github',
-        name: 'GitHub Repository',
-        keywords: 'Portfolio Github Git Repository Repo Code',
+        id: '3-linkedin',
+        name: 'LinkedIn',
+        keywords: 'LinkedIn profile',
         section: 'External',
-        perform: () => window.open('https://github.com/Andreasgdp', '_ blank'),
+        perform: () =>
+          window.open('https://linkedin.com/in/Andreasgdp', '_ blank'),
       },
     ];
     let id = 1;
@@ -80,7 +81,7 @@ export const SearchProvider: FC<{ children: ReactNode }> = ({ children }) => {
   return (
     <KBarProvider actions={actions}>
       <KBarPortal>
-        <KBarPositioner className="bg-zinc-300/50 p-4 backdrop-blur backdrop-filter dark:bg-black/50">
+        <KBarPositioner className="z-50 bg-zinc-300/50 p-4 backdrop-blur backdrop-filter dark:bg-black/50">
           <KBarAnimator className="w-full max-w-xl">
             <Card>
               <div className="flex items-center space-x-4 p-4">
