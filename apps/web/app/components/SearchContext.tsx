@@ -36,7 +36,7 @@ export const SearchProvider: FC<{ children: ReactNode }> = ({ children }) => {
       {
         id: '0-contact',
         name: 'Contact',
-        keywords: 'Portfolio Home Start Index Overview Features Intro',
+        keywords: 'Contact Email Social',
         section: 'Home',
         perform: () => router.push('/contact'),
       },
