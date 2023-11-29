@@ -51,7 +51,7 @@ const content = {
         .
       </p>
       <p className="mt-2">
-        Made with 💜 by{' '}
+        Made with ❤️ by{' '}
         <Link
           href="https://linkedin.com/in/andreasgdp"
           className="hover:text-slate-700 dark:hover:text-slate-300"
