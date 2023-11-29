@@ -7,6 +7,9 @@ import Image from 'next/image';
 import Experience from './components/experience';
 import { Container } from './components/common/Container';
 
+// TODO make this light mode compatible
+// TODO also make projects and contacts page light mode compatible
+
 export default function Home() {
   return (
     <Container transparentBackground={true}>
@@ -17,12 +20,12 @@ export default function Home() {
         />
         <section
           id="landing"
-          className="flex flex-col items-center justify-center w-screen h-screen overflow-hidden bg-gradient-to-tl from-black via-zinc-600/20 to-black"
+          className="flex flex-col items-center justify-center w-screen h-screen overflow-hidden bg-gradient-to-tl from-white via-zinc-300 to-white dark:from-black dark:via-zinc-600/20 dark:to-black"
         >
           <div className="md:h-40 flex items-center justify-center">
             <div className="flex flex-col items-center justify-center w-screen ">
               <div className="hidden w-screen h-px animate-glow md:block animate-fade-left bg-gradient-to-r from-zinc-300/0 via-zinc-300/50 to-zinc-300/0" />
-              <h1 className="z-10 text-4xl text-transparent duration-1000 bg-white cursor-default text-edge-outline animate-title font-display sm:text-6xl md:text-9xl whitespace-nowrap bg-clip-text pb-1 font-bold">
+              <h1 className="z-10 text-4xl text-transparent duration-1000 bg-black dark:bg-white text-black dark:text-white cursor-default text-edge-outline animate-title font-display sm:text-6xl md:text-9xl whitespace-nowrap bg-clip-text pb-1 font-bold">
                 Guldberg
               </h1>
               <div className="hidden w-screen h-px animate-glow md:block animate-fade-right bg-gradient-to-r from-zinc-300/0 via-zinc-300/50 to-zinc-300/0" />
@@ -38,12 +41,12 @@ export default function Home() {
               height={500} // Adjust the height as per your requirement
               priority
             />
-            <h2 className="text-base sm:text-lg md:text-xl text-zinc-500 ">
+            <h2 className="text-base sm:text-lg md:text-xl dark:text-zinc-500 text-zinc-800">
               I'm building{' '}
               <Link
                 target="_blank"
                 href="https://momentmeal.com"
-                className="underline duration-500 hover:text-zinc-300"
+                className="underline duration-500 dark:hover:text-zinc-300 hover:text-zinc-500"
               >
                 momentmeal.com
               </Link>{' '}
@@ -69,12 +72,12 @@ export default function Home() {
         </section>
         <section
           id="Experience"
-          className="flex flex-col items-center justify-center w-screen min-h-screen overflow-hidden bg-gradient-to-tr from-black via-zinc-600/20 to-black"
+          className="flex flex-col items-center justify-center w-screen min-h-screen overflow-hidden bg-gradient-to-tr from-white via-zinc-300 to-white dark:from-black dark:via-zinc-600/20 dark:to-black"
         >
           <div className="!h-40 flex items-center justify-center pt-10">
             <div className="flex flex-col items-center justify-center w-screen ">
               <div className="hidden w-screen h-px animate-glow md:block animate-fade-left bg-gradient-to-r from-zinc-300/0 via-zinc-300/50 to-zinc-300/0" />
-              <h1 className="z-10 text-4xl text-transparent duration-1000 bg-white cursor-default text-edge-outline animate-title font-display sm:text-6xl md:text-9xl whitespace-nowrap bg-clip-text font-bold ">
+              <h1 className="z-10 text-4xl text-transparent duration-1000 bg-black dark:bg-white text-black dark:text-white cursor-default text-edge-outline animate-title font-display sm:text-6xl md:text-9xl whitespace-nowrap bg-clip-text font-bold ">
                 Experience
               </h1>
               <div className="hidden w-screen h-px animate-glow md:block animate-fade-right bg-gradient-to-r from-zinc-300/0 via-zinc-300/50 to-zinc-300/0" />
