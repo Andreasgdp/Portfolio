@@ -34,6 +34,13 @@ export const SearchProvider: FC<{ children: ReactNode }> = ({ children }) => {
         perform: () => router.push('/'),
       },
       {
+        id: '0-contact',
+        name: 'Contact',
+        keywords: 'Portfolio Home Start Index Overview Features Intro',
+        section: 'Home',
+        perform: () => router.push('/contact'),
+      },
+      {
         id: '3-linkedin',
         name: 'LinkedIn',
         keywords: 'LinkedIn profile',
