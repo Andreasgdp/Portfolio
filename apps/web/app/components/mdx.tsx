@@ -6,6 +6,7 @@ import { DocsCard } from './docs/DocsCard';
 import { ChevronLink as ChevronLinkComponent } from './common/ChevronLink';
 import { Link } from './common/Link';
 import { Callout } from './common/Callout';
+import Experience from './experience';
 
 function clsx(...args: any) {
   return args.filter(Boolean).join(' ');
@@ -167,6 +168,7 @@ const components = {
   Card: DocsCard,
   ChevronLink: ChevronLinkComponent,
   Callout,
+  Experience,
   Link,
 };
 

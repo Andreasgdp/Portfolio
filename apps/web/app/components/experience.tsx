@@ -1,6 +1,7 @@
 'use client';
 
 import Image from 'next/image';
+import Link from 'next/link';
 import React, { useEffect, useRef, useState } from 'react';
 import {
   VerticalTimeline,
@@ -15,7 +16,7 @@ const URIcon = () => (
     alt="Universal Robots Logo"
     width={100}
     height={100}
-    className="rounded-full"
+    className="rounded-full mt-0"
   />
 );
 
@@ -27,6 +28,7 @@ const experiencesData = [
     description: 'Developing the PolyScope X for Universal Robots',
     icon: <URIcon />,
     technologies: ['Angular', 'TypeScript', 'RxJS', 'NgRx', 'SCSS', 'Git'],
+    docsUrl: '/docs/work-experience/work-experience/Universal-Robots',
   },
   {
     date: '2023',
@@ -36,6 +38,7 @@ const experiencesData = [
       'Developing improved motion control and internal development tools for Universal Robots',
     icon: <URIcon />,
     technologies: ['C++', 'Python', 'DevOps', 'Git'],
+    docsUrl: '/docs/work-experience/work-experience/Universal-Robots',
   },
   {
     date: '2021 - 2023',
@@ -44,6 +47,7 @@ const experiencesData = [
     description: 'Developing the PolyScope X for Universal Robots',
     icon: <URIcon />,
     technologies: ['Angular', 'TypeScript', 'RxJS', 'NgRx', 'SCSS', 'Git'],
+    docsUrl: '/docs/work-experience/work-experience/Universal-Robots',
   },
 ];
 
@@ -93,9 +97,11 @@ export default function Experience() {
                 fontSize: '1.5rem',
               }}
             >
-              <h3 className="font-semibold capitalize dark:text-white">
-                {item.title}
-              </h3>
+              <Link href={item.docsUrl}>
+                <h3 className="font-semibold capitalize dark:text-white">
+                  {item.title}
+                </h3>
+              </Link>
               <p className="font-normal !mt-0 dark:text-white/80">
                 {item.location}
               </p>

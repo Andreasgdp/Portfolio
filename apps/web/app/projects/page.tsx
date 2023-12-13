@@ -7,6 +7,7 @@ import { Article } from './article';
 import { Redis } from '@upstash/redis';
 import { Eye } from 'lucide-react';
 import { Container } from '../components/common/Container';
+import Experience from '../components/experience';
 
 const redis = Redis.fromEnv();
 
