@@ -28,7 +28,7 @@ const experiencesData = [
     description: 'Developing the PolyScope X for Universal Robots',
     icon: <URIcon />,
     technologies: ['Angular', 'TypeScript', 'RxJS', 'NgRx', 'SCSS', 'Git'],
-    docsUrl: '/docs/work-experience/work-experience/Universal-Robots',
+    docsUrl: '/docs/work-experience/Universal-Robots',
   },
   {
     date: '2023',
@@ -38,7 +38,7 @@ const experiencesData = [
       'Developing improved motion control and internal development tools for Universal Robots',
     icon: <URIcon />,
     technologies: ['C++', 'Python', 'DevOps', 'Git'],
-    docsUrl: '/docs/work-experience/work-experience/Universal-Robots',
+    docsUrl: '/docs/work-experience/Universal-Robots',
   },
   {
     date: '2021 - 2023',
@@ -47,7 +47,7 @@ const experiencesData = [
     description: 'Developing the PolyScope X for Universal Robots',
     icon: <URIcon />,
     technologies: ['Angular', 'TypeScript', 'RxJS', 'NgRx', 'SCSS', 'Git'],
-    docsUrl: '/docs/work-experience/work-experience/Universal-Robots',
+    docsUrl: '/docs/work-experience/Universal-Robots',
   },
 ];
 
