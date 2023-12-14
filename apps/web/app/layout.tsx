@@ -2,7 +2,6 @@ import '../global.css';
 import { Metadata } from 'next';
 import { GeistSans } from 'geist/font/sans';
 import { GeistMono } from 'geist/font/mono';
-import { Analytics } from '@vercel/analytics/react';
 import Providers from './components/providers';
 
 export const metadata: Metadata = {
@@ -62,7 +61,6 @@ export default function RootLayout({
         <Providers attribute="class" defaultTheme="dark" enableSystem>
           {children}
         </Providers>
-        <Analytics />
       </body>
     </html>
   );
