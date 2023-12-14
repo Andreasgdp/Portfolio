@@ -8,6 +8,7 @@ import { Icon, IconName } from './Icon';
 import { Label } from './Label';
 import { Logo } from './Logo';
 import { usePathname } from 'next/navigation';
+import { ThemeToggle } from '../theme-toggle';
 
 const navLinks: Array<{ label: string; url: string }> = [
   { label: 'Projects', url: '/projects' },
@@ -133,6 +134,7 @@ export const MainNavigation = () => {
                       icon={icon}
                     />
                   ))}
+                  <ThemeToggle />
                 </div>
               </nav>
             </div>
@@ -162,6 +164,7 @@ export const MainNavigation = () => {
                 icon={icon}
               />
             ))}
+            <ThemeToggle />
           </div>
         </nav>
       </div>
