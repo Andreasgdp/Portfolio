@@ -11,7 +11,7 @@ export const DocsFooter: FC<{ doc: Doc }> = ({ doc }) => {
     <>
       <hr />
       <div className="space-y-4 text-sm sm:flex sm:justify-between sm:space-y-0">
-        <p className="m-0">
+        {/* <p className="m-0">
           Was this article helpful to you? <br />{' '}
           <Link
             href="https://github.com/Andreasgdp/issues"
@@ -24,7 +24,7 @@ export const DocsFooter: FC<{ doc: Doc }> = ({ doc }) => {
             </span>
             <span>Provide feedback</span>
           </Link>
-        </p>
+        </p> */}
         <p className="m-0 text-right">
           Last edited on {format(new Date(doc.last_edited), 'MMMM dd, yyyy')}.
           <br />
