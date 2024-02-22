@@ -1,0 +1,53 @@
+---
+global_id: a1940b14
+title: GTK Dark Theme on Ubuntu
+excerpt: Awesomewm, gtk, dark theme, ubuntu
+---
+
+# Issue
+
+When using ubuntu it can happen that the gtk theme is not correctly set to dark. This can be the case when using a window manager like `awesomewm`. This means that chrome will use light mode as the default. If you want to use dark mode you have to set the gtk theme to dark.
+
+
+# Solution
+
+This can be done like this:
+
+You'll need to touch this file for gtk3: `/etc/gtk-3.0/settings.ini`
+
+For apps using older gtk2: `/etc/gtk-2.0/gtkrc`
+
+For qt apps I suggest you to install `qt5ct` package (`sudo apt install qt5ct`).
+
+Sample of /etc/gtk-3.0/settings.ini:
+
+```
+[Settings]
+gtk-theme-name = breeze-gtk-theme
+gtk-icon-theme-name = Numix
+gtk-font-name = Roboto Regular 11
+gtk-xft-antialias = 1
+gtk-xft-hinting = 0
+gtk-xft-hintstyle = hintmedium
+gtk-recent-files-enabled = false
+gtk-enable-animations = false
+gtk-cursor-theme-name = Amiga
+gtk-decoration-layout = close,menu
+Sample of /etc/gtk-2.0/gtkrc:
+```
+
+```
+gtk-theme-name = "Xfce-smooth"
+gtk-icon-theme-name = "Numix"
+gtk-font-name = "Roboto Regular 11"
+gtk-xft-antialias = 1
+gtk-enable-animations = 0
+gtk-enable-event-sounds = 0
+gtk-enable-input-feedback-sounds = 0
+```
+
+You can uncomment to set the commented options if you like.
+
+For qt, after you install qt5ct package you can execute `qt5ct`, which will present you with a GUI app to set the qt apps theme or sync it to the gtk one.
+
+[Solution Source](https://unix.stackexchange.com/a/683855/559089)
