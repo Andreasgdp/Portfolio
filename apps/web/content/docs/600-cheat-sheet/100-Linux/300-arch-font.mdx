@@ -1,0 +1,55 @@
+---
+global_id: af0ab966
+title: Arch install font with emoji support
+excerpt: arch, font, emoji
+---
+
+The following will configure Noto font with emoji support on arch linux
+1. **Install `noto-fonts` and `noto-fonts-emoji`**
+   - `paru -S noto-fonts` and `paru -S noto-fonts-emoji`
+
+1. **Open or Create Font Configuration File:**
+
+   ```bash
+   vim ~/.config/fontconfig/fonts.conf
+   ```
+1. **Write the following content in it:**
+   ```xml
+    <?xml version='1.0'?>
+    <!DOCTYPE fontconfig SYSTEM 'fonts.dtd'>
+    <fontconfig>
+
+    <alias>
+      <family>sans-serif</family>
+      <prefer>
+      <family>Noto Sans</family>
+      <family>Noto Color Emoji</family>
+      </prefer>
+    </alias>
+
+    <alias>
+      <family>serif</family>
+      <prefer>
+      <family>Noto Serif</family>
+      <family>Noto Color Emoji</family>
+      </prefer>
+    </alias>
+
+    <alias>
+      <family>monospace</family>
+      <prefer>
+      <family>Noto Mono</family>
+      <family>Noto Color Emoji</family>
+      </prefer>
+    </alias>
+
+    </fontconfig>
+   ```
+1. **Update Font Cache:**
+   ```bash
+   fc-cache -fv
+   ```
+1. **Verify Configuration:**
+   - Open an application that uses system fonts, such as a web browser or text editor, and verify that Noto fonts are being used for various font categories and that emoji support is enabled.
+
+This cheat sheet provides a quick and easy-to-follow guide for configuring Noto fonts with emoji support on Arch Linux.
