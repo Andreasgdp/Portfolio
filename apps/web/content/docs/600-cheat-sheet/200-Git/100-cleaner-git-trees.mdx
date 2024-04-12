@@ -1,0 +1,66 @@
+---
+global_id: cd12a992
+title: Git Clean Commit History Cheat Sheet
+excerpt: Interactive rebase, git, commit history, git trees
+---
+
+## Problem:
+
+- **Merge commits**: Standard but messy
+- **Environmental impact**: Wastes time, resources, and finances
+
+## Solution:
+
+- **Interactive Rebase**: Clean up commit history before merging to main branch
+- **Benefits**: Cleaner history, easier issue identification, efficient bug finding
+
+## How to Use Interactive Rebase:
+
+1. **Start on Your Feature Branch:**
+
+   ```bash
+   git checkout -b my-feature
+   ```
+
+2. **Grab the Latest Main Branch Updates Without Switching:**
+
+   ```bash
+   git fetch origin main:main
+   ```
+
+3. **Interactive Rebase Time:**
+
+   ```bash
+   git rebase main --interactive
+   ```
+
+   - Pick and choose commits to keep or squash (`s` to squash) to clean up history while preserving changes.
+
+4. **Safely Update the Remote Branch:**
+
+   ```bash
+   git push --force-with-lease
+   ```
+
+   - Ensures no accidental overwriting of others' work.
+
+5. **Prepare to Merge:**
+
+   ```bash
+   git checkout main
+   ```
+
+6. **Merge Without Extra Commits:**
+
+   ```bash
+   git merge --ff-only
+   ```
+
+   - Keeps history straight, avoiding merge commits.
+
+7. **Push it Up:**
+   ```bash
+   git push
+   ```
+
+By integrating this process into daily workflows, Git trees remain clean and manageable.
