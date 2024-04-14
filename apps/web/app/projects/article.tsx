@@ -1,14 +1,14 @@
 import type { Project } from "@/.contentlayer/generated";
 import Link from "next/link";
-import { Eye, View } from "lucide-react";
+import { Eye } from "lucide-react";
 import { Suspense } from "react";
+import { Views } from "./views";
 
 type Props = {
   project: Project;
-  views: number;
 };
 
-export const Article: React.FC<Props> = ({ project, views }) => {
+export const Article: React.FC<Props> = ({ project }) => {
   return (
     <Link href={`/projects/${project.slug}`}>
       <article className="p-4 md:p-8">
@@ -27,9 +27,7 @@ export const Article: React.FC<Props> = ({ project, views }) => {
           <span className="text-zinc-500 text-xs  flex items-center gap-1">
             <Eye className="w-4 h-4" />{" "}
             <Suspense fallback={<p>loding...</p>}>
-              {Intl.NumberFormat("en-US", { notation: "compact" }).format(
-                views,
-              )}
+              <Views slug={project.slug} />
             </Suspense>
           </span>
         </div>
