@@ -11,10 +11,11 @@ export const Views: React.FC<Props> = async ({ slug: projectName }) => {
     ["pageviews", "projects", projectName].join(":"),
   )) as number;
 
-  // const views = 1000000;
-  // await new Promise((resolve) => setTimeout(resolve, 1000));
-
   return (
     <>{Intl.NumberFormat("en-US", { notation: "compact" }).format(views)}</>
   );
+};
+
+export const ViewLoader: React.FC = () => {
+  return <div className="loader"></div>;
 };

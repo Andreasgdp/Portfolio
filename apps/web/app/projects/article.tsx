@@ -2,7 +2,7 @@ import type { Project } from "@/.contentlayer/generated";
 import Link from "next/link";
 import { Eye } from "lucide-react";
 import { Suspense } from "react";
-import { Views } from "./views";
+import { ViewLoader, Views } from "./views";
 
 type Props = {
   project: Project;
@@ -26,7 +26,7 @@ export const Article: React.FC<Props> = ({ project }) => {
           </span>
           <span className="text-zinc-500 text-xs  flex items-center gap-1">
             <Eye className="w-4 h-4" />{" "}
-            <Suspense fallback={<p>loding...</p>}>
+            <Suspense fallback={<ViewLoader></ViewLoader>}>
               <Views slug={project.slug} />
             </Suspense>
           </span>
