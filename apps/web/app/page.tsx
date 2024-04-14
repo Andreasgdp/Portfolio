@@ -1,14 +1,11 @@
-'use client';
+"use client";
 
-import Link from 'next/link';
-import React from 'react';
-import Particles from './components/particles';
-import Image from 'next/image';
-import Experience from './components/experience';
-import { Container } from './components/common/Container';
-
-// TODO make this light mode compatible
-// TODO also make projects and contacts page light mode compatible
+import Link from "next/link";
+import React from "react";
+import Particles from "./components/particles";
+import Image from "next/image";
+import Experience from "./components/experience";
+import { Container } from "./components/common/Container";
 
 export default function Home() {
   return (
@@ -42,14 +39,14 @@ export default function Home() {
               priority
             />
             <h2 className="text-base sm:text-lg md:text-xl dark:text-zinc-500 text-zinc-800">
-              I'm building{' '}
+              I'm building{" "}
               <Link
                 target="_blank"
                 href="https://momentmeal.com"
                 className="underline duration-500 dark:hover:text-zinc-300 hover:text-zinc-500"
               >
                 momentmeal.com
-              </Link>{' '}
+              </Link>{" "}
               to help people cook more and eat better.
             </h2>
           </div>
