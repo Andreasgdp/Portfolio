@@ -7,7 +7,6 @@ import { Eye } from "lucide-react";
 import { Container } from "../components/common/Container";
 import { ViewLoader, Views } from "./views";
 
-export const revalidate = 60;
 export default async function ProjectsPage() {
   const featured = allProjects.find(
     (project) => project.slug === "momentmeal",
