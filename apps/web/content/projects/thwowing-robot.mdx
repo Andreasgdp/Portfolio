@@ -1,0 +1,14 @@
+---
+title: Throwwing Robot
+description: This project involved creating a robot system that can identify an object with machine vision, pick it up, and throw it at any spot in a target area.
+date: "2021-12-19"
+published: true
+repository: Andreasgdp/robo-throw
+imageUrl: /projects/throw.mp4
+---
+
+<div style={{ display: "flex", justifyContent: "center" }}>
+  [![](https://user-images.githubusercontent.com/39928082/200022665-8c2d359a-6334-4ccb-8d87-b789a3a441dd.gif)](https://github.com/Andreasgdp/robo-throw)
+</div>
+
+In this project, we have worked with creating a robot system that can identify an object with the use of machine vision, then pick it up and throw it at any spot in a given target area. Both the object and the target is being spotted by an RGB camera and then being processed with machine vision in C++ with the library OpenCV to find their positions. We have then made translations between the camera’s coordinate system and the table and then between the table and the robot’s coordinate system. We have made a C++ program that controls the robot and the gripper with use of the libraries UR-RTDE and Robotics library [3]. The program calculates an object trajectory with input from the camera and the program runs a simulation in URSim where every movement is tested before they are send to the robot. All this is being logged in a database in MySQL through out the program.

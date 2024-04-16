@@ -1,0 +1,14 @@
+---
+title: Drawing Robot
+description: This project used image processing to control a drawing robot. We established requirements for the robot and conducted tests to ensure compliance.
+date: "2020-12-10"
+published: true
+repository: Andreasgdp/Drawing-robot-semester-1
+imageUrl: /projects/drawing-robot-timelapse.mp4
+---
+
+<div style={{ display: "flex", justifyContent: "center" }}>
+  [![](https://user-images.githubusercontent.com/39928082/199998276-67d2aa06-8f68-43ae-b4f2-bddfe8cf1543.png)](https://github.com/Andreasgdp/Drawing-robot-semester-1)
+</div>
+
+In this project, we worked with processing and drawing images. We have for the treatment of images used Java to obtain coordinates that our drawing robot has received. We has then set up a number of requirements that our drawing robot has had to comply with. To confirm that these have been complied with, we have carried out a series of tests and benchmarks. Based on these have we made statistics and have come to the conclusion that it is generally fastest to draw with lines, if it is a black and white image, but if it's greyscale, it's faster to draw it sorted by our own sorting algorithm. We also found that complexity increases the print time for our sorted coordinates. We have achieved to draw pictures in 4 ways, draw greyscale with 6 shades, automatically pencil sharpening and simulating the drawings in Java. The processed images are sent through a TCP server to a PLC that controls the robot and can be controlled through a GUI. Our goal with the project was to draw a nice drawing as quickly as possible and this has been achieved.

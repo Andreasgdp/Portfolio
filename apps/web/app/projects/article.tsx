@@ -9,18 +9,40 @@ type Props = {
   project: Project;
 };
 
+// component to show image if type is image, and show video if type is video of the param given to the component
+const ImageOrVideo: React.FC<{ url: string }> = ({ url }) => {
+  if (url.includes("mp4")) {
+    return (
+      <video
+        className="w-full h-full object-cover"
+        autoPlay
+        loop
+        muted
+        playsInline
+        style={{ filter: "brightness(20%)" }}
+      >
+        <source src={url} type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+    );
+  }
+  return (
+    <Image
+      src={url}
+      alt="Project Image"
+      layout="fill"
+      objectFit="cover"
+      style={{ filter: "brightness(20%)" }}
+    />
+  );
+};
+
 export const Article: React.FC<Props> = ({ project }) => {
   return (
     <Link href={`/projects/${project.slug}`}>
       <article className="relative p-4 md:p-8">
         <div className="absolute inset-0">
-          <Image
-            src={project.imageUrl ?? ""}
-            alt="Profile Picture"
-            layout="fill"
-            objectFit="cover"
-            style={{ filter: "brightness(20%)" }} // Darken the image by 10%
-          />
+          <ImageOrVideo url={project.imageUrl ?? ""} />
         </div>
         <div className="relative z-10">
           <div className="flex justify-between gap-2 items-center">
