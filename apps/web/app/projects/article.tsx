@@ -29,7 +29,7 @@ export const ImageOrVideo: React.FC<{ url: string }> = ({ url }) => {
   return (
     <Image
       src={url}
-      alt="Project Image"
+      alt=""
       layout="fill"
       objectFit="cover"
       style={{ filter: "brightness(20%)" }}
