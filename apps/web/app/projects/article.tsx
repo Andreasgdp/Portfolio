@@ -10,7 +10,7 @@ type Props = {
 };
 
 // component to show image if type is image, and show video if type is video of the param given to the component
-const ImageOrVideo: React.FC<{ url: string }> = ({ url }) => {
+export const ImageOrVideo: React.FC<{ url: string }> = ({ url }) => {
   if (url.includes("mp4")) {
     return (
       <video
