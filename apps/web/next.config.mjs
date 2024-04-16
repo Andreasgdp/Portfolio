@@ -10,6 +10,7 @@ const nextConfig = {
     domains: [
       "avatars.githubusercontent.com",
       "user-images.githubusercontent.com",
+      "momentmeal.com",
     ],
   },
 };

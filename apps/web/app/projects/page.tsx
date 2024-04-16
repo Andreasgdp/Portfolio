@@ -52,7 +52,7 @@ export default async function ProjectsPage() {
           <div className="w-full h-px bg-zinc-800" />
 
           <div className="grid grid-cols-1 gap-8 mx-auto lg:grid-cols-2 ">
-            <Card>
+            <Card imageUrl={featured.imageUrl ?? ""}>
               <Link href={`/projects/${featured.slug}`}>
                 <article className="relative w-full h-full p-4 md:p-8">
                   <div className="flex items-center justify-between gap-2">
@@ -95,7 +95,7 @@ export default async function ProjectsPage() {
 
             <div className="flex flex-col w-full gap-8 mx-auto border-t border-zinc-900/10 lg:mx-0 lg:border-t-0 ">
               {[top2, top3].map((project) => (
-                <Card key={project.slug}>
+                <Card imageUrl={project.imageUrl ?? ""} key={project.slug}>
                   <Article project={project} />
                 </Card>
               ))}
@@ -108,7 +108,7 @@ export default async function ProjectsPage() {
               {sorted
                 .filter((_, i) => i % 3 === 0)
                 .map((project) => (
-                  <Card key={project.slug}>
+                  <Card imageUrl={project.imageUrl ?? ""} key={project.slug}>
                     <Article project={project} />
                   </Card>
                 ))}
@@ -117,7 +117,7 @@ export default async function ProjectsPage() {
               {sorted
                 .filter((_, i) => i % 3 === 1)
                 .map((project) => (
-                  <Card key={project.slug}>
+                  <Card imageUrl={project.imageUrl ?? ""} key={project.slug}>
                     <Article project={project} />
                   </Card>
                 ))}
@@ -126,7 +126,7 @@ export default async function ProjectsPage() {
               {sorted
                 .filter((_, i) => i % 3 === 2)
                 .map((project) => (
-                  <Card key={project.slug}>
+                  <Card imageUrl={project.imageUrl ?? ""} key={project.slug}>
                     <Article project={project} />
                   </Card>
                 ))}
