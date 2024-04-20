@@ -3,7 +3,6 @@
 import Link from "next/link";
 import React from "react";
 import Particles from "./components/particles";
-import Image from "next/image";
 import Experience from "./components/experience";
 import { Container } from "./components/common/Container";
 
