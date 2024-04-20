@@ -1,0 +1,41 @@
+---
+global_id: bc898bee
+title: Merge Conflict Magic - Git Rerere Cheat Sheet
+excerpt: git rerere, git rebase, merge conflict resolution, git rerere enabled, git rerere storage, git rerere usage tips
+---
+
+## What is `git rerere`?
+
+- **Stands for**: "Reuse Recorded Resolution"
+- **Function**: Automates resolution of merge conflicts by remembering past resolutions.
+- **Activation**:
+  ```bash
+  git config --global rerere.enabled true
+  ```
+  - Enables `rerere` across all repositories.
+  - Use without `--global` flag for specific repositories.
+
+## Benefits of `git rerere` in Rebasing:
+
+- **Simplifies Conflict Resolution**: Automatically resolves recurring conflicts from previous rebases.
+- **Efficiency**: Reduces time and complexity in resolving conflicts during rebase.
+
+## Under The Hood:
+
+- **Storage**:
+  - Stored under `.git/rr-cache` directory.
+  - Three files for each conflict:
+    1. **Preimage (pre)**: State of content before conflict.
+    2. **Postimage (post)**: State of content after conflict resolution.
+    3. **Status**: Metadata including unique conflict identifiers.
+
+## Usage Tips:
+
+- **Workflow Efficiency**: Useful for long-lived branches and team collaboration.
+- **Caution**:
+  - Be cautious when using `rerere`; can resolve conflicts in unexpected ways. If this happens, might need to delete irrelevant recordings.
+- **Clean Commit Tree**: Small, traceable changes lead to small, easily fixable conflicts.
+
+By mastering `git rerere`, you can streamline complex rebase operations and improve workflow efficiency.
+
+[Source](https://newsletter.omerxx.com/)
