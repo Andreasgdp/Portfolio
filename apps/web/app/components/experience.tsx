@@ -1,13 +1,13 @@
-'use client';
+"use client";
 
-import Image from 'next/image';
-import Link from 'next/link';
-import React, { useEffect, useRef, useState } from 'react';
+import Image from "next/image";
+import Link from "next/link";
+import React, { useEffect, useRef, useState } from "react";
 import {
   VerticalTimeline,
   VerticalTimelineElement,
-} from 'react-vertical-timeline-component';
-import 'react-vertical-timeline-component/style.min.css';
+} from "react-vertical-timeline-component";
+import "react-vertical-timeline-component/style.min.css";
 
 // universal robots icon
 const URIcon = () => (
@@ -22,32 +22,51 @@ const URIcon = () => (
 
 const experiencesData = [
   {
-    date: '2023 - Present',
-    title: 'Student Worker - Software Engineer',
-    location: 'Odense, Denmark',
-    description: 'Developing the PolyScope X for Universal Robots',
+    date: "2024 - Present",
+    title: "Software Engineer",
+    location: "Odense, Denmark",
+    description: "Developing tools for Universal Robots",
     icon: <URIcon />,
-    technologies: ['Angular', 'TypeScript', 'RxJS', 'NgRx', 'SCSS', 'Git'],
-    docsUrl: '/docs/work-experience/Universal-Robots',
+    technologies: [
+      "Angular",
+      "TypeScript",
+      "C#",
+      ".NET",
+      "Azure",
+      "RxJS",
+      "NgRx",
+      "SCSS",
+      "Git",
+    ],
+    docsUrl: "/docs/work-experience/Universal-Robots",
   },
   {
-    date: '2023',
-    title: 'Engineering Intern - Control Systems',
-    location: 'Odense, Denmark',
+    date: "2023 - 2024",
+    title: "Student Worker - Software Engineer",
+    location: "Odense, Denmark",
+    description: "Developing the PolyScope X for Universal Robots",
+    icon: <URIcon />,
+    technologies: ["Angular", "TypeScript", "RxJS", "NgRx", "SCSS", "Git"],
+    docsUrl: "/docs/work-experience/Universal-Robots",
+  },
+  {
+    date: "2023",
+    title: "Engineering Intern - Control Systems",
+    location: "Odense, Denmark",
     description:
-      'Developing improved motion control and internal development tools for Universal Robots',
+      "Developing improved motion control and internal development tools for Universal Robots",
     icon: <URIcon />,
-    technologies: ['C++', 'Python', 'DevOps', 'Git'],
-    docsUrl: '/docs/work-experience/Universal-Robots',
+    technologies: ["C++", "Python", "DevOps", "Git"],
+    docsUrl: "/docs/work-experience/Universal-Robots",
   },
   {
-    date: '2021 - 2023',
-    title: 'Student Worker - Software Engineer',
-    location: 'Odense, Denmark',
-    description: 'Developing the PolyScope X for Universal Robots',
+    date: "2021 - 2023",
+    title: "Student Worker - Software Engineer",
+    location: "Odense, Denmark",
+    description: "Developing the PolyScope X for Universal Robots",
     icon: <URIcon />,
-    technologies: ['Angular', 'TypeScript', 'RxJS', 'NgRx', 'SCSS', 'Git'],
-    docsUrl: '/docs/work-experience/Universal-Robots',
+    technologies: ["Angular", "TypeScript", "RxJS", "NgRx", "SCSS", "Git"],
+    docsUrl: "/docs/work-experience/Universal-Robots",
   },
 ];
 
@@ -80,21 +99,21 @@ export default function Experience() {
             <VerticalTimelineElement
               visible={isVisible}
               contentStyle={{
-                background: 'rgba(255, 255, 255, 0.05)',
-                boxShadow: 'none',
-                border: '1px solid rgba(0, 0, 0, 0.05)',
-                textAlign: 'left',
-                padding: '1.3rem 2rem',
+                background: "rgba(255, 255, 255, 0.05)",
+                boxShadow: "none",
+                border: "1px solid rgba(0, 0, 0, 0.05)",
+                textAlign: "left",
+                padding: "1.3rem 2rem",
               }}
               contentArrowStyle={{
-                borderRight: '0.4rem solid rgba(255, 255, 255, 0.5)',
+                borderRight: "0.4rem solid rgba(255, 255, 255, 0.5)",
               }}
               date={item.date}
               dateClassName="text-zinc-700 dark:text-white/75"
               icon={item.icon}
               iconStyle={{
-                background: 'rgba(255, 255, 255, 0.15)',
-                fontSize: '1.5rem',
+                background: "rgba(255, 255, 255, 0.15)",
+                fontSize: "1.5rem",
               }}
             >
               <Link href={item.docsUrl}>
