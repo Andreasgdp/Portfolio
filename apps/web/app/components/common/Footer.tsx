@@ -1,17 +1,17 @@
-import Link from 'next/link';
-import { FC } from 'react';
-import { Logo } from './Logo';
-import { Icon } from './Icon';
+import Link from "next/link";
+import { FC } from "react";
+import { Logo } from "./Logo";
+import { Icon } from "./Icon";
 
 const isExternalUrl = (link: string): boolean => {
-  return !link.startsWith('/');
+  return !link.startsWith("/");
 };
 
 const content = {
   note: (
     <>
       <p>
-        This website is built using{' '}
+        This website is built using{" "}
         <Link
           href="https://nextjs.org/"
           className="hover:text-slate-700 dark:hover:text-slate-300"
@@ -39,7 +39,7 @@ const content = {
         >
           Contentlayer
         </Link>
-        , and is hosted on{' '}
+        , and is hosted on{" "}
         <Link
           href="https://vercel.com/"
           className="hover:text-slate-700 dark:hover:text-slate-300"
@@ -51,7 +51,7 @@ const content = {
         .
       </p>
       <p className="mt-2">
-        Made with ❤️ by{' '}
+        Made with ❤️ by{" "}
         <Link
           href="https://linkedin.com/in/andreasgdp"
           className="hover:text-slate-700 dark:hover:text-slate-300"
@@ -65,22 +65,23 @@ const content = {
   ),
   menus: [
     {
-      title: 'Docs',
+      title: "Docs",
       elements: [
-        { label: 'Bio', url: '/docs/bio' },
-        { label: 'Education', url: '/docs/education-honor-award/education' },
-        { label: 'Experience', url: '/docs/work-experience' },
+        { label: "Bio", url: "/docs/bio" },
+        { label: "Education", url: "/docs/education-honor-award/education" },
+        { label: "Experience", url: "/docs/work-experience" },
+        { label: "Cheat Sheet", url: "/docs/cheat-sheet" },
       ],
     },
 
     {
-      title: 'Community',
+      title: "Community",
       elements: [
-        { label: 'LinkedIn', url: 'https://linkedin.com/in/andreasgdp' },
-        { label: 'Twitter', url: 'https://twitter.com/guldberg_' },
+        { label: "LinkedIn", url: "https://linkedin.com/in/andreasgdp" },
+        { label: "Twitter", url: "https://twitter.com/guldberg_" },
         {
-          label: 'GitHub',
-          url: 'https://github.com/Andreasgdp',
+          label: "GitHub",
+          url: "https://github.com/Andreasgdp",
         },
       ],
     },
@@ -115,7 +116,7 @@ export const Footer: FC = () => {
                     <Link
                       href={url}
                       className="inline-flex items-center space-x-1 text-slate-500 hover:text-slate-700 dark:text-slate-400 dark:hover:text-slate-300"
-                      target={isExternalUrl(url) ? '_blank' : undefined}
+                      target={isExternalUrl(url) ? "_blank" : undefined}
                     >
                       <span>{label}</span>
                       {isExternalUrl(url) && (
