@@ -30,14 +30,6 @@ export default function Home() {
           </div>
 
           <div className="my-10 text-center animate-fade-in px-4">
-            <Image
-              src="/profile-pic.png"
-              alt="Profile Image"
-              className="w-1/2 sm:w-3/5 md:w-2/3 h-auto mx-auto animate-fade-in mb-10 duration-1000 bg-transparent"
-              width={500} // Adjust the width as per your requirement
-              height={500} // Adjust the height as per your requirement
-              priority
-            />
             <h2 className="text-base sm:text-lg md:text-xl dark:text-zinc-500 text-zinc-800">
               I'm building{" "}
               <Link
