@@ -14,7 +14,8 @@ export const urlFromFilePath = (doc: DocumentGen): string => {
     .split("/")
     .map((segment) => segment.replace(/^\d\d\d\-/, ""))
     .join("/");
-  return urlPath;
+
+  return urlPath.toLowerCase();
 };
 
 export const getLastEditedDate = async (doc: DocumentGen): Promise<Date> => {
