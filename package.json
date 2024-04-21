@@ -9,7 +9,10 @@
     "generate-page-ids": "cd apps/web/ && node scripts/generate-page-ids.mjs"
   },
   "devDependencies": {
+    "@turbo/gen": "^1.10.12",
+    "@types/fs-extra": "^11.0.4",
     "eslint": "^8.48.0",
+    "fs-extra": "^11.2.0",
     "prettier": "^3.0.3",
     "simple-git": "^3.24.0",
     "tsconfig": "workspace:*",
