@@ -40,7 +40,6 @@ export default function generator(plop: PlopTypes.NodePlopAPI): void {
       const dirName = data.type.toLowerCase().replace(/\s/g, "-");
       const fileName = data.name.toLowerCase().replace(/\s/g, "-");
 
-      // Check if the directory exists
       const dirs = fs.readdirSync(path.resolve(__dirname, RootDir));
       let dirExists = false;
       let dirNumber = -1;
@@ -56,7 +55,6 @@ export default function generator(plop: PlopTypes.NodePlopAPI): void {
       const actions = [];
 
       if (dirExists) {
-        // Get the number for the file
         const files = fs.readdirSync(
           path.resolve(__dirname, `${RootDir}${dirNumber}-${dirName}`),
         );
@@ -68,8 +66,6 @@ export default function generator(plop: PlopTypes.NodePlopAPI): void {
             tmpFileNumber = fileNumber;
           }
         });
-
-        // Increment the file number
         fileNumber = tmpFileNumber + 1;
 
         actions.push({
@@ -80,7 +76,7 @@ export default function generator(plop: PlopTypes.NodePlopAPI): void {
         return actions;
       }
 
-      // Generate the number for the directory and the file
+      // Generate the number for the directory
       let tmpDirNumber = -1;
       dirs.forEach((file: string) => {
         const dirNumber = parseInt(file.split("-")[0]);
@@ -88,9 +84,8 @@ export default function generator(plop: PlopTypes.NodePlopAPI): void {
           tmpDirNumber = dirNumber;
         }
       });
-
-      // Increment the directory number
       dirNumber = tmpDirNumber + 1;
+
       fileNumber = 100;
 
       actions.push({
