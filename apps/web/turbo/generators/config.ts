@@ -12,17 +12,18 @@ export default function generator(plop: PlopTypes.NodePlopAPI): void {
       {
         type: "input",
         name: "type",
-        message: "What is the type of the cheat sheet?",
+        message: "Type of group for the cheat sheet (e.g. git, linux, etc):",
       },
       {
         type: "input",
         name: "name",
-        message: "What is the name of the cheat sheet?",
+        message:
+          "Name of the cheat sheet (e.g. git commit, linux commands, etc):",
       },
       {
         type: "input",
         name: "title",
-        message: "What is the title of the cheat sheet?",
+        message: "Title of the cheat sheet:",
       },
       {
         type: "input",
