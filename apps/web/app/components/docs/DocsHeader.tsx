@@ -1,32 +1,36 @@
-'use client';
+"use client";
 
-import { FC, Fragment, useState, useEffect } from 'react';
-import { TreeNode } from 'types/TreeNode';
-import Link from 'next/link';
-import { DocsNavigation } from './DocsNavigation';
-import { Icon } from '../common/Icon';
-import { usePathname } from 'next/navigation';
+import { FC, Fragment, useState, useEffect } from "react";
+import { TreeNode } from "types/TreeNode";
+import Link from "next/link";
+import { DocsNavigation } from "./DocsNavigation";
+import { Icon } from "../common/Icon";
+import { usePathname } from "next/navigation";
+import { CopyUrlBtn } from "./DocsShareBtn";
 
 export const DocsHeader: FC<{
   tree: TreeNode[];
   breadcrumbs: any[];
   title: string;
-}> = ({ tree, breadcrumbs, title }) => {
+  globalId: string;
+}> = ({ tree, breadcrumbs, title, globalId }) => {
   const [open, setOpen] = useState<boolean>(false);
   const [top, setTop] = useState<boolean>(true);
 
   useEffect(() => {
     const handleScroll = () => setTop(window.scrollY <= 30);
     handleScroll();
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
     return () => {
-      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener("scroll", handleScroll);
     };
   }, []);
 
   useEffect(() => {
     setOpen(false);
   }, [usePathname]);
+
+  const url = `${window.location.origin}/docs/${globalId}`;
 
   return (
     <>
@@ -51,10 +55,13 @@ export const DocsHeader: FC<{
               </Fragment>
             ))}
           </ul>
-          <h1 className="sr-only text-2xl font-semibold text-slate-800 dark:text-slate-200 md:text-3xl lg:not-sr-only lg:text-4xl">
-            {title}
-          </h1>
-          <div className="lg:hidden">
+          <div className="relative flex items-center sr-only lg:not-sr-only">
+            <h1 className="sr-only text-2xl font-semibold text-slate-800 dark:text-slate-200 md:text-3xl lg:not-sr-only lg:text-4xl">
+              {title}
+            </h1>
+            <CopyUrlBtn url={url} />
+          </div>
+          <div className="relative flex items-center lg:hidden">
             <button
               aria-label="Show docs navigation"
               onClick={() => setOpen(true)}
@@ -65,6 +72,7 @@ export const DocsHeader: FC<{
               </span>
               <span className="inline-block flex-shrink">{title}</span>
             </button>
+            <CopyUrlBtn url={url} />
           </div>
         </div>
       </header>
@@ -94,7 +102,7 @@ export const DocsHeader: FC<{
       )}
       <div
         className={`fixed top-16 z-10 hidden h-16 w-full border-b border-zinc-200 bg-white bg-opacity-90 backdrop-blur backdrop-filter transition-opacity duration-200 dark:border-zinc-800 dark:bg-black lg:block ${
-          top ? 'opacity-0' : 'opacity-100'
+          top ? "opacity-0" : "opacity-100"
         }`}
       >
         <ul className="flex h-full items-center space-x-2 px-16 text-sm">
