@@ -1,6 +1,7 @@
+import * as fs from 'node:fs/promises';
 import path from 'node:path';
 import type { DocumentGen } from 'contentlayer/core';
-import { CleanOptions, simpleGit, SimpleGit } from 'simple-git';
+import { simpleGit, SimpleGit } from 'simple-git';
 
 export const contentDirPath = 'content';
 
@@ -20,12 +21,18 @@ export const urlFromFilePath = (doc: DocumentGen): string => {
 
 export const getLastEditedDate = async (doc: DocumentGen): Promise<Date> => {
   const sourceFilePath = path.join(contentDirPath, doc._raw.sourceFilePath);
-  const git: SimpleGit = simpleGit().clean(CleanOptions.FORCE);
-  const lastCommit = await git.log({ file: sourceFilePath });
+  try {
+    const git: SimpleGit = simpleGit();
+    const lastCommit = await git.log({ file: sourceFilePath });
 
-  if (lastCommit.latest === null) {
-    return new Date();
+    if (lastCommit.latest === null || lastCommit.latest.date === null) {
+      throw new Error('No commit found');
+    }
+
+    return new Date(lastCommit.latest.date);
+  } catch (error) {
+    console.error(error);
   }
-
-  return new Date(lastCommit.latest.date);
+  const stats = await fs.stat(path.join(sourceFilePath));
+  return stats.mtime;
 };
