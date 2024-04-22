@@ -1,20 +1,23 @@
-'use client';
+"use client";
 
-import { FC } from 'react';
-import Link from 'next/link';
-import { Icon } from '../common/Icon';
-import { format } from 'date-fns';
-import { Doc } from 'contentlayer/generated';
+import { FC } from "react";
+import Link from "next/link";
+import { Icon } from "../common/Icon";
+import { format } from "date-fns";
+import { Doc } from "contentlayer/generated";
+
+const githubBranch = "master";
+const githubBaseUrl = `https://github.com/Andreasgdp/Portfolio/blob/${githubBranch}/apps/web/content/`;
 
 export const DocsFooter: FC<{ doc: Doc }> = ({ doc }) => {
   return (
     <>
       <hr />
       <div className="space-y-4 text-sm sm:flex sm:justify-between sm:space-y-0">
-        {/* <p className="m-0">
-          Was this article helpful to you? <br />{' '}
+        <p className="m-0">
+          Was this document helpful to you? <br />{" "}
           <Link
-            href="https://github.com/Andreasgdp/issues"
+            href="https://github.com/Andreasgdp/Portfolio/issues"
             className="inline-flex items-center space-x-1"
             target="_blank"
             rel="noreferrer"
@@ -24,10 +27,21 @@ export const DocsFooter: FC<{ doc: Doc }> = ({ doc }) => {
             </span>
             <span>Provide feedback</span>
           </Link>
-        </p> */}
+        </p>
         <p className="m-0 text-right">
-          Last edited on {format(new Date(doc.last_edited), 'MMMM dd, yyyy')}.
+          Last edited on {format(new Date(doc.last_edited), "MMMM dd, yyyy")}.
           <br />
+          <Link
+            href={githubBaseUrl + doc._raw.sourceFilePath}
+            className="inline-flex items-center space-x-1"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <span className="inline-block w-4">
+              <Icon name="github" />
+            </span>
+            <span>Edit this page</span>
+          </Link>
         </p>
       </div>
     </>
