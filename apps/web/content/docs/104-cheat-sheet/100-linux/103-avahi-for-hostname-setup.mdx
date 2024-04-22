@@ -1,0 +1,56 @@
+---
+global_id: a889fe30
+title: Avahi for Hostname Setup
+excerpt: Avahi, hostname, setup, Arch Linux, ssh
+---
+
+## Overview:
+
+Avahi is a free Zero-configuration networking (zeroconf) implementation, including a system for multicast DNS/DNS-SD service discovery. It allows programs to publish and discover services and hosts running on a local network with no specific configuration. For example you can plug into a network and instantly find printers to print to, files to look at and people to talk to. It is licensed under the GNU Lesser General Public License (LGPL).
+
+## Installation Steps:
+
+1. **Install Required Packages**:
+
+   ```bash
+   $ pacman -S avahi nss-mdns gtk3 python-dbus python-gobject
+   ```
+
+2. **Enable Avahi Daemon**:
+
+   ```bash
+   $ systemctl enable avahi-daemon.service
+   ```
+
+3. **Start DBus & Avahi Daemons**:
+
+   ```bash
+   $ systemctl start dbus.service
+   $ systemctl start avahi-daemon.service
+   ```
+
+4. **Update nss-mdns Configuration**:
+   - Edit `/etc/nsswitch.conf`
+   - Change the hosts line to:
+     ```
+     hosts: ... mdns4_minimal [NOTFOUND=return] resolve [!UNAVAIL=return] dns ... mdns4
+     ```
+
+## Utilities & Examples:
+
+- **Avahi Utilities**:
+  - `avahi-browse`, `avahi-discover`, `avahi-resolve`
+- **Avahi Zeroconf Browser Utilities**:
+  - `bssh`, `bvnc` for SSH & VNC Servers
+
+### Examples:
+
+```bash
+$ bssh
+$ avahi-browse --all --ignore-local --resolve --terminate
+$ avahi-resolve -n device-hostname.local
+$ ssh user@device-hostname.local
+```
+
+[Source](https://www.brainxploit.com/how-to-set-up-avahi-on-arch-linux/)
+[Arch Wiki](https://wiki.archlinux.org/index.php/Avahi)
