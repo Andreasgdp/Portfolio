@@ -26,3 +26,5 @@ pnpm run dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 The documentation page is located at [http://localhost:3000/docs](http://localhost:3000/docs).
+
+hello world
