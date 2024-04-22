@@ -30,7 +30,10 @@ export const DocsHeader: FC<{
     setOpen(false);
   }, [usePathname]);
 
-  const url = `${window.location.origin}/docs/${globalId}`;
+  const url =
+    typeof window !== 'undefined'
+      ? `${window.location.origin}/docs/${globalId}`
+      : '';
 
   return (
     <>
