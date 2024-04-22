@@ -23,12 +23,12 @@ export default function generator(plop: PlopTypes.NodePlopAPI): void {
       {
         type: "input",
         name: "title",
-        message: "Title of the cheat sheet:",
+        message: "Title of the cheat sheet (default is the name):",
       },
       {
         type: "input",
         name: "excerpt",
-        message: "Short summary of the cheat sheet:",
+        message: "Short summary of the cheat sheet (default is the title):",
       },
     ],
     actions: function (data) {
@@ -36,7 +36,16 @@ export default function generator(plop: PlopTypes.NodePlopAPI): void {
         throw new Error("Name and type are required");
       }
 
-      const RootDir = "../../content/docs/500-cheat-sheet/";
+      data.title = data.title || data.name;
+      data.excerpt = data.excerpt || data.title;
+
+      var titleCase = require("titlecase");
+      data.name = titleCase(data.name);
+      data.type = titleCase(data.type);
+      data.title = titleCase(data.title);
+      data.excerpt = titleCase(data.excerpt);
+
+      const RootDir = "../../content/docs/104-cheat-sheet/";
       // ensure both dirName and fileName are lowercase and have no spaces should be "kebab-case"
       const dirName = data.type.toLowerCase().replace(/\s/g, "-");
       const fileName = data.name.toLowerCase().replace(/\s/g, "-");
@@ -71,7 +80,7 @@ export default function generator(plop: PlopTypes.NodePlopAPI): void {
 
         actions.push({
           type: "add",
-          path: `content/docs/500-cheat-sheet/${dirNumber}-${dirName}/${fileNumber}-${fileName}.mdx`,
+          path: `content/docs/104-cheat-sheet/${dirNumber}-${dirName}/${fileNumber}-${fileName}.mdx`,
           templateFile: "templates/doc.hbs",
         });
         return actions;
@@ -91,14 +100,14 @@ export default function generator(plop: PlopTypes.NodePlopAPI): void {
 
       actions.push({
         type: "add",
-        path: `content/docs/500-cheat-sheet/${dirNumber}-${dirName}/${fileNumber}-${fileName}.mdx`,
+        path: `content/docs/104-cheat-sheet/${dirNumber}-${dirName}/${fileNumber}-${fileName}.mdx`,
         templateFile: "templates/doc.hbs",
       });
 
       // Create the index.mdx file
       actions.push({
         type: "add",
-        path: `content/docs/500-cheat-sheet/${dirNumber}-${dirName}/index.mdx`,
+        path: `content/docs/104-cheat-sheet/${dirNumber}-${dirName}/index.mdx`,
         templateFile: "templates/index.hbs",
       });
 
