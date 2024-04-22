@@ -91,7 +91,7 @@ export default async function PostPage({ params }: Props) {
         const segments = _.pathSegments
           .map((_: PathSegment) => _.pathName)
           .join('/')
-          .replace(new RegExp(`\-${_.global_id}$`, 'g'), ''); // Remove global content ID from url
+          .replace(new RegExp(`\\-${_.global_id}$`, 'g'), ''); // Remove global content ID from url
         return segments === pagePath;
       });
       // If doc exists, but global content ID is missing in url, redirect to url
