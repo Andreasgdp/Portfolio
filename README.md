@@ -1,3 +1,5 @@
+[![CodeQL](https://github.com/Andreasgdp/Portfolio/actions/workflows/github-code-scanning/codeql/badge.svg)](https://github.com/Andreasgdp/Portfolio/actions/workflows/github-code-scanning/codeql)
+
 # Guldberg.dev - Portfolio Website
 
 This is my portfolio website, built with [Next.js](https://nextjs.org/) and [Tailwind CSS](https://tailwindcss.com/).
