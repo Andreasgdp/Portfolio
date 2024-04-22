@@ -1,24 +1,23 @@
-import { FC, ReactNode, useMemo } from 'react';
-import { useRouter } from 'next/navigation';
-
-import {
-  KBarProvider,
-  KBarPortal,
-  KBarPositioner,
-  KBarSearch,
-  KBarAnimator,
-  KBarResults,
-  useMatches,
-  Action,
-} from 'kbar';
-import { TreeNode } from 'types/TreeNode';
-import { Card } from './common/Card';
-import { Icon } from './common/Icon';
-import { Label } from './common/Label';
-import { buildDocsTree } from 'util/build-docs-tree';
 // import { allDocs, allPosts, Post } from 'contentlayer/generated';
 import { allDocs, allProjects } from 'contentlayer/generated';
 import { format } from 'date-fns';
+import {
+  Action,
+  KBarAnimator,
+  KBarPortal,
+  KBarPositioner,
+  KBarProvider,
+  KBarResults,
+  KBarSearch,
+  useMatches,
+} from 'kbar';
+import { useRouter } from 'next/navigation';
+import { FC, ReactNode, useMemo } from 'react';
+import { TreeNode } from 'types/TreeNode';
+import { buildDocsTree } from 'util/build-docs-tree';
+import { Card } from './common/Card';
+import { Icon } from './common/Icon';
+import { Label } from './common/Label';
 
 export const SearchProvider: FC<{ children: ReactNode }> = ({ children }) => {
   const router = useRouter();
@@ -119,7 +118,7 @@ const RenderResults = () => {
           <div>
             {typeof item === 'string' ? (
               <div className="pt-3">
-                <div className="block border-t border-zinc-100 px-4 pt-6 pb-2 text-xs font-semibold uppercase text-slate-400 dark:border-zinc-800 dark:text-slate-500">
+                <div className="block border-t border-zinc-100 px-4 pb-2 pt-6 text-xs font-semibold uppercase text-slate-400 dark:border-zinc-800 dark:text-slate-500">
                   {item}
                 </div>
               </div>

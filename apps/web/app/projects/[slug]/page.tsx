@@ -1,11 +1,11 @@
-import { notFound } from 'next/navigation';
-import { allProjects } from 'contentlayer/generated';
 import { Mdx } from '@/app/components/mdx';
+import { allProjects } from 'contentlayer/generated';
+import { notFound } from 'next/navigation';
 import { Header } from './header';
 import './mdx.css';
-import { ReportView } from './view';
-import { Redis } from '@upstash/redis';
 import { Container } from '@/app/components/common/Container';
+import { Redis } from '@upstash/redis';
+import { ReportView } from './view';
 
 export const revalidate = 60;
 
@@ -46,7 +46,7 @@ export default async function PostPage({ params }: Props) {
         <Header project={project} views={views} />
         <ReportView slug={project.slug} />
 
-        <article className="px-4 py-12 mx-auto prose-quoteless prose prose-slate mb-4 shrink p-4 pb-8 prose-headings:font-semibold prose-a:font-normal prose-code:font-normal prose-code:before:content-none prose-code:after:content-none prose-hr:border-zinc-200 dark:prose-invert dark:prose-a:text-zinc-400 dark:prose-hr:border-zinc-800 md:mb-8 md:px-8">
+        <article className="prose-quoteless prose prose-slate prose-headings:font-semibold prose-a:font-normal prose-code:font-normal prose-code:before:content-none prose-code:after:content-none prose-hr:border-zinc-200 dark:prose-invert dark:prose-a:text-zinc-400 dark:prose-hr:border-zinc-800 mx-auto mb-4 shrink p-4 px-4 py-12 pb-8 md:mb-8 md:px-8">
           <Mdx code={project.body.code} />
         </article>
       </div>

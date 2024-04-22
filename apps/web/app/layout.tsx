@@ -1,7 +1,7 @@
 import '../global.css';
-import { Metadata } from 'next';
-import { GeistSans } from 'geist/font/sans';
 import { GeistMono } from 'geist/font/mono';
+import { GeistSans } from 'geist/font/sans';
+import { Metadata } from 'next';
 import Providers from './components/providers';
 
 export const metadata: Metadata = {

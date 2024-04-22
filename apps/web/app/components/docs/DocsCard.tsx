@@ -1,6 +1,6 @@
+import { ChevronLink } from '../common/ChevronLink';
 import { Icon, IconName } from '../common/Icon';
 import { Label } from '../common/Label';
-import { ChevronLink } from '../common/ChevronLink';
 
 export const DocsCard: React.FC<
   React.PropsWithChildren<{
@@ -21,7 +21,7 @@ export const DocsCard: React.FC<
       >
         {icon && (
           <div className="-mt-10 mb-4 block w-12 rounded-full bg-white dark:bg-black">
-            <div className="fill-current h-12 w-12 rounded-full border border-zinc-200 bg-zinc-100 p-2.5 text-zinc-600 dark:border-zinc-900 dark:bg-zinc-900/50 dark:text-zinc-500">
+            <div className="h-12 w-12 rounded-full border border-zinc-200 bg-zinc-100 fill-current p-2.5 text-zinc-600 dark:border-zinc-900 dark:bg-zinc-900/50 dark:text-zinc-500">
               <Icon name={icon} />
             </div>
           </div>

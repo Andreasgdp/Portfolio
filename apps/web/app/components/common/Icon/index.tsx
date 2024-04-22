@@ -1,12 +1,11 @@
 import { FC } from 'react';
-
 import { ApiIcon } from './API';
 import { BarsIcon } from './Bars';
 import { BrokenLinkIcon } from './BrokenLink';
 import { CalendarIcon } from './Calendar';
+import { CheckIcon } from './Check';
 import { CheckCircleIcon } from './CheckCircle';
 import { CheckCircleOutlineIcon } from './CheckCircleOutline';
-import { CheckIcon } from './Check';
 import { ChevronDownIcon } from './ChevronDown';
 import { ChevronLeftIcon } from './ChevronLeft';
 import { ChevronRightIcon } from './ChevronRight';
@@ -27,9 +26,9 @@ import { GitHubIcon } from './GitHub';
 import { GitpodIcon } from './Gitpod';
 import { GraphQLIcon } from './GraphQL';
 import { InfoIcon } from './Info';
-import { LinkedInIcon } from './LinkedIn';
 import { JekyllIcon } from './Jekyll';
 import { LightningIcon } from './Lightning';
+import { LinkedInIcon } from './LinkedIn';
 import { MarkdownIcon } from './Markdown';
 import { MoonIcon } from './Moon';
 import { NotionIcon } from './Notion';

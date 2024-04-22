@@ -1,5 +1,5 @@
-import { FC, ReactNode } from 'react';
 import NextLink from 'next/link';
+import { FC, ReactNode } from 'react';
 import { Icon } from './Icon';
 
 export const Link: FC<{ href: string; children: ReactNode }> = ({
@@ -11,7 +11,7 @@ export const Link: FC<{ href: string; children: ReactNode }> = ({
   return (
     <NextLink
       href={href}
-      className="inline-flex items-center m-0 space-x-1"
+      className="m-0 inline-flex items-center space-x-1"
       target={isExternalUrl ? '_blank' : undefined}
       rel={isExternalUrl ? 'noreferrer' : undefined}
     >

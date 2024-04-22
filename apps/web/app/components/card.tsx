@@ -1,19 +1,20 @@
-"use client";
-import { motion, useMotionTemplate, useSpring } from "framer-motion";
+'use client';
 
-import Image from "next/image";
-import { PropsWithChildren } from "react";
+import { motion, useMotionTemplate, useSpring } from 'framer-motion';
+import Image from 'next/image';
+import { PropsWithChildren } from 'react';
+
 // component to show image if type is image, and show video if type is video of the param given to the component
 export const ImageOrVideo: React.FC<{ url: string }> = ({ url }) => {
-  if (url.includes("mp4")) {
+  if (url.includes('mp4')) {
     return (
       <video
-        className="w-full h-full object-cover"
+        className="h-full w-full object-cover"
         autoPlay
         loop
         muted
         playsInline
-        style={{ filter: "brightness(20%)" }}
+        style={{ filter: 'brightness(20%)' }}
       >
         <source src={url} type="video/mp4" />
         Your browser does not support the video tag.
@@ -26,7 +27,7 @@ export const ImageOrVideo: React.FC<{ url: string }> = ({ url }) => {
       alt=""
       layout="fill"
       objectFit="cover"
-      style={{ filter: "brightness(20%)" }}
+      style={{ filter: 'brightness(20%)' }}
     />
   );
 };
@@ -50,16 +51,16 @@ export const Card: React.FC<CardProps> = ({ children, imageUrl }) => {
   return (
     <div
       onMouseMove={onMouseMove}
-      className="overflow-hidden relative duration-700 border rounded-xl hover:bg-zinc-800/10 group md:gap-8 hover:border-zinc-400/50 border-zinc-600 "
+      className="group relative overflow-hidden rounded-xl border border-zinc-600 duration-700 hover:border-zinc-400/50 hover:bg-zinc-800/10 md:gap-8 "
     >
       <div className="absolute inset-0">
-        <ImageOrVideo url={imageUrl ?? ""} />
+        <ImageOrVideo url={imageUrl ?? ''} />
       </div>
-      <div className="relative z-10 w-full h-full">
+      <div className="relative z-10 h-full w-full">
         <div className="pointer-events-none">
           <div className="absolute inset-0 z-0  transition duration-1000 [mask-image:linear-gradient(black,transparent)]" />
           <motion.div
-            className="absolute inset-0 z-10  bg-gradient-to-br opacity-100  via-zinc-100/10  transition duration-1000 group-hover:opacity-50 "
+            className="absolute inset-0 z-10  bg-gradient-to-br via-zinc-100/10  opacity-100  transition duration-1000 group-hover:opacity-50 "
             style={style}
           />
           <motion.div

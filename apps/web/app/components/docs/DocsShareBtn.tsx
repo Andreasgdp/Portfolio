@@ -1,9 +1,8 @@
-"use client";
+'use client';
 
-import { FC, useState } from "react";
-import { Button } from "../ui/button";
-import { Clipboard } from "lucide-react";
-import { ClipboardCopy } from "lucide-react";
+import { Clipboard, ClipboardCopy } from 'lucide-react';
+import { FC, useState } from 'react';
+import { Button } from '../ui/button';
 
 export const CopyUrlBtn: FC<{ url: string }> = ({ url }) => {
   const [copied, setCopied] = useState<boolean>(false);

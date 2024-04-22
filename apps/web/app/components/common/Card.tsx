@@ -1,7 +1,7 @@
 'use client';
 
-import { FC, ReactNode } from 'react';
 import classNames from 'classnames';
+import { FC, ReactNode } from 'react';
 
 export const Card: FC<{
   children: ReactNode;

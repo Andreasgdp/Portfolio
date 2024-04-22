@@ -1,15 +1,14 @@
-import { notFound } from "next/navigation";
-import { permanentRedirect } from "next/navigation";
-import { Doc, allDocs } from "contentlayer/generated";
-import { Mdx } from "@/app/components/mdx";
-import "./mdx.css";
-import { Redis } from "@upstash/redis";
-import { buildDocsTree } from "@/util/build-docs-tree";
-import { DocsNavigation } from "@/app/components/docs/DocsNavigation";
-import { DocsHeader } from "@/app/components/docs/DocsHeader";
-import { DocsFooter } from "@/app/components/docs/DocsFooter";
-import { DocsChildCard } from "@/app/components/docs/DocsChildCard";
-import { Container } from "@/app/components/common/Container";
+import { Mdx } from '@/app/components/mdx';
+import { allDocs, Doc } from 'contentlayer/generated';
+import { notFound, permanentRedirect } from 'next/navigation';
+import './mdx.css';
+import { Container } from '@/app/components/common/Container';
+import { DocsChildCard } from '@/app/components/docs/DocsChildCard';
+import { DocsFooter } from '@/app/components/docs/DocsFooter';
+import { DocsHeader } from '@/app/components/docs/DocsHeader';
+import { DocsNavigation } from '@/app/components/docs/DocsNavigation';
+import { buildDocsTree } from '@/util/build-docs-tree';
+import { Redis } from '@upstash/redis';
 
 export const revalidate = 60;
 
@@ -22,13 +21,13 @@ type Props = {
 const redis = Redis.fromEnv();
 
 function getSupportingProps(doc: Doc, params: any) {
-  let slugs = params.slug ? ["docs", ...params.slug] : [];
-  let path = "";
+  let slugs = params.slug ? ['docs', ...params.slug] : [];
+  let path = '';
   let breadcrumbs: any = [];
   for (const slug of slugs) {
     path += `/${slug}`;
     const breadcrumbDoc = allDocs.find(
-      (_) => _.url_path === path || _.url_path_without_id === path,
+      (_) => _.url_path === path || _.url_path_without_id === path
     );
     if (!breadcrumbDoc) continue;
     breadcrumbs.push({
@@ -39,38 +38,38 @@ function getSupportingProps(doc: Doc, params: any) {
   const tree = buildDocsTree(allDocs);
   const childrenTree = buildDocsTree(
     allDocs,
-    doc.pathSegments.map((_: PathSegment) => _.pathName),
+    doc.pathSegments.map((_: PathSegment) => _.pathName)
   );
   return { tree, breadcrumbs, childrenTree };
 }
 
-export async function generateStaticParams(): Promise<Props["params"][]> {
+export async function generateStaticParams(): Promise<Props['params'][]> {
   // this is taking the path to the document (the url is based on the path within content/docs)
   // and splitting it into an array of strings (the slug) e.g. /docs/getting-started -> ['docs', 'getting-started']
   const params = allDocs.map((doc) => ({
-    slug: doc?.url_path.replace(/^\//, "").split("/"),
+    slug: doc?.url_path.replace(/^\//, '').split('/'),
   }));
 
   return params;
 }
 
 export default async function PostPage({ params }: Props) {
-  const pagePath = params.slug?.join("/") ?? "";
+  const pagePath = params.slug?.join('/') ?? '';
   let doc;
   let project;
   // If on the index page, we don't worry about the global_id
-  if (pagePath === "") {
-    doc = allDocs.find((_) => _.url_path === "/docs");
+  if (pagePath === '') {
+    doc = allDocs.find((_) => _.url_path === '/docs');
     if (!doc) notFound();
     project = { doc, ...getSupportingProps(doc, params) };
   } else if (pagePath !== undefined) {
     // Identify the global content ID as the last part of the page path following
     // the last slash. It should be an 8-digit number.
     const globalContentId = pagePath
-      .split("/")
+      .split('/')
       .filter(Boolean)
       .pop()
-      ?.split("-")
+      ?.split('-')
       .pop();
 
     // If there is a global content ID, find the corresponding document.
@@ -81,7 +80,7 @@ export default async function PostPage({ params }: Props) {
     // correct one, redirect to the proper URL path.
     const urlPath = doc?.pathSegments
       .map((_: PathSegment) => _.pathName)
-      .join("/");
+      .join('/');
     if (doc && urlPath !== pagePath) {
       permanentRedirect(doc.url_path);
     }
@@ -91,8 +90,8 @@ export default async function PostPage({ params }: Props) {
       doc = allDocs.find((_) => {
         const segments = _.pathSegments
           .map((_: PathSegment) => _.pathName)
-          .join("/")
-          .replace(new RegExp(`\-${_.global_id}$`, "g"), ""); // Remove global content ID from url
+          .join('/')
+          .replace(new RegExp(`\-${_.global_id}$`, 'g'), ''); // Remove global content ID from url
         return segments === pagePath;
       });
       // If doc exists, but global content ID is missing in url, redirect to url
@@ -114,12 +113,12 @@ export default async function PostPage({ params }: Props) {
 
   return (
     <Container
-      title={project.doc.title + " – Docs"}
+      title={project.doc.title + ' – Docs'}
       description={project.doc.excerpt}
     >
       <div className="relative mx-auto w-full max-w-screen-2xl lg:flex lg:items-start">
         <div
-          style={{ height: "calc(100vh - 64px)" }}
+          style={{ height: 'calc(100vh - 64px)' }}
           className="sticky top-16 hidden shrink-0 border-r border-zinc-200 dark:border-zinc-800 lg:block"
         >
           <div className="-ml-3 h-full overflow-y-scroll p-8 pl-16">
@@ -133,7 +132,7 @@ export default async function PostPage({ params }: Props) {
             title={project.doc.title}
             globalId={project.doc.global_id}
           />
-          <div className="docs prose prose-slate mx-auto mb-4 w-full max-w-3xl shrink p-4 pb-8 prose-headings:font-semibold prose-a:font-normal prose-code:font-normal prose-code:before:content-none prose-code:after:content-none prose-hr:border-zinc-200 dark:prose-invert dark:prose-a:text-zinc-400 dark:prose-hr:border-zinc-800 md:mb-8 md:px-8 lg:mx-0 lg:max-w-full lg:px-16">
+          <div className="docs prose prose-slate prose-headings:font-semibold prose-a:font-normal prose-code:font-normal prose-code:before:content-none prose-code:after:content-none prose-hr:border-zinc-200 dark:prose-invert dark:prose-a:text-zinc-400 dark:prose-hr:border-zinc-800 mx-auto mb-4 w-full max-w-3xl shrink p-4 pb-8 md:mb-8 md:px-8 lg:mx-0 lg:max-w-full lg:px-16">
             <Mdx code={project.doc.body.code} />
             {project.doc.show_child_cards && (
               <>

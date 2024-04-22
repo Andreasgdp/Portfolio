@@ -1,12 +1,12 @@
-"use client";
+'use client';
 
-import { FC, Fragment, useState, useEffect } from "react";
-import { TreeNode } from "types/TreeNode";
-import Link from "next/link";
-import { DocsNavigation } from "./DocsNavigation";
-import { Icon } from "../common/Icon";
-import { usePathname } from "next/navigation";
-import { CopyUrlBtn } from "./DocsShareBtn";
+import Link from 'next/link';
+import { usePathname } from 'next/navigation';
+import { FC, Fragment, useEffect, useState } from 'react';
+import { TreeNode } from 'types/TreeNode';
+import { Icon } from '../common/Icon';
+import { DocsNavigation } from './DocsNavigation';
+import { CopyUrlBtn } from './DocsShareBtn';
 
 export const DocsHeader: FC<{
   tree: TreeNode[];
@@ -20,9 +20,9 @@ export const DocsHeader: FC<{
   useEffect(() => {
     const handleScroll = () => setTop(window.scrollY <= 30);
     handleScroll();
-    window.addEventListener("scroll", handleScroll);
+    window.addEventListener('scroll', handleScroll);
     return () => {
-      window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener('scroll', handleScroll);
     };
   }, []);
 
@@ -47,7 +47,7 @@ export const DocsHeader: FC<{
                     >
                       {title}
                     </Link>
-                    <span className="fill-current inline-block w-1.5 text-slate-400 dark:text-slate-500">
+                    <span className="inline-block w-1.5 fill-current text-slate-400 dark:text-slate-500">
                       <Icon name="chevron-right" />
                     </span>
                   </li>
@@ -55,7 +55,7 @@ export const DocsHeader: FC<{
               </Fragment>
             ))}
           </ul>
-          <div className="relative flex items-center sr-only lg:not-sr-only">
+          <div className="sr-only relative flex items-center lg:not-sr-only">
             <h1 className="sr-only text-2xl font-semibold text-slate-800 dark:text-slate-200 md:text-3xl lg:not-sr-only lg:text-4xl">
               {title}
             </h1>
@@ -67,7 +67,7 @@ export const DocsHeader: FC<{
               onClick={() => setOpen(true)}
               className="flex space-x-2 text-left text-2xl font-semibold text-slate-800 dark:text-slate-200 md:space-x-3 md:text-3xl lg:text-4xl"
             >
-              <span className="fill-current mt-1.5 inline-block w-4 flex-shrink-0 md:w-5">
+              <span className="mt-1.5 inline-block w-4 flex-shrink-0 fill-current md:w-5">
                 <Icon name="chevron-down" />
               </span>
               <span className="inline-block flex-shrink">{title}</span>
@@ -89,7 +89,7 @@ export const DocsHeader: FC<{
                 onClick={() => setOpen(!open)}
                 className="flex h-8 w-8 items-center justify-end text-slate-600 dark:text-slate-300"
               >
-                <span className="fill-current inline-block w-4">
+                <span className="inline-block w-4 fill-current">
                   <Icon name="close" />
                 </span>
               </button>
@@ -102,7 +102,7 @@ export const DocsHeader: FC<{
       )}
       <div
         className={`fixed top-16 z-10 hidden h-16 w-full border-b border-zinc-200 bg-white bg-opacity-90 backdrop-blur backdrop-filter transition-opacity duration-200 dark:border-zinc-800 dark:bg-black lg:block ${
-          top ? "opacity-0" : "opacity-100"
+          top ? 'opacity-0' : 'opacity-100'
         }`}
       >
         <ul className="flex h-full items-center space-x-2 px-16 text-sm">
@@ -116,7 +116,7 @@ export const DocsHeader: FC<{
                   >
                     {title}
                   </Link>
-                  <span className="fill-current inline-block w-1.5 text-slate-400 dark:text-slate-500">
+                  <span className="inline-block w-1.5 fill-current text-slate-400 dark:text-slate-500">
                     <Icon name="chevron-right" />
                   </span>
                 </li>

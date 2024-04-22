@@ -1,12 +1,12 @@
-"use client";
+'use client';
 
-import React, { FC, useState, useEffect } from "react";
-import Link from "next/link";
-import { usePathname } from "next/navigation";
-import classNames from "classnames";
-import { TreeNode } from "types/TreeNode";
-import { Label } from "../common/Label";
-import { Icon } from "../common/Icon";
+import classNames from 'classnames';
+import Link from 'next/link';
+import { usePathname } from 'next/navigation';
+import React, { FC, useEffect, useState } from 'react';
+import { TreeNode } from 'types/TreeNode';
+import { Icon } from '../common/Icon';
+import { Label } from '../common/Label';
 
 const NavLink: FC<{
   title: string;
@@ -30,34 +30,34 @@ const NavLink: FC<{
   return (
     <div
       className={classNames(
-        "group flex h-8 items-center justify-between space-x-2 whitespace-nowrap rounded-md px-3 text-sm leading-none",
+        'group flex h-8 items-center justify-between space-x-2 whitespace-nowrap rounded-md px-3 text-sm leading-none',
         url == activePath
           ? `${
-              level == 0 ? "font-medium" : "font-normal"
+              level == 0 ? 'font-medium' : 'font-normal'
             } bg-zinc-50 text-zinc-900 dark:bg-zinc-500/20 dark:text-zinc-50`
           : `hover:bg-zinc-50 dark:hover:bg-zinc-900 ${
               level == 0
-                ? "font-medium text-slate-600 hover:text-slate-700 dark:text-slate-300 dark:hover:text-slate-200"
-                : "font-normal hover:text-slate-600 dark:hover:text-slate-300"
-            }`,
+                ? 'font-medium text-slate-600 hover:text-slate-700 dark:text-slate-300 dark:hover:text-slate-200'
+                : 'font-normal hover:text-slate-600 dark:hover:text-slate-300'
+            }`
       )}
     >
       <Link
         href={url}
-        className="flex items-center h-full space-x-2 grow max-w-full"
+        className="flex h-full max-w-full grow items-center space-x-2"
       >
-        <span className="overflow-ellipsis overflow-hidden">{title}</span>
+        <span className="overflow-hidden overflow-ellipsis">{title}</span>
         {label && <Label text={label} />}
       </Link>
       {collapsible && (
         <button
           aria-label="Toggle children"
           onClick={toggleCollapsed}
-          className="px-2 py-1 mr-2 shrink-0"
+          className="mr-2 shrink-0 px-2 py-1"
         >
           <span
-            className={`fill-current block w-2.5 ${
-              collapsed ? "-rotate-90 transform" : ""
+            className={`block w-2.5 fill-current ${
+              collapsed ? '-rotate-90 transform' : ''
             }`}
           >
             <Icon name="chevron-down" />
@@ -112,8 +112,8 @@ const Tree: FC<{ tree: TreeNode[]; level: number; activePath: string }> = ({
   return (
     <div
       className={classNames(
-        "ml-3 space-y-2 pl-3",
-        level > 0 ? "border-l border-zinc-200 dark:border-zinc-800" : "",
+        'ml-3 space-y-2 pl-3',
+        level > 0 ? 'border-l border-zinc-200 dark:border-zinc-800' : ''
       )}
     >
       {tree.map((treeNode, index) => (
@@ -129,7 +129,7 @@ const Tree: FC<{ tree: TreeNode[]; level: number; activePath: string }> = ({
 };
 
 export const DocsNavigation: FC<{ tree: TreeNode[] }> = ({ tree }) => {
-  const pathname = usePathname() ?? "";
+  const pathname = usePathname() ?? '';
 
   return (
     <aside className="-ml-6 w-80">

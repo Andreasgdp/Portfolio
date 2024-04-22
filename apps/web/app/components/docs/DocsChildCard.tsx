@@ -1,9 +1,9 @@
 'use client';
 
-import React from 'react';
 import { Card as ChildCard } from '@/app/components/common/Card';
 import { Label } from '@/app/components/common/Label';
 import { useRouter } from 'next/navigation';
+import React from 'react';
 
 interface Card {
   urlPath: string;

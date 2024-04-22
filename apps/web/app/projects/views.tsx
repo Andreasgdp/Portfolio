@@ -1,4 +1,4 @@
-import { Redis } from "@upstash/redis";
+import { Redis } from '@upstash/redis';
 
 type Props = {
   slug: string;
@@ -8,11 +8,11 @@ const redis = Redis.fromEnv();
 
 export const Views: React.FC<Props> = async ({ slug: projectName }) => {
   const views = (await redis.get<number>(
-    ["pageviews", "projects", projectName].join(":"),
+    ['pageviews', 'projects', projectName].join(':')
   )) as number;
 
   return (
-    <>{Intl.NumberFormat("en-US", { notation: "compact" }).format(views)}</>
+    <>{Intl.NumberFormat('en-US', { notation: 'compact' }).format(views)}</>
   );
 };
 

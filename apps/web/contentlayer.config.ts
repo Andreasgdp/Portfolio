@@ -1,58 +1,58 @@
-import { defineDocumentType, makeSource } from "contentlayer/source-files";
-import remarkGfm from "remark-gfm";
-import rehypePrettyCode from "rehype-pretty-code";
-import rehypeSlug from "rehype-slug";
-import rehypeAutolinkHeadings from "rehype-autolink-headings";
-import { getLastEditedDate, urlFromFilePath } from "./util/utils";
-import { bundleMDX } from "mdx-bundler";
-import { mdxToMarkdown } from "mdast-util-mdx";
-import { toMarkdown } from "mdast-util-to-markdown";
-import type * as unified from "unified";
+import { defineDocumentType, makeSource } from 'contentlayer/source-files';
+import { mdxToMarkdown } from 'mdast-util-mdx';
+import { toMarkdown } from 'mdast-util-to-markdown';
+import { bundleMDX } from 'mdx-bundler';
+import rehypeAutolinkHeadings from 'rehype-autolink-headings';
+import rehypePrettyCode from 'rehype-pretty-code';
+import rehypeSlug from 'rehype-slug';
+import remarkGfm from 'remark-gfm';
+import type * as unified from 'unified';
+import { getLastEditedDate, urlFromFilePath } from './util/utils';
 
 // TODO: Come back and fix type errors for ignored parts.
 
 /** @type {import('contentlayer/source-files').ComputedFields} */
 const computedFields = {
   path: {
-    type: "string",
+    type: 'string',
     // @ts-ignore
     resolve: (doc) => `/${doc._raw.flattenedPath}`,
   },
   slug: {
-    type: "string",
+    type: 'string',
     // @ts-ignore
-    resolve: (doc) => doc._raw.flattenedPath.split("/").slice(1).join("/"),
+    resolve: (doc) => doc._raw.flattenedPath.split('/').slice(1).join('/'),
   },
 };
 
 export const Project = defineDocumentType(() => ({
-  name: "Project",
-  filePathPattern: "./projects/**/*.mdx",
-  contentType: "mdx",
+  name: 'Project',
+  filePathPattern: './projects/**/*.mdx',
+  contentType: 'mdx',
 
   fields: {
     published: {
-      type: "boolean",
+      type: 'boolean',
     },
     title: {
-      type: "string",
+      type: 'string',
       required: true,
     },
     description: {
-      type: "string",
+      type: 'string',
       required: true,
     },
     date: {
-      type: "date",
+      type: 'date',
     },
     url: {
-      type: "string",
+      type: 'string',
     },
     imageUrl: {
-      type: "string",
+      type: 'string',
     },
     repository: {
-      type: "string",
+      type: 'string',
     },
   },
   // @ts-ignore
@@ -66,32 +66,32 @@ const tocPlugin =
   () => {
     return (node: any) => {
       for (const element of node.children.filter(
-        (_: any) => _.type === "heading" || _.name === "OptionsTable",
+        (_: any) => _.type === 'heading' || _.name === 'OptionsTable'
       )) {
-        if (element.type === "heading") {
+        if (element.type === 'heading') {
           const title = toMarkdown(
-            { type: "paragraph", children: element.children },
-            { extensions: [mdxToMarkdown()] },
+            { type: 'paragraph', children: element.children },
+            { extensions: [mdxToMarkdown()] }
           )
             .trim()
-            .replace(/<.*$/g, "")
-            .replace(/\\/g, "")
+            .replace(/<.*$/g, '')
+            .replace(/\\/g, '')
             .trim();
           headings.push({ level: element.depth, title });
-        } else if (element.name === "OptionsTable") {
+        } else if (element.name === 'OptionsTable') {
           element.children
-            .filter((_: any) => _.name === "OptionTitle")
+            .filter((_: any) => _.name === 'OptionTitle')
             .forEach((optionTitle: any) => {
               optionTitle.children
-                .filter((_: any) => _.type === "heading")
+                .filter((_: any) => _.type === 'heading')
                 .forEach((heading: any) => {
                   const title = toMarkdown(
-                    { type: "paragraph", children: heading.children },
-                    { extensions: [mdxToMarkdown()] },
+                    { type: 'paragraph', children: heading.children },
+                    { extensions: [mdxToMarkdown()] }
                   )
                     .trim()
-                    .replace(/<.*$/g, "")
-                    .replace(/\\/g, "")
+                    .replace(/<.*$/g, '')
+                    .replace(/\\/g, '')
                     .trim();
                   headings.push({ level: heading.depth, title });
                 });
@@ -102,43 +102,43 @@ const tocPlugin =
   };
 
 export const Doc = defineDocumentType(() => ({
-  name: "Doc",
+  name: 'Doc',
   filePathPattern: `./docs/**/*.mdx`,
-  contentType: "mdx",
+  contentType: 'mdx',
   fields: {
     global_id: {
-      type: "string",
+      type: 'string',
       description:
-        "Random ID to uniquely identify this doc, even after it moves",
+        'Random ID to uniquely identify this doc, even after it moves',
       required: true,
     },
     title: {
-      type: "string",
-      description: "The title of the page",
+      type: 'string',
+      description: 'The title of the page',
       required: true,
     },
     nav_title: {
-      type: "string",
-      description: "Override the title for display in nav",
+      type: 'string',
+      description: 'Override the title for display in nav',
     },
     label: {
-      type: "string",
+      type: 'string',
     },
     excerpt: {
-      type: "string",
+      type: 'string',
       required: true,
     },
     show_child_cards: {
-      type: "boolean",
+      type: 'boolean',
       default: false,
     },
     collapsible: {
-      type: "boolean",
+      type: 'boolean',
       required: false,
       default: false,
     },
     collapsed: {
-      type: "boolean",
+      type: 'boolean',
       required: false,
       default: false,
     },
@@ -146,26 +146,26 @@ export const Doc = defineDocumentType(() => ({
   },
   computedFields: {
     url_path: {
-      type: "string",
+      type: 'string',
       description:
         'The URL path of this page relative to site root. For example, the site root page would be "/", and doc page would be "docs/getting-started/"',
       resolve: (doc) => {
-        if (doc._id.startsWith("docs/index.md")) return "/docs";
+        if (doc._id.startsWith('docs/index.md')) return '/docs';
         return urlFromFilePath(doc);
       },
     },
     url_path_without_id: {
-      type: "string",
+      type: 'string',
       description:
         'The URL path of this page relative to site root. For example, the site root page would be "/", and doc page would be "docs/getting-started/"',
       resolve: (doc) =>
-        urlFromFilePath(doc).replace(new RegExp(`-${doc.global_id}$`), ""),
+        urlFromFilePath(doc).replace(new RegExp(`-${doc.global_id}$`), ''),
     },
     pathSegments: {
-      type: "json",
+      type: 'json',
       resolve: (doc) =>
         urlFromFilePath(doc)
-          .split("/")
+          .split('/')
           // skip `/docs` prefix
           .slice(2)
           .map((dirName) => {
@@ -176,7 +176,7 @@ export const Doc = defineDocumentType(() => ({
           }),
     },
     headings: {
-      type: "json",
+      type: 'json',
       resolve: async (doc) => {
         const headings: DocHeading[] = [];
 
@@ -194,22 +194,22 @@ export const Doc = defineDocumentType(() => ({
         return [{ level: 1, title: doc.title }, ...headings];
       },
     },
-    last_edited: { type: "date", resolve: getLastEditedDate },
+    last_edited: { type: 'date', resolve: getLastEditedDate },
   },
   extensions: {},
 }));
 
 export const Page = defineDocumentType(() => ({
-  name: "Page",
-  filePathPattern: "pages/**/*.mdx",
-  contentType: "mdx",
+  name: 'Page',
+  filePathPattern: 'pages/**/*.mdx',
+  contentType: 'mdx',
   fields: {
     title: {
-      type: "string",
+      type: 'string',
       required: true,
     },
     description: {
-      type: "string",
+      type: 'string',
     },
   },
   // @ts-ignore
@@ -217,7 +217,7 @@ export const Page = defineDocumentType(() => ({
 }));
 
 export default makeSource({
-  contentDirPath: "./content",
+  contentDirPath: './content',
   documentTypes: [Page, Project, Doc],
   mdx: {
     remarkPlugins: [remarkGfm],
@@ -226,22 +226,22 @@ export default makeSource({
       [
         rehypePrettyCode,
         {
-          theme: "github-dark",
+          theme: 'github-dark',
           // @ts-ignore
           onVisitLine(node) {
             // Prevent lines from collapsing in `display: grid` mode, and allow empty
             // lines to be copy/pasted
             if (node.children.length === 0) {
-              node.children = [{ type: "text", value: " " }];
+              node.children = [{ type: 'text', value: ' ' }];
             }
           },
           // @ts-ignore
           onVisitHighlightedLine(node) {
-            node.properties.className.push("line--highlighted");
+            node.properties.className.push('line--highlighted');
           },
           // @ts-ignore
           onVisitHighlightedWord(node) {
-            node.properties.className = ["word--highlighted"];
+            node.properties.className = ['word--highlighted'];
           },
         },
       ],
@@ -249,8 +249,8 @@ export default makeSource({
         rehypeAutolinkHeadings,
         {
           properties: {
-            className: ["subheading-anchor"],
-            ariaLabel: "Link to section",
+            className: ['subheading-anchor'],
+            ariaLabel: 'Link to section',
           },
         },
       ],

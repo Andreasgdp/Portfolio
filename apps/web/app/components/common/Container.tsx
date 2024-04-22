@@ -1,12 +1,12 @@
 'use client';
 
-import { FC } from 'react';
+import classNames from 'classnames';
 import Head from 'next/head';
 import { usePathname } from 'next/navigation';
+import { FC } from 'react';
 import { SearchProvider } from '../SearchContext';
-import { MainNavigation } from './MainNavigation';
 import { Footer } from './Footer';
-import classNames from 'classnames';
+import { MainNavigation } from './MainNavigation';
 
 export const Container: FC<any> = ({
   children,
