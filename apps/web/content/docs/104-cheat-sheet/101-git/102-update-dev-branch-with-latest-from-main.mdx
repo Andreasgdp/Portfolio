@@ -4,14 +4,46 @@ title: Update Dev Branch With Latest From Main
 excerpt: Update Dev Branch With Latest From Main
 ---
 
-Being on the dev branch, run the following command to pull the latest changes from the main branch:
+There are two ways of getting the latest changes from the main branch (or any other branch for that matter)
+
+## TL;DR
+
+Merge the latest changes from the remote main branch into the current branch: `git merge origin/main`
+
+Use rebase instead of merge to get the latest changes from the remote main branch: `git pull --rebase origin main`
+
+## Merge
+
+Being on the dev branch, you can merge the latest changes in from main using the following command:
 
 ```bash
-git pull origin main
+git merge main
 ```
 
-If you want to use rebase instead of merge (or whatever is the default config for you), you can use the following command:
+This will merge the latest changes from the local main branch into your current branch.
+
+That, however, might not be up to date with the remote main branch. To get the latest changes from the remote main branch, you can run the following command:
+
+```bash
+git merge origin/main
+```
+
+### Usecases for merging
+
+- You want to keep the history of the main branch in your dev branch
+- There are a lot of commits in the dev branch, so a rebase would be too much work
+
+## Rebase
+
+If you want to use rebase instead of merge, you can use the following command:
 
 ```bash
 git pull --rebase origin main
 ```
+
+This will rebase your current branch on top of the main branch. This will make your history linear and easier to read.
+
+### Usecases for rebasing
+
+- You want to keep a clean history that better represents the actual changes
+- You want to have more control over the history of your branch
