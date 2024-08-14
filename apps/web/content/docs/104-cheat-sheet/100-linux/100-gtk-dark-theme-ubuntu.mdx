@@ -33,8 +33,9 @@ gtk-recent-files-enabled = false
 gtk-enable-animations = false
 gtk-cursor-theme-name = Amiga
 gtk-decoration-layout = close,menu
-Sample of /etc/gtk-2.0/gtkrc:
 ```
+
+Sample of /etc/gtk-2.0/gtkrc:
 
 ```
 gtk-theme-name = "Xfce-smooth"
@@ -49,5 +50,13 @@ gtk-enable-input-feedback-sounds = 0
 You can uncomment to set the commented options if you like.
 
 For qt, after you install qt5ct package you can execute `qt5ct`, which will present you with a GUI app to set the qt apps theme or sync it to the gtk one.
+
+Also you need `lxappearance`:
+
+```
+sudo apt install lxappearance
+```
+
+Just run `lxappearance` and select a dark theme. After logout and login you should have dark theme.
 
 [Solution Source](https://unix.stackexchange.com/a/683855/559089)

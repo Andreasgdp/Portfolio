@@ -11,19 +11,19 @@
     "cs": "turbo gen cs && npm run generate-page-ids"
   },
   "devDependencies": {
+    "@ianvs/prettier-plugin-sort-imports": "^4.1.0",
     "@turbo/gen": "^1.10.12",
     "@types/fs-extra": "^11.0.4",
     "eslint": "^8.48.0",
-    "fs-extra": "^11.2.0",
-    "@ianvs/prettier-plugin-sort-imports": "^4.1.0",
     "eslint-config-prettier": "^9.0.0",
+    "fs-extra": "^11.2.0",
     "prettier": "^3.0.3",
     "prettier-plugin-tailwindcss": "^0.5.4",
     "simple-git": "^3.24.0",
     "titlecase": "^1.1.3",
     "tsconfig": "workspace:*",
-    "turbo": "^1.13.2"
+    "turbo": "^1.13.3"
   },
-  "packageManager": "pnpm@9.1.0",
+  "packageManager": "pnpm@9.1.3",
   "name": "docsPortfolio"
 }
